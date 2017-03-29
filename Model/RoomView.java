@@ -9,42 +9,6 @@ public class RoomView {
 
 	public static void main(String[] args) {
 
-
-		LinkedList<Room> roomListLevel1 = new LinkedList<Room>();
-		LinkedList<Room> roomListLevel2 = new LinkedList<Room>();
-		LinkedList<Room> roomListLevel3 = new LinkedList<Room>();
-		LinkedList<Room> roomListLevel4 = new LinkedList<Room>();
-
-		// LEVEL 1 ROOMS -------------------------------------------------- 
-		roomListLevel1.add(new Room("RM101", "DR101 and DR102", "Entrance"));
-		roomListLevel1.add(new Room("HW_L1", "DR101, DR102,DR103, DR104, "
-				+ "DR105, DR106, DR107, DR108", "Hallway Level 1"));
-
-		roomListLevel1.add(new Room("RM102", "DR103", "Greeting Area"));
-		roomListLevel1.add(new Room("RM103", "DR104", "Living Room"));
-		roomListLevel1.add(new Room("RM104", "DR105", "Game Room"));
-		roomListLevel1.add(new Room("RM105", "DR106", "Kitchen"));
-		roomListLevel1.add(new Room("RM106", "DR107", "Dining Room"));
-		roomListLevel1.add(new Room("RM107", "DR108", "Landing"));
-
-		//for(Room rooms: roomListLevel1 ) {
-		//	System.out.println(rooms);
-		//}
-
-		// LEVEL 2 ROOMS ---------------------------------------------------
-		roomListLevel2.add(new Room("HW_L2", "DR201, DR202, DR203, DR205. DR208, DR209, DR211, 									DR 212", "Hallway Level 2"));
-		roomListLevel2.add(new Room("RM201", "DR 201, DR202, DR203, DR204", "Waiting Room"));
-		roomListLevel2.add(new Room("RM202", "DR205", "Supply Room"));
-		roomListLevel2.add(new Room("RM203", "DR206, DR207", "Bedroom"));
-		roomListLevel2.add(new Room("RM204", "DR207, DR208", "Cleaning Supply Room"));
-		roomListLevel2.add(new Room("RM205", "DR209, DR2106", "Music Room"));
-		roomListLevel2.add(new Room("RM206", "DR210, DR211", "Wine Cellar"));
-		roomListLevel2.add(new Room("RM207", "DR204, DR212", "Library"));
-
-		//for(Room rooms: roomListLevel2 ) {
-		//	System.out.println(rooms);
-		//}
-
 		// Room Descripts ----------------------------------------------------------
 
 		boolean response = true; //used to access menu of options

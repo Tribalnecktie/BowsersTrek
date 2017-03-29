@@ -6,17 +6,11 @@ public class RoomLibrary {
 	
 	private ArrayList<Room> rooms = new ArrayList<Room>();
 	Monster monster;
-	Puzzle puzzle;
-	Artifacts item;
 	
 	
-	public ArrayList<Room> genRoom()
 	
-	{
-		
-		
 		//public Room(int rmLevel, String rmId, String rmDoor, String rmName, Monster monsterObj, Puzzle puzzleObj, ArrayList<Artifact> itemObj) 
-	}
+	
 	public String getRmDescript(String rmId) {
 		String rmDescript = "";
 		if(rmId.equalsIgnoreCase("RM101"))

@@ -11,17 +11,17 @@ public class Room {
 	private String rmDescript;
 	private int rmLevel;
 	private Monster monsterObj;
-	private Puzzle puzzleObj; //Puzzle
-	private ArrayList<Artifacts> itemObj; 
+	private Puzzle puzzle;
+	private ArrayList<Artifact> itemObj; 
 	
-	public Room(int rmLevel, String rmId, String rmDoor, String rmName, Monster monsterObj, Puzzle puzzleObj, ArrayList<Artifacts> itemObj) {
+	public Room(int rmLevel, String rmId, String rmDoor, String rmName, Monster monsterObj, ArrayList<Artifact> itemObj) {
 		this.rmLevel = rmLevel;
 		this.rmId = rmId;
 		this.rmDoor = rmDoor;
 		this.rmName = rmName;
 		this.monsterObj = monsterObj;
-		this.puzzleObj = puzzleObj;
-		this.itemObj = new ArrayList<Artifacts>();
+		//this.puzzleObj = puzzleObj;
+		this.itemObj = new ArrayList<Artifact>();
 		
 	}
 	
@@ -74,23 +74,7 @@ public class Room {
 		this.monsterObj = monsterObj;
 	}
 
-	public Puzzle getPuzzleObj() {
-		return puzzleObj;
-	}
 
-	public void setPuzzleObj(Puzzle puzzleObj) {
-		this.puzzleObj = puzzleObj;
-	}
-
-
-	public ArrayList<Artifacts> getItemObj() {
-		return itemObj;
-	}
-
-
-	public void setItemObj(ArrayList<Artifacts> itemObj) {
-		this.itemObj = itemObj;
-	}
 
 }
 	
