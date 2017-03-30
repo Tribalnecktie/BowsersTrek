@@ -13,6 +13,14 @@ public class Player extends Character {
 		attackPower = 1;
 	}
 	
+	public ArrayList<String> getInv() {
+		return inv;
+	}
+
+	public void setInv(ArrayList<String> inv) {
+		this.inv = inv;
+	}
+
 	void attack(Monster monster)
 	{
 		monster.health -= attackPower;

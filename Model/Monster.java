@@ -80,4 +80,28 @@ public class Monster extends Character {
 	{
 		player.health -= attackPower;
 	}
+
+	public String getID() {
+		return ID;
+	}
+
+	public void setID(String iD) {
+		ID = iD;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getItemDrop() {
+		return itemDrop;
+	}
+
+	public void setItemDrop(String itemDrop) {
+		this.itemDrop = itemDrop;
+	}
 }
