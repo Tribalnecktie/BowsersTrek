@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class ConsoleView 
 {
 	
+	String currentroomID;
 
 	/**
 	 * @param args
