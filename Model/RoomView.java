@@ -8,6 +8,11 @@ import java.util.Scanner;
 public class RoomView {
 
 	public static void main(String[] args) {
+		
+		LinkedList<Room> roomListLevel1 = new LinkedList<Room>();
+		LinkedList<Room> roomListLevel2 = new LinkedList<Room>();
+		LinkedList<Room> roomListLevel3 = new LinkedList<Room>();
+		LinkedList<Room> roomListLevel4 = new LinkedList<Room>();
 
 		// Room Descripts ----------------------------------------------------------
 
@@ -56,7 +61,7 @@ public class RoomView {
 					{
 						correctID = true;
 						display = rooms.getRmId();
-						System.out.println(rooms.getRmDescript((display)));
+						//System.out.println(rooms.getRmDescript((display)));
 						System.out.println();
 						System.out.println("----------------------------------------------------------------------");
 					}

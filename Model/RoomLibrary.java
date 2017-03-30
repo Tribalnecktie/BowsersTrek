@@ -5,11 +5,7 @@ import java.util.ArrayList;
 public class RoomLibrary {
 	
 	private ArrayList<Room> rooms = new ArrayList<Room>();
-	Monster monster;
-	
-	
-	
-		//public Room(int rmLevel, String rmId, String rmDoor, String rmName, Monster monsterObj, Puzzle puzzleObj, ArrayList<Artifact> itemObj) 
+
 	
 	public String getRmDescript(String rmId) {
 		String rmDescript = "";
@@ -57,3 +53,5 @@ public class RoomLibrary {
 	}
 
 }
+
+ 
