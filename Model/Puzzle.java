@@ -1,13 +1,14 @@
 package Model;
 
-public class Puzzle2 {
+public class Puzzle 
+{
 
 	private int plzId;
 	private String plzDescription;
 	private String answer;
 	private boolean isCorrect;
 
-	public Puzzle2 (int plzId, String plzDescription, String answer, boolean isCorrect){
+	public Puzzle (int plzId, String plzDescription, String answer, boolean isCorrect){
 		this.plzId = plzId;
 		this.plzDescription = plzDescription;
 		this.answer = answer;
