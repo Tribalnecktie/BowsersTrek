@@ -34,7 +34,7 @@ public class GameController
 		roomInfoMap = roomlibrary.getRoomsAL();
 		
 		//Loop through and print every Key in the HashMap.
-		Iterator iterate = roomInfoMap.entrySet().iterator();
+		Iterator<?> iterate = roomInfoMap.entrySet().iterator();
 		while(iterate.hasNext())
 		{
 			Map.Entry roomobj = (Map.Entry<String, Room>)iterate.next();
@@ -57,6 +57,38 @@ public class GameController
 			Room thisroom = roomList.get(x);
 			System.out.println(thisroom.getRmId());
 		}
+		
+		
+		/*
+		 * Artifact Creation and Inventory List.
+		 * 
+		 * 
+		 */
+		
+		Artifact testArtifact = new Artifact("A0000");
+		Artifact testArtifact2 = new Artifact("A0001");
+		Artifact testArtifact3 = new Artifact("A0002");
+		
+		
+		/*System.out.println(testArtifact.getID());
+		System.out.println(testArtifact.getName());
+		System.out.println(testArtifact.getStrength());*/
+		//Haha works wonderfully.
+		
+		//Now for something more difficult..inventory list.
+		Backpack usersBackpack = new Backpack();
+		
+		//Null pointer exception on this. wonder why. 
+		usersBackpack.addArtifact(testArtifact.getID().toString(),testArtifact);
+		usersBackpack.addArtifact(testArtifact2.getID().toString(),testArtifact2);
+		usersBackpack.addArtifact(testArtifact3.getID().toString(),testArtifact3);
+		
+		usersBackpack.printBackpack();
+		
+		
+		
+		
+		
 		
 		
 	}
