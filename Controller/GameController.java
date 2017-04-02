@@ -62,3 +62,23 @@ public class GameController
 	}
 
 }
+
+
+
+/*
+	NOTES**
+	
+	
+	Okay so for the saving and loading of a game. On startup. Loop through the filenames in the save dir.
+	Store in a hash map so we can get the key and on selected then load using that key.
+	the filename list is displayed to the user if they select load game on the main menu. 
+	user will choose a name and that names key will be used to select and read in that file.
+	The data read in from this file will create the objects necessary to start the player from the last place they left off.
+	Need to probably implement Serializable into our object classes. so that we can save the object instead of just string data.
+	string data could work. but would have to be error checked to hell because users are stupid and make mistakes. 
+	i think at this point we should stick with what we have just for the sake of time.
+	
+	
+	
+	
+*/
