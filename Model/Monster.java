@@ -72,6 +72,7 @@ public class Monster extends Character {
 			itemDrop = "A0009";
 			description = "A tall, lanky old man. He smells as bad as he looks. He will totally rip your heart out if you let him, so beware.";
 		}
+		else
 	
 			System.out.println("Invalid ID");
 	}
