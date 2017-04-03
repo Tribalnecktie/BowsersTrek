@@ -2,19 +2,18 @@ package Model;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-
+import java.util.List;
 import java.util.Scanner;
 
 public class RoomView {
 
 	public static void main(String[] args) {
-		
-		LinkedList<Room> roomListLevel1 = new LinkedList<Room>();
-		LinkedList<Room> roomListLevel2 = new LinkedList<Room>();
-		LinkedList<Room> roomListLevel3 = new LinkedList<Room>();
-		LinkedList<Room> roomListLevel4 = new LinkedList<Room>();
 
-		// Room Descripts ----------------------------------------------------------
+
+		// THIS ONLY A TESTER CLASS FOR CALLING ROOMLIBRAY
+		RoomLibrary rl = new RoomLibrary();
+		
+
 
 		boolean response = true; //used to access menu of options
 		int userInput; //stores user's menu option selection to be processed in "if/else-if statements"
@@ -34,16 +33,26 @@ public class RoomView {
 
 			if (userInput == 1 )
 			{	
-				System.out.println("There are exactly " + roomListLevel1.size() + " rooms on this level.  They are as 										follows:");
+				System.out.println("There are exactly " + rl.roomsAL().size() + " rooms on this level.  They are as 										follows:");
 				int numRoom = 1;
-				for (Room rooms: roomListLevel1)
+				ArrayList<String> roomIdAL = new ArrayList<String>();
+
+				for(Room rooms : rl.roomsAL())
+				{	
+					roomIdAL.add(rooms.getRmId());
+				}
+
+				for (Room rooms: rl.roomsAL())
 				{
 					System.out.println("Room " + numRoom + ": " + rooms.getRmId() + " --> " + rooms.getRmName());
 					numRoom++;
+
 				}
+
 				System.out.println();
 				System.out.println("Now What?");
 				System.out.println("----------------------------------------------------------------------");
+
 			}
 
 			else if (userInput == 2)
@@ -54,14 +63,22 @@ public class RoomView {
 
 				boolean correctID = false;
 				String display;
+				ArrayList<String> roomIdAL = new ArrayList<String>();
 
-				for(Room rooms : roomListLevel1)
+				for(Room rooms : rl.roomsAL())
 				{	
-					if(IDRequest.equalsIgnoreCase(rooms.getRmId())) 
+					roomIdAL.add(rooms.getRmId());
+				}
+				
+
+				for(int i = 0; i < roomIdAL.size(); i++) {
+
+					
+					if(roomIdAL.get(i).equalsIgnoreCase(IDRequest))
 					{
 						correctID = true;
-						display = rooms.getRmId();
-						//System.out.println(rooms.getRmDescript((display)));
+						display = rl.getRmDescript(IDRequest);
+						System.out.println(display);
 						System.out.println();
 						System.out.println("----------------------------------------------------------------------");
 					}
@@ -74,24 +91,54 @@ public class RoomView {
 				}
 			}
 
+
 			else if (userInput == 3)
 			{
-				for (Room rooms : roomListLevel1)
-				{
-					System.out.print(rooms.getRmName() + " ");
-				}
-
-				System.out.print("Enter the NAME of the room you would like to search: ");
+				
+				System.out.printf("Enter the NAME of the ROOM you want to enter: ");
+				IDRequest =input.next();
 				IDRequest = input.nextLine();
+				System.out.println();
 
-				if(IDRequest.equalsIgnoreCase(roomListLevel1.get(2).getRmName())) {
-					String display = roomListLevel1.get(0).getRmId();
+				boolean correctID = false;
+				String display = "";
+				ArrayList<String> roomIdAL = new ArrayList<String>();
+
+				
+				for(Room rooms : rl.roomsAL())
+				{	
+					
+					roomIdAL.add(rooms.getRmName());
 				}
+				
+				System.out.println(roomIdAL);
+
+				for(int i = 0; i < roomIdAL.size(); i++) {
+
+					if(roomIdAL.get(i).equalsIgnoreCase(IDRequest))
+					{
+						correctID = true;
+						display = rl.getRmDescript(IDRequest);
+						System.out.println(display);
+						System.out.println();
+						System.out.println("----------------------------------------------------------------------");
+					}
+				}
+				if(!correctID)
+				{
+					System.out.println("Wrong room honey, try again or enter another option");
+					System.out.println();
+					System.out.println("----------------------------------------------------------------------");
+				}
+			}
+			
+			else if(userInput == 4) {
+				System.out.println("Thanks for playing!");
+				break;
 			}
 		}
 	}
 }
-
 
 
 

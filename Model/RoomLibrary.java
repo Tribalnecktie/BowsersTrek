@@ -18,7 +18,7 @@ public class RoomLibrary {
 	 */
 	public ArrayList<Room> roomsAL() {
 		
-		//LEVEL ONE ROOMS ADD TO ARRAY
+		//LEVEL ONE ROOMS ADD TO ARRAY --> 7 Rooms
 		roomsAL.add(new Room(1, "RM101", "DR101 and DR102", "Entrance", mID, pID, aType));
 		roomsAL.add(new Room(1, "HW_L1", "DR101, DR102,DR103, DR104, DR105, DR106, DR107, DR108", "Hallway Level 1", mID, pID, aType));
 		roomsAL.add(new Room(1, "RM102", "DR103", "Greeting Area", mID, pID, aType));
@@ -27,7 +27,7 @@ public class RoomLibrary {
 		roomsAL.add(new Room(1, "RM105", "DR106", "Kitchen", mID, pID, aType));
 		roomsAL.add(new Room(1, "RM106", "DR107", "Dining Room", mID, pID, aType));
 		
-		//LEVEL TWO ROOMS ADDED TO ARRAY
+		//LEVEL TWO ROOMS ADDED TO ARRAY  --> 7 Rooms
 		roomsAL.add(new Room(2, "HW_L2", "DR201, DR202, DR203, DR205, DR208, DR209, DR211, DR 212", "Hallway Level 2", mID, pID, aType));
 		roomsAL.add(new Room(2, "M201", "DR 201, DR202, DR203, DR204", "Waiting Room", mID, pID, aType));
 		roomsAL.add(new Room(2, "RM202", "DR205", "Supply Room", mID, pID, aType));
@@ -36,7 +36,7 @@ public class RoomLibrary {
 		roomsAL.add(new Room(2, "RM205", "DR209, DR2106", "Music Room", mID, pID, aType));
 		roomsAL.add(new Room(2, "RM206", "DR210, DR211", "Wine Cellar", mID, pID, aType));
 		
-		//LEVEL THREE ROOMS ADDED TO ARRAY
+		//LEVEL THREE ROOMS ADDED TO ARRAY --> 6 Rooms
 		roomsAL.add(new Room(3, "HW_L3", "DR300, DR301, DR302, DR303, DR304, DR306, DR307", "Hallway Level 3", mID, pID, aType));
 		roomsAL.add(new Room(3, "RM301", "DR300, DR301", "Colorful Room", mID, pID, aType));
 		roomsAL.add(new Room(3, "RM302", "DR302, DR303", "Library", mID, pID, aType));
@@ -44,7 +44,7 @@ public class RoomLibrary {
 		roomsAL.add(new Room(3, "RM304", "DR304, DR305", "TV Room", mID, pID, aType));
 		roomsAL.add(new Room(3, "RM305", "DR315, DR316", "Red Chest Room", mID, pID, aType));
 		
-		//LEVEL FOUR ROOMS ADDED TO ARRAY
+		//LEVEL FOUR ROOMS ADDED TO ARRAY --> 8 Rooms
 		roomsAL.add(new Room(4, "HW_L4", "DR401, DR402, DR403, DR405, DR407, DR408, DR409", "Hallway Level 4", mID, pID, aType));
 		roomsAL.add(new Room(4, "RM401", "DR401", "Game Room", mID, pID, aType));
 		roomsAL.add(new Room(4, "RM402", "DR402", "Study Room", mID, pID, aType));
@@ -54,7 +54,7 @@ public class RoomLibrary {
 		roomsAL.add(new Room(4, "RM406", "DR408", "Dining Room", mID, pID, aType));
 		roomsAL.add(new Room(4, "RM407", "DR409", "Dark Room", mID, pID, aType));
 
-		return roomsAL;
+		return roomsAL; //Returns 28 Rooms
 	}
 
 	
