@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import Model.Artifact;
+import Model.Backpack;
 import Model.Monster;
 import Model.Player;
 
@@ -11,6 +12,7 @@ public class AltView {
 	static Player player = new Player();
 	static Monster [] mList = new Monster[8];
 	static ArrayList<Artifact> iniInv = new ArrayList<Artifact>();
+	static Backpack pack = new Backpack();
 	//static RoomLibrary_HashMap rooms = new RoomLibrary_HashMap();
 
 	//Stop at 07
@@ -30,7 +32,7 @@ public class AltView {
 		//iniInv.add(new Artifact("A0001"));
 
 
-		player.setInv(iniInv);
+		//player.setInv(iniInv);
 		boolean gameStart = true;
 
 
@@ -48,7 +50,7 @@ public class AltView {
 			}
 			else if (command == 2)
 			{
-
+				
 			}
 			else if (command == 3)
 			{
@@ -74,15 +76,15 @@ public class AltView {
 	}
 
 	//Need to test out how the monster loop would work
-	static void encounterEnemy(Scanner playerInput)
+	static void encounterEnemy(Scanner playerInput, Monster tempMonster)
 	{
 		boolean inEncounter = true;
-		Monster tempMonster = mList[0];
+		//Monster tempMonster = mList[0];
 
-		System.out.println(mList[0].getDescription());
+		System.out.println(tempMonster.getDescription());
 		while (inEncounter == true)
 		{
-			if (tempMonster.health <= 0)
+			if (tempMonster.getHealth() <= 0)
 			{
 				System.out.println("You have slain the beast here is your reward");
 				System.out.println(tempMonster.getItemDrop() + " added to your inventory");
@@ -98,12 +100,12 @@ public class AltView {
 				if (command == 1)
 				{
 					System.out.println("You attack for " + player.getAttackPower());
-					tempMonster.health -= player.getAttackPower();
-					System.out.println("Monster Health " + tempMonster.health);
+					player.attack(tempMonster);
+					System.out.println("Monster Health " + tempMonster.getHealth());
 				}
 				else if (command == 2)
 				{
-					player.printInv();
+					pack.printBackpack();
 				}
 				else if (command == 3)
 				{
@@ -129,13 +131,13 @@ public class AltView {
 
 
 		//Time to make the start menu loop
-		startMenu(playerInput);
+		//startMenu(playerInput);
 
 		//This is the in-game loop
 		boolean gameOn = true;
 		while (gameOn == true)
 		{
-			encounterEnemy(playerInput);
+			//encounterEnemy(playerInput);
 			//roomNavigate(playerInput);
 		}
 	}

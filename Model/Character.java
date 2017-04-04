@@ -3,7 +3,7 @@ package Model;
 
 public abstract class Character {
 	String name;
-	public int health;
+	int health;
 	int attackPower;
 	
 	public Character()

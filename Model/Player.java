@@ -21,7 +21,7 @@ public class Player extends Character {
 		this.inv = inv;
 	}
 
-	void attack(Monster monster)
+	public void attack(Monster monster)
 	{
 		monster.health -= attackPower;
 	}
