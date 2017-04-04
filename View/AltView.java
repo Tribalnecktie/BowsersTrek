@@ -88,7 +88,7 @@ public class AltView {
 			{
 				System.out.println("You have slain the beast here is your reward");
 				System.out.println(tempMonster.getItemDrop() + " added to your inventory");
-				player.inv.add(new Artifact(tempMonster.getItemDrop()));
+				pack.addArtifact(tempMonster.getItemDrop().getID(), tempMonster.getItemDrop());
 				inEncounter = false;
 			}
 			else
@@ -105,7 +105,7 @@ public class AltView {
 				}
 				else if (command == 2)
 				{
-					pack.printBackpack();
+					pack.printBackpack(); 
 				}
 				else if (command == 3)
 				{
