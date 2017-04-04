@@ -36,6 +36,12 @@ public class Backpack {
 		userBackpack.put(ID, ArtifactObj);
 	}
 	
+	public void removeArtifact(String ID)
+	{
+		//Remove the artifact from the backpack
+		userBackpack.remove(ID);
+	}
+	
 	public void printBackpack()
 	{
 		

@@ -26,8 +26,7 @@ public class ConsoleView
 		//ConsoleView will be started by the GameController
 		printMenu("MM00"); 
 		
-		
-		
+			
 
 	}
 	
