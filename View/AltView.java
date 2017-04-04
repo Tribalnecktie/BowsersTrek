@@ -3,9 +3,12 @@ package View;
 import java.util.Scanner;
 
 import Model.Monster;
+import Model.RoomLibrary_HashMap;
 
 public class AltView {
 	static Monster [] mList = new Monster[8];
+	static RoomLibrary_HashMap rooms = new RoomLibrary_HashMap();
+	
 	//Stop at 07
 	//mList[0] = (new Monster("ML00"));
 	/*
@@ -22,13 +25,43 @@ public class AltView {
 		boolean gameStart = true;
 		while(gameStart == true)
 		{
-			System.out.println("Start Game");
-			System.out.println("Load Game");
-			System.out.println("Help");
+			System.out.println("1. Start Game");
+			System.out.println("2. Load Game");
+			System.out.println("3. Help");
+			int command = playerInput.nextInt();
 			//Right here is where we check the player's inputs
-			if (playerInput)
+			if (command == 1)
+			{
+				System.out.println("You started the game");
+				gameStart = false;
+			}
+			else if (command == 2)
+			{
+				
+			}
+			else if (command == 3)
+			{
+				
+			}
+			else
+				System.out.println("That command is not available");
 		}
 	}
+	
+	static void roomNavigate(Scanner playerInput)
+	{
+		boolean roomNav = true;
+		while (roomNav == true)
+		{
+			System.out.println(rooms.getRmDescript("RM101"));
+			int command = playerInput.nextInt();
+			if (command == 1)
+			{
+				
+			}
+		}
+	}
+	
 
 	public static void main(String[] args)
 	{
@@ -44,13 +77,13 @@ public class AltView {
 
 
 		//Time to make the start menu loop
-		startMenu();
+		startMenu(playerInput);
 
 		//This is the in-game loop
 		boolean gameOn = true;
 		while (gameOn == true)
 		{
-
+			roomNavigate(playerInput);
 		}
 	}
 }
