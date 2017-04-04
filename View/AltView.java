@@ -1,14 +1,18 @@
 package View;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
+import Model.Artifact;
 import Model.Monster;
-import Model.RoomLibrary_HashMap;
+import Model.Player;
 
 public class AltView {
+	static Player player = new Player();
 	static Monster [] mList = new Monster[8];
-	static RoomLibrary_HashMap rooms = new RoomLibrary_HashMap();
-	
+	static ArrayList<Artifact> iniInv = new ArrayList<Artifact>();
+	//static RoomLibrary_HashMap rooms = new RoomLibrary_HashMap();
+
 	//Stop at 07
 	//mList[0] = (new Monster("ML00"));
 	/*
@@ -22,7 +26,14 @@ public class AltView {
 	 */
 	static void startMenu(Scanner playerInput)
 	{
+		//Getting all the starter stuff
+		//iniInv.add(new Artifact("A0001"));
+
+
+		player.setInv(iniInv);
 		boolean gameStart = true;
+
+
 		while(gameStart == true)
 		{
 			System.out.println("1. Start Game");
@@ -37,31 +48,72 @@ public class AltView {
 			}
 			else if (command == 2)
 			{
-				
+
 			}
 			else if (command == 3)
 			{
-				
+
 			}
 			else
 				System.out.println("That command is not available");
 		}
 	}
-	
+
 	static void roomNavigate(Scanner playerInput)
 	{
 		boolean roomNav = true;
 		while (roomNav == true)
 		{
-			System.out.println(rooms.getRmDescript("RM101"));
+			//System.out.println(rooms.getRmDescript("RM101"));
 			int command = playerInput.nextInt();
 			if (command == 1)
 			{
-				
+
 			}
 		}
 	}
-	
+
+	//Need to test out how the monster loop would work
+	static void encounterEnemy(Scanner playerInput)
+	{
+		boolean inEncounter = true;
+		Monster tempMonster = mList[0];
+
+		System.out.println(mList[0].getDescription());
+		while (inEncounter == true)
+		{
+			if (tempMonster.health <= 0)
+			{
+				System.out.println("You have slain the beast here is your reward");
+				System.out.println(tempMonster.getItemDrop() + " added to your inventory");
+				player.inv.add(new Artifact(tempMonster.getItemDrop()));
+				inEncounter = false;
+			}
+			else
+			{
+				System.out.println("1. Attack");
+				System.out.println("2. Inventory");
+				System.out.println("3. Escape");
+				int command = playerInput.nextInt();
+				if (command == 1)
+				{
+					System.out.println("You attack for " + player.getAttackPower());
+					tempMonster.health -= player.getAttackPower();
+					System.out.println("Monster Health " + tempMonster.health);
+				}
+				else if (command == 2)
+				{
+					player.printInv();
+				}
+				else if (command == 3)
+				{
+					System.out.println("You've escaped with your life");
+					inEncounter = false;
+				}
+			}
+		}
+	}
+
 
 	public static void main(String[] args)
 	{
@@ -83,7 +135,8 @@ public class AltView {
 		boolean gameOn = true;
 		while (gameOn == true)
 		{
-			roomNavigate(playerInput);
+			encounterEnemy(playerInput);
+			//roomNavigate(playerInput);
 		}
 	}
 }
