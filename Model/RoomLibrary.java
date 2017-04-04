@@ -8,6 +8,7 @@ public class RoomLibrary {
 	protected Monster mID;
 	protected Puzzle pID;
 	protected Artifact aType;
+	protected Player playID;
 	
 	/**
 	 * Method: roomsAL()
@@ -18,43 +19,47 @@ public class RoomLibrary {
 	 */
 	public ArrayList<Room> roomsAL() {
 		
+	
+		
 		//LEVEL ONE ROOMS ADD TO ARRAY --> 7 Rooms
-		roomsAL.add(new Room(1, "RM101", "DR101 and DR102", "Entrance", mID, pID, aType));
-		roomsAL.add(new Room(1, "HW_L1", "DR101, DR102,DR103, DR104, DR105, DR106, DR107, DR108", "Hallway Level 1", mID, pID, aType));
-		roomsAL.add(new Room(1, "RM102", "DR103", "Greeting Area", mID, pID, aType));
-		roomsAL.add(new Room(1, "RM103", "DR104", "Living Room", mID, pID, aType));
-		roomsAL.add(new Room(1, "RM104", "DR105", "Game Room", mID, pID, aType));
-		roomsAL.add(new Room(1, "RM105", "DR106", "Kitchen", mID, pID, aType));
-		roomsAL.add(new Room(1, "RM106", "DR107", "Dining Room", mID, pID, aType));
+		roomsAL.add(new Room(1, "RM101", "DR101 and DR102", "Entrance", mID, pID, aType, playID));
+		roomsAL.add(new Room(1, "HW_L1", "DR101, DR102,DR103, DR104, DR105, DR106, DR107, DR108", "Hallway Level 1", mID, pID, aType, playID));
+		roomsAL.add(new Room(1, "RM102", "DR103", "Greeting Area", mID, pID, aType, playID));
+		roomsAL.add(new Room(1, "RM103", "DR104", "Living Room", mID, pID, aType, playID));
+		roomsAL.add(new Room(1, "RM104", "DR105", "Game Room", mID, pID, aType, playID));
+		roomsAL.add(new Room(1, "RM105", "DR106", "Kitchen", mID, pID, aType, playID));
+		roomsAL.add(new Room(1, "RM106", "DR107", "Dining Room", mID, pID, aType, playID));
+		roomsAL.add(new Room(1, "RM107", "DR108", "Landing", mID, pID, aType, playID));
 		
 		//LEVEL TWO ROOMS ADDED TO ARRAY  --> 7 Rooms
-		roomsAL.add(new Room(2, "HW_L2", "DR201, DR202, DR203, DR205, DR208, DR209, DR211, DR 212", "Hallway Level 2", mID, pID, aType));
-		roomsAL.add(new Room(2, "M201", "DR 201, DR202, DR203, DR204", "Waiting Room", mID, pID, aType));
-		roomsAL.add(new Room(2, "RM202", "DR205", "Supply Room", mID, pID, aType));
-		roomsAL.add(new Room(2, "RM203", "DR206, DR207", "Bedroom", mID, pID, aType));
-		roomsAL.add(new Room(2, "RM204", "DR207, DR208", "Cleaning Supply Room", mID, pID, aType));
-		roomsAL.add(new Room(2, "RM205", "DR209, DR2106", "Music Room", mID, pID, aType));
-		roomsAL.add(new Room(2, "RM206", "DR210, DR211", "Wine Cellar", mID, pID, aType));
+		roomsAL.add(new Room(2, "HW_L2", "DR201, DR202, DR203, DR205, DR208, DR209, DR211, DR 212", "Hallway Level 2", mID, pID, aType, playID));
+		roomsAL.add(new Room(2, "M201", "DR 201, DR202, DR203, DR204", "Waiting Room", mID, pID, aType, playID));
+		roomsAL.add(new Room(2, "RM202", "DR205", "Supply Room", mID, pID, aType, playID));
+		roomsAL.add(new Room(2, "RM203", "DR206, DR207", "Bedroom", mID, pID, aType, playID));
+		roomsAL.add(new Room(2, "RM204", "DR207, DR208", "Cleaning Supply Room", mID, pID, aType, playID));
+		roomsAL.add(new Room(2, "RM205", "DR209, DR2106", "Music Room", mID, pID, aType, playID));
+		roomsAL.add(new Room(2, "RM206", "DR210, DR211", "Wine Cellar", mID, pID, aType, playID));
+		roomsAL.add(new Room(2, "RM207", "DR204, DR212", "Library", mID, pID, aType, playID));
 		
 		//LEVEL THREE ROOMS ADDED TO ARRAY --> 6 Rooms
-		roomsAL.add(new Room(3, "HW_L3", "DR300, DR301, DR302, DR303, DR304, DR306, DR307", "Hallway Level 3", mID, pID, aType));
-		roomsAL.add(new Room(3, "RM301", "DR300, DR301", "Colorful Room", mID, pID, aType));
-		roomsAL.add(new Room(3, "RM302", "DR302, DR303", "Library", mID, pID, aType));
-		roomsAL.add(new Room(3, "RM303", "DR306, DR307", "Work Room", mID, pID, aType));
-		roomsAL.add(new Room(3, "RM304", "DR304, DR305", "TV Room", mID, pID, aType));
-		roomsAL.add(new Room(3, "RM305", "DR315, DR316", "Red Chest Room", mID, pID, aType));
+		roomsAL.add(new Room(3, "HW_L3", "DR300, DR301, DR302, DR303, DR304, DR306, DR307", "Hallway Level 3", mID, pID, aType, playID));
+		roomsAL.add(new Room(3, "RM301", "DR300, DR301", "Colorful Room", mID, pID, aType, playID));
+		roomsAL.add(new Room(3, "RM302", "DR302, DR303", "Library", mID, pID, aType, playID));
+		roomsAL.add(new Room(3, "RM303", "DR306, DR307", "Work Room", mID, pID, aType, playID));
+		roomsAL.add(new Room(3, "RM304", "DR304, DR305", "TV Room", mID, pID, aType, playID));
+		roomsAL.add(new Room(3, "RM305", "DR315, DR316", "Red Chest Room", mID, pID, aType, playID));
 		
 		//LEVEL FOUR ROOMS ADDED TO ARRAY --> 8 Rooms
-		roomsAL.add(new Room(4, "HW_L4", "DR401, DR402, DR403, DR405, DR407, DR408, DR409", "Hallway Level 4", mID, pID, aType));
-		roomsAL.add(new Room(4, "RM401", "DR401", "Game Room", mID, pID, aType));
-		roomsAL.add(new Room(4, "RM402", "DR402", "Study Room", mID, pID, aType));
-		roomsAL.add(new Room(4, "RM403", "DR403, DR404", "Dream Room", mID, pID, aType));
-		roomsAL.add(new Room(4, "RM404", "DR405, DR406", "Garden Room", mID, pID, aType));
-		roomsAL.add(new Room(4, "RM405", "DR406, DR407", "Theater Room", mID, pID, aType));
-		roomsAL.add(new Room(4, "RM406", "DR408", "Dining Room", mID, pID, aType));
-		roomsAL.add(new Room(4, "RM407", "DR409", "Dark Room", mID, pID, aType));
+		roomsAL.add(new Room(4, "HW_L4", "DR401, DR402, DR403, DR405, DR407, DR408, DR409", "Hallway Level 4", mID, pID, aType, playID));
+		roomsAL.add(new Room(4, "RM401", "DR401", "Game Room", mID, pID, aType, playID));
+		roomsAL.add(new Room(4, "RM402", "DR402", "Study Room", mID, pID, aType, playID));
+		roomsAL.add(new Room(4, "RM403", "DR403, DR404", "Dream Room", mID, pID, aType, playID));
+		roomsAL.add(new Room(4, "RM404", "DR405, DR406", "Garden Room", mID, pID, aType, playID));
+		roomsAL.add(new Room(4, "RM405", "DR406, DR407", "Theater Room", mID, pID, aType, playID));
+		roomsAL.add(new Room(4, "RM406", "DR408", "Dining Room", mID, pID, aType, playID));
+		roomsAL.add(new Room(4, "RM407", "DR409", "Dark Room", mID, pID, aType, playID));
 
-		return roomsAL; //Returns 28 Rooms
+		return roomsAL; //Returns 30 Rooms
 	}
 
 	
@@ -192,7 +197,7 @@ public class RoomLibrary {
 		//End of Level Three Room Descriptions
 		
 		
-		if(rmId.equalsIgnoreCase("RM401"))
+		if(rmId.equalsIgnoreCase("HW_L4"))
 		{
 			rmDescript = "The walls are higher than 7 foot, there is a big mirror on the right side of the hall and on the other side is a dark room. The only light in this wide landing is coming from the window above the landing that overlooks the garden.  In the southeastern corner of the landing is a colorful Tiffany lamp that’s dimly lit.  As you look around the last level of the mansion there is one long hallway leading to several other rooms.  In the middle of the hall is a big round table, which is covered by a silk cover, and there is one big flowerpot full of flowers on the table. The floor is all wooden. The color of the walls is yellowish white. On the floor, there is handcrafted carpet.   So many rooms to explore.\n" +
 

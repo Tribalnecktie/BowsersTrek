@@ -31,7 +31,7 @@ public class GameController
 		RoomLibrary_HashMap roomlibrary = new RoomLibrary_HashMap();
 		
 		//Set 
-		roomInfoMap = roomlibrary.getRoomsAL();
+		roomInfoMap = roomlibrary.roomsAL();
 		
 		//Loop through and print every Key in the HashMap.
 		Iterator<?> iterate = roomInfoMap.entrySet().iterator();
