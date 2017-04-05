@@ -2,9 +2,9 @@ package Model;
 
 
 public abstract class Character {
-	String name;
-	int health;
-	int attackPower;
+	protected String name;
+	protected int health;
+	protected int attackPower;
 	
 	public Character()
 	{

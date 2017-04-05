@@ -80,6 +80,12 @@ public class AltView {
 	{
 		boolean inEncounter = true;
 		//Monster tempMonster = mList[0];
+		if (tempMonster.getHealth() <= 0)
+		{
+			System.out.println("You have already slain this monster");
+			inEncounter = false;
+			return;
+		}
 
 		System.out.println(tempMonster.getDescription());
 		while (inEncounter == true)
@@ -106,6 +112,7 @@ public class AltView {
 				else if (command == 2)
 				{
 					pack.printBackpack(); 
+					
 				}
 				else if (command == 3)
 				{
@@ -137,7 +144,7 @@ public class AltView {
 		boolean gameOn = true;
 		while (gameOn == true)
 		{
-			//encounterEnemy(playerInput);
+			encounterEnemy(playerInput, mList[0]);
 			//roomNavigate(playerInput);
 		}
 	}
