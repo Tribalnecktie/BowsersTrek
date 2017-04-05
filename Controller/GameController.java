@@ -65,7 +65,7 @@ public class GameController
 			System.out.println("Please Enter your Character Name");
 			thisPlayer.setName(newGameScan.nextLine());
 			
-			System.out.println("Ready to start the game " + thisPlayer.getName() + "?");
+			console.printConsoleView("Ready to start the game " + thisPlayer.getName() + "?");
 			
 		//for dramatic effect
 			try
@@ -84,12 +84,11 @@ public class GameController
 			System.out.println(roomLibrary.getRmDescript("RM101"));
 			
 		//Here is where we will pass in the room id to get the menu options and then display them.
-			//for now we are hardcoding the menu options for this room.
+			//for now we are hard coding the menu options for this room.
 			
+			thisRoom.printRoomInfo();
 			
-			
-			
-			
+
 		//Close the scanner to avoid exceptions
 			newGameScan.close();
 		}
@@ -114,11 +113,6 @@ public class GameController
 		{
 			
 		}
-		
-		
-		
-		
-		
 		
 		/*---------------------------------------------TestZone--------------------------------------------------*/
 		
@@ -147,8 +141,8 @@ public class GameController
 		System.out.println(roomlibrary.getRmDescript(CurrentRoom.getRmId()));*/		
 		
 		
-		/* Artifact Creation and Inventory List.
-		 * 
+		/* 
+		 * Artifact Creation and Inventory List.
 		 * 
 		 */
 		

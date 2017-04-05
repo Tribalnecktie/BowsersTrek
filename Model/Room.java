@@ -2,6 +2,8 @@ package Model;
 
 import java.util.ArrayList;
 
+import View.ConsoleView;
+
 
 public class Room  {
 
@@ -14,6 +16,8 @@ public class Room  {
 	private Puzzle puzzleObj;
 	private Artifact itemObj; 
 	private Player playerID;
+	
+	ConsoleView console = new ConsoleView();
 
 	public Room(int rmLevel, String rmId, String rmDoor, String rmName, Monster monsterObj, Puzzle puzzleObj, Artifact itemObj, Player playerID) {
 		this.rmLevel = rmLevel;
@@ -70,7 +74,7 @@ public class Room  {
 
 	public Puzzle getPuzzleType() {
 		// TODO Auto-generated method stub
-		return puzzleObj;
+		return this.puzzleObj;
 	}
 
 	public Artifact getArtifactID() {
@@ -79,10 +83,12 @@ public class Room  {
 	}	
 	
 
-	@Override
-	public String toString() {
-		return "Room [rmId=" + rmId + ", rmDoor=" + rmDoor + ", rmName=" + rmName + ", rmDescript=" + rmDescript
+	public void printRoomInfo() {
+		String str = "Room [rmId=" + rmId + ", rmDoor=" + rmDoor + ", rmName=" + rmName + ", rmDescript=" + rmDescript
 				+ ", rmLevel=" + rmLevel + ", monsterObj=" + monsterObj + ", puzzleObj=" + puzzleObj + ", itemObj="
 				+ itemObj + "]";
+		
+		console.printConsoleView(str);
+		
 	}		
 }

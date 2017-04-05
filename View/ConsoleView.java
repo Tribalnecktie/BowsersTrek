@@ -33,6 +33,12 @@ public class ConsoleView
 	public ConsoleView()
 	{
 		
+		
+	}
+	
+	public void printConsoleView(String str)
+	{
+		System.out.println(str);
 	}
 	
 	
