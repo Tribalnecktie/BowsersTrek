@@ -1,5 +1,6 @@
 package Controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -24,7 +25,6 @@ public class GameController
 	 * 			Send appropriate object data to the View for display
 	 */
 	
-	Map<String,Room> roomInfoMap;
 	
 	public static void main(String[] args)
 	{
@@ -33,45 +33,68 @@ public class GameController
 		//Create and start the View for the Main Menu.
 		ConsoleView console = new ConsoleView();
 		
-		//Test
+		//show the user the main menu
 		int choice = console.printMenu("MM00");
 		
-		System.out.println("The users Choice was : " + choice);
-		
-		if(choice == 1)	//Start a new Game
+		//Process the choice for the main menu. proceed from here.		
+		//Start a new Game
+		if(choice == 1)		
 		{
-			
-			//Start Scanner
+		//Start Scanner
 			Scanner newGameScan = new Scanner(System.in);
 			
+		//Set up the room map.
 			Map<String,Room> roomInfoMap = new HashMap<String,Room>();
-			RoomLibrary_HashMap roomlibrary = new RoomLibrary_HashMap();
+			RoomLibrary_HashMap roomLibrary = new RoomLibrary_HashMap();
 			
-			roomInfoMap = roomlibrary.roomsAL();
+		//Set up the Monster map.
+			Map<String,Monster> monsterMap = new HashMap<String,Monster>();
+			MonsterLibrary_HashMap monsterLibrary = new MonsterLibrary_HashMap();
 			
-			//Create our initial objects need
-			Room thisRoom = roomInfoMap.get("RM101");
+		//Set the libraries to our Maps.
+			roomInfoMap = roomLibrary.roomsAL();
+			monsterMap = monsterLibrary.monsterAL();
+			
+		//Create our initial objects needed
+			Room thisRoom = roomInfoMap.get("RM101");	//START NEW GAME ALWAYS AT RM101!!!
 			Player thisPlayer = new Player();
+			Backpack thisBackpack = new Backpack();
+			Monster thisMonster = monsterMap.get("ML00");
 			
-			//Get Username
+		//Get UserName
 			System.out.println("Please Enter your Character Name");
 			thisPlayer.setName(newGameScan.nextLine());
 			
 			System.out.println("Ready to start the game " + thisPlayer.getName() + "?");
 			
-			//for dramatic effect
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
+		//for dramatic effect
+			try
+			{
+				Thread.sleep(800);
+				//see if we can clear the screen here also.
+			} 
+			catch (InterruptedException ie)
+			{
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				ie.printStackTrace();
 			}
 			
+		//Display the room description
+			System.out.println(thisRoom.getRmId().toString());
+			System.out.println(roomLibrary.getRmDescript("RM101"));
+			
+		//Here is where we will pass in the room id to get the menu options and then display them.
+			//for now we are hardcoding the menu options for this room.
 			
 			
 			
+			
+			
+		//Close the scanner to avoid exceptions
+			newGameScan.close();
 		}
-		else if(choice == 2)
+		//Load Game
+		else if(choice == 2)	
 		{
 			//Show the user a list of save files
 			//When one is chosen. Load that file.
@@ -81,9 +104,15 @@ public class GameController
 			
 			//Start player at loaded room ID.
 		}
+		//Exit the game
 		else if(choice == 3)
 		{
 			System.exit(0);
+		}
+		//Dev team info
+		else if(choice == 4)
+		{
+			
 		}
 		
 		
@@ -93,7 +122,7 @@ public class GameController
 		
 		/*---------------------------------------------TestZone--------------------------------------------------*/
 		
-		//Creating our Room Objects with the RoomLibrary_HashMap class
+		/*//Creating our Room Objects with the RoomLibrary_HashMap class
 		System.out.println("\nStarting RoomLibrary_HashMap example");
 		Map<String,Room> roomInfoMap = new HashMap<String,Room>();
 		RoomLibrary_HashMap roomlibrary = new RoomLibrary_HashMap();
@@ -103,22 +132,22 @@ public class GameController
 	
 		//Testing for roomInfoMap
 		//Loop through and print every Key in the HashMap.
-		/*Iterator<?> iterate = roomInfoMap.entrySet().iterator();
+		Iterator<?> iterate = roomInfoMap.entrySet().iterator();
 		while(iterate.hasNext())
 		{
 			Map.Entry roomobj = (Map.Entry<String, Room>)iterate.next();
 			System.out.println(roomobj.getKey().toString());
 			//System.out.println(roomlibrary.getRmDescript(roomobj.getKey().toString()));
-		}*/
+		}
 		
 		//get the room ID.
 		
 		Room CurrentRoom = roomInfoMap.get("RM101");
 		
-		System.out.println(roomlibrary.getRmDescript(CurrentRoom.getRmId()));		
+		System.out.println(roomlibrary.getRmDescript(CurrentRoom.getRmId()));*/		
 		
-		/*
-		 * Artifact Creation and Inventory List.
+		
+		/* Artifact Creation and Inventory List.
 		 * 
 		 * 
 		 */
@@ -128,9 +157,9 @@ public class GameController
 		Artifact testArtifact3 = new Artifact("A0002");
 		
 		
-		/*System.out.println(testArtifact.getID());
+		System.out.println(testArtifact.getID());
 		System.out.println(testArtifact.getName());
-		System.out.println(testArtifact.getStrength());*/
+		System.out.println(testArtifact.getStrength());
 		//Haha works wonderfully.
 		
 		//Now for something more difficult..inventory list.
@@ -140,14 +169,11 @@ public class GameController
 		usersBackpack.addArtifact(testArtifact.getID().toString(),testArtifact);
 		usersBackpack.addArtifact(testArtifact2.getID().toString(),testArtifact2);
 		usersBackpack.addArtifact(testArtifact3.getID().toString(),testArtifact3);
+		usersBackpack.addArtifact(testArtifact.getID().toString(),testArtifact);
+		
+		
 		
 		usersBackpack.printBackpack();
-		
-		
-		
-		
-		
-		
 		
 	}
 
