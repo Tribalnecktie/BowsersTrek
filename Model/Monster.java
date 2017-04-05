@@ -5,6 +5,7 @@ public class Monster extends Character {
 	String ID;
 	String description;
 	Artifact itemDrop;
+	boolean isAlive;
 	
 	public Monster(String ID, String name, int health, int attackPower, String description, Artifact itemDrop)
 	{
@@ -14,6 +15,7 @@ public class Monster extends Character {
 		this.attackPower = attackPower;
 		this.description = description;
 		this.itemDrop = itemDrop;
+		this.isAlive = true;
 	}
 	
 
