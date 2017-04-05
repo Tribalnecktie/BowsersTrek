@@ -78,26 +78,33 @@ public class AltView {
 	}
 
 	//Need to test out how the monster loop would work
-	static void encounterEnemy(Scanner playerInput, Monster tempMonster)
+	static void encounterEnemy(Player player, Monster tempMonster)
 	{
+		Scanner playerInput = new Scanner(System.in);
 		boolean inEncounter = true;
 		//Monster tempMonster = mList[0];
 		if (tempMonster.getHealth() <= 0)
 		{
 			System.out.println("You have already slain this monster");
 			inEncounter = false;
+			playerInput.close();
 			return;
 		}
 
 		System.out.println(tempMonster.getDescription());
 		while (inEncounter == true)
 		{
+			if (player.getHealth() <= 0)
+			{
+				System.out.println("You died, Better Luck Next TIme");
+			}
 			if (tempMonster.getHealth() <= 0)
 			{
 				System.out.println("You have slain the beast here is your reward");
 				System.out.println(tempMonster.getItemDrop() + " added to your inventory");
 				pack.addArtifact(tempMonster.getItemDrop().getID(), tempMonster.getItemDrop());
 				inEncounter = false;
+				playerInput.close();
 			}
 			else
 			{
@@ -120,6 +127,7 @@ public class AltView {
 				{
 					System.out.println("You've escaped with your life");
 					inEncounter = false;
+					playerInput.close();
 				}
 			}
 		}
@@ -148,7 +156,7 @@ public class AltView {
 		boolean gameOn = true;
 		while (gameOn == true)
 		{
-			encounterEnemy(playerInput, mList.monsterAL().get("ML00"));
+			encounterEnemy(player, mList.monsterAL().get("ML00"));
 			//roomNavigate(playerInput);
 		}
 	}
