@@ -4,6 +4,7 @@
 package View;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * @author Tobin Crone
@@ -16,25 +17,32 @@ public class ConsoleView
 {
 	
 	String currentroomID;
+	int user_selection;
 
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) 
+	/*public static void main(String[] args) 
 	{
 		//Print the main menu on startup.
 		//ConsoleView will be started by the GameController
-		printMenu("MM00"); 
-		
-			
+		printMenu("MM00"); 	
 
+	}*/
+	
+	public ConsoleView()
+	{
+		
 	}
+	
 	
 	//This method will print the menu to the user.
 	//The options show will reflect the current room.
 	//If at the main menu (MM00) constants defined below are shown.
-	public static void printMenu(String roomid)
+	public int printMenu(String roomid)
 	{
+		Scanner user_input = new Scanner(System.in);
+		
 		String menutitle = "\t\t\t\t\t\t\tMain Menu:";
 		String headerline = "=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=";
 		ArrayList<String> MenuOptions = new ArrayList<String>();
@@ -60,7 +68,21 @@ public class ConsoleView
 		}		
 		System.out.println(footerline);
 		
+		this.user_selection = user_input.nextInt();
 		
+		return this.user_selection;
+		
+	}
+	
+	
+	
+	public int getUser_selection() {
+		return user_selection;
+	}
+
+
+	public void setUser_selection(int user_selection) {
+		this.user_selection = user_selection;
 	}
 
 }

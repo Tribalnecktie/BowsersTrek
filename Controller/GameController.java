@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Scanner;
 
 import Model.*;
+import View.ConsoleView;
 
 /**
  * @author  Tobin Crone
@@ -22,42 +24,98 @@ public class GameController
 	 * 			Send appropriate object data to the View for display
 	 */
 	
+	Map<String,Room> roomInfoMap;
+	
 	public static void main(String[] args)
 	{
+		/*BEGINNING OF GAME*/
+		
+		//Create and start the View for the Main Menu.
+		ConsoleView console = new ConsoleView();
+		
+		//Test
+		int choice = console.printMenu("MM00");
+		
+		System.out.println("The users Choice was : " + choice);
+		
+		if(choice == 1)	//Start a new Game
+		{
+			
+			//Start Scanner
+			Scanner newGameScan = new Scanner(System.in);
+			
+			Map<String,Room> roomInfoMap = new HashMap<String,Room>();
+			RoomLibrary_HashMap roomlibrary = new RoomLibrary_HashMap();
+			
+			roomInfoMap = roomlibrary.roomsAL();
+			
+			//Create our initial objects need
+			Room thisRoom = roomInfoMap.get("RM101");
+			Player thisPlayer = new Player();
+			
+			//Get Username
+			System.out.println("Please Enter your Character Name");
+			thisPlayer.setName(newGameScan.nextLine());
+			
+			System.out.println("Ready to start the game " + thisPlayer.getName() + "?");
+			
+			//for dramatic effect
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+			
+			
+		}
+		else if(choice == 2)
+		{
+			//Show the user a list of save files
+			//When one is chosen. Load that file.
+			System.out.println("Save Files:\n");
+			System.out.println("Tobin : Room 1");
+			
+			
+			//Start player at loaded room ID.
+		}
+		else if(choice == 3)
+		{
+			System.exit(0);
+		}
+		
+		
+		
+		
+		
+		
+		/*---------------------------------------------TestZone--------------------------------------------------*/
 		
 		//Creating our Room Objects with the RoomLibrary_HashMap class
 		System.out.println("\nStarting RoomLibrary_HashMap example");
 		Map<String,Room> roomInfoMap = new HashMap<String,Room>();
 		RoomLibrary_HashMap roomlibrary = new RoomLibrary_HashMap();
 		
-		//Set 
-		roomInfoMap = roomlibrary.roomsAL();
-		
+		//Set the roomInfoMap 
+		roomInfoMap = roomlibrary.roomsAL();		
+	
+		//Testing for roomInfoMap
 		//Loop through and print every Key in the HashMap.
-		Iterator<?> iterate = roomInfoMap.entrySet().iterator();
+		/*Iterator<?> iterate = roomInfoMap.entrySet().iterator();
 		while(iterate.hasNext())
 		{
 			Map.Entry roomobj = (Map.Entry<String, Room>)iterate.next();
 			System.out.println(roomobj.getKey().toString());
 			//System.out.println(roomlibrary.getRmDescript(roomobj.getKey().toString()));
-		}
+		}*/
+		
+		//get the room ID.
 		
 		Room CurrentRoom = roomInfoMap.get("RM101");
 		
-		System.out.println(roomlibrary.getRmDescript(CurrentRoom.getRmId()));
-		
-		
-		//Trying with original RoomLibrary class
-		System.out.println("\nStarting RoomLibrary example");
-		RoomLibrary rl = new RoomLibrary();
-		ArrayList<Room> roomList = rl.roomsAL();
-		
-		for(int x = 0; x < roomList.size(); x++)
-		{			
-			Room thisroom = roomList.get(x);
-			System.out.println(thisroom.getRmId());
-		}
-		
+		System.out.println(roomlibrary.getRmDescript(CurrentRoom.getRmId()));		
 		
 		/*
 		 * Artifact Creation and Inventory List.
