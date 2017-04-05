@@ -1,97 +1,114 @@
 package Model;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 public class Puzzle 
 {
 
-	private String plzId;
-	private String plzName;
-	private String plzDescription;
+	private String ID;
+	private String pzlName;
+	private String pzlDescription;
+	private String pzlHint;
 	private String answer;
-	private String reward;
+	private Artifact reward;
 	private Room rmID;
 	
-	public Puzzle (String plzId, String plzName, String plzDescription, String answer, String reward){
-		this.plzId = plzId;
-		this.plzName = plzName;
-		this.plzDescription = plzDescription;
+	public Puzzle (String ID, String plzName, String plzDescription, String pzlHint, String answer, Artifact reward){
+		this.ID = ID;
+		this.pzlName = plzName;
+		this.pzlDescription = plzDescription;
+		this.pzlHint = pzlHint;
 		this.answer = answer;
 		this.reward = reward;
 		
 	}
 	
-	public Puzzle(String plzId ) {
+	public Puzzle(String ID ) {
 		
-		if(plzId.equalsIgnoreCase("PL0001")) {
-			plzName = "Shiny days";
-			plzDescription = "What people can go five days without sleep?";
+		if(ID.equals("PL0001")) {
+			pzlName = "Shiny days";
+			pzlDescription = "What people can go five days without sleep?";
+			pzlHint = "Sleeping during...";
 			answer = "Sleeping during the night";
-			reward = "Healing Mushroom";
+			reward = new Artifact("A0000");
 		}
 		
-		if(plzId.equalsIgnoreCase("PL0002")) {
-			plzName = "Fire";
-			plzDescription = "If you enter into the 'dark room'. Inside the room has oil lamp, kindling wood, match, and candle. Which one do you light first?";
+		if(ID.equals("PL0002")) {
+			pzlName = "Fire";
+			pzlDescription = "If you enter into the 'dark room'. Inside the room has oil lamp, kindling wood, match, and candle. Which one do you light first?";
+			pzlHint = "Not the candle";
 			answer = "Match";
-			reward = "Tri-Shroom Bow ";
+			reward = new Artifact("A0003");
 		}
 		
-		if(plzId.equalsIgnoreCase("PL0003")) {
-			plzName = "Up and Down";
-			plzDescription = "What goes up and down but remain in the same place?";
+		if(ID.equals("PL0003")) {
+			pzlName = "Up and Down";
+			pzlDescription = "What goes up and down but remain in the same place?";
+			pzlHint = "Sta...";
 			answer = "Stairs";
-			reward = "Coin of Brutality ";
+			reward = new Artifact("A0012");
 		}
-		if(plzId.equalsIgnoreCase("PL0004")) {
-			plzName = "Quarter";
-			plzDescription = "What has a head and a tail?";
+		if(ID.equals("PL0004")) {
+			pzlName = "Quarter";
+			pzlDescription = "What has a head and a tail?";
+			pzlHint = "A pair of them can jingle in your pocket";
 			answer = "A Coin";
-			reward = "Coin of Toughness ";
+			reward = new Artifact("A0011");
 		}
-		if(plzId.equalsIgnoreCase("PL0005")) {
-			plzName = "Light";
-			plzDescription = "You feed me and I live, but you gave me drink and I die. Who am I?";
+		if(ID.equals("PL0005")) {
+			pzlName = "Light";
+			pzlDescription = "You feed me and I live, but you gave me drink and I die. Who am I?";
+			pzlHint = "... and Ice";
 			answer = "Fire";
-			reward = "Fire Flower";
+			reward = new Artifact("A0004");
 		}
-		if(plzId.equalsIgnoreCase("PL0006")) {
-			plzName = "Mirrors";
-			plzDescription = "Imagine you are in a beautiful garden, full of gorgeous flowers, you see a building at the end of the garden. You enter to the building, mirrors are everywhere you just see yourself. You are scared.'How do you get out???'";
+		if(ID.equals("PL0006")) {
+			pzlName = "Mirrors";
+			pzlDescription = "Imagine you are in a beautiful garden, full of gorgeous flowers, you see a building at the end of the garden. You enter to the building, mirrors are everywhere you just see yourself. You are scared.'How do you get out???'";
+			pzlHint = "'Imagine'";
 			answer = "Stop Imagining";
-			reward = "Poison Goomba ";
+			reward = new Artifact("A0001");
 		}
 		
-		if(plzId.equalsIgnoreCase("PL0007")) {
-			plzName = "Special Room";
-			plzDescription = "What room does not have a door/window, and no one can enter?";
+		if(ID.equals("PL0007")) {
+			pzlName = "Special Room";
+			pzlDescription = "What room does not have a door/window, and no one can enter?";
+			pzlHint = "Aren't these puzzle Fun, Gus?";
 			answer = "Mushroom";
-			reward = "Healing Mushroom";
+			reward = new Artifact("A0000");
 		}	
 	}
 
-	public String getPlzId() {
-		return plzId;
+	public String getID() {
+		return ID;
 	}
 
-	public void setPlzId(String plzId) {
-		this.plzId = plzId;
+	public void setPzlId(String ID) {
+		this.ID = ID;
 	}
 
-	public String getPlzName() {
-		return plzName;
+	public String getPzlName() {
+		return pzlName;
 	}
 
-	public void setPlzName(String plzName) {
-		this.plzName = plzName;
+	public void setPzlName(String plzName) {
+		this.pzlName = plzName;
 	}
 
-	public String getPlzDescription() {
-		return plzDescription;
+	public String getPzlDescription() {
+		return pzlDescription;
 	}
 
-	public void setPlzDescription(String plzDescription) {
-		this.plzDescription = plzDescription;
+	public void setPzlDescription(String pzlDescription) {
+		this.pzlDescription = getPzlDescription();
+	}
+	
+	public String getHint(){
+		return pzlHint;
+	}
+	
+	public void setHint(String pzlHint){
+		this.pzlHint = pzlHint;
 	}
 
 	public String getAnswer() {
@@ -102,11 +119,11 @@ public class Puzzle
 		this.answer = answer;
 	}
 
-	public String getReward() {
+	public Artifact getReward() {
 		return reward;
 	}
 
-	public void setReward(String reward) {
+	public void setReward(Artifact reward) {
 		this.reward = reward;
 	}
 

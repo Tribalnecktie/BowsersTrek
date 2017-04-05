@@ -8,6 +8,7 @@ import Model.Backpack;
 import Model.Monster;
 import Model.MonsterLibrary_HashMap;
 import Model.Player;
+import Model.Puzzle;
 
 public class AltView {
 	static Player player = new Player();
@@ -128,6 +129,56 @@ public class AltView {
 					System.out.println("You've escaped with your life");
 					inEncounter = false;
 					playerInput.close();
+				}
+			}
+		}
+	}
+	
+	static void puzzleSolver(Scanner playerInput, Puzzle currentPuzzle)
+	{
+		int numOfAttempts = 0;
+		boolean inPuzzle = true;
+		
+		System.out.println(currentPuzzle.getPzlDescription());
+		while (inPuzzle = true)
+		{
+			if (numOfAttempts < 5)
+			{
+				if (playerInput.equals(currentPuzzle.getAnswer()))
+				{
+					System.out.println("You have correctly answer the puzzle!");
+					System.out.println(currentPuzzle.getReward() + " has been added to your inventory");
+					pack.addArtifact(currentPuzzle.getReward().getID(), currentPuzzle.getReward());
+					inPuzzle = false;
+				}
+				else
+				{
+					System.out.println("That is not the correct answer, please try again.");
+					System.out.println(currentPuzzle.getPzlDescription());
+					numOfAttempts += 1;
+				}
+			}
+			else if (numOfAttempts >= 5 && numOfAttempts <= 10)
+			{
+				System.out.println("Looks like you are having a little trouble, here is a hint:");
+				System.out.println(currentPuzzle.getHint());
+				numOfAttempts += 1;
+			}
+			else
+			{
+				System.out.println("Would you like to come back to this puzzle later?");
+				System.out.println("1. Come back to puzzle later");
+				System.out.println("2. Keep trying");
+				int command = playerInput.nextInt();
+				if (command == 1)
+				{
+					System.out.println("You can always come back and try again, have a safe journey.");
+					inPuzzle = false;
+				}
+				else if (command == 2)
+				{
+					System.out.println("I like the spirit, lets keep trying.");
+					numOfAttempts = 5;
 				}
 			}
 		}
