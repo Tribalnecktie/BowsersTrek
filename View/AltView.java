@@ -6,13 +6,15 @@ import java.util.Scanner;
 import Model.Artifact;
 import Model.Backpack;
 import Model.Monster;
+import Model.MonsterLibrary_HashMap;
 import Model.Player;
 
 public class AltView {
 	static Player player = new Player();
-	static Monster [] mList = new Monster[8];
+	//static Monster [] mList = new Monster[8];
 	static ArrayList<Artifact> iniInv = new ArrayList<Artifact>();
 	static Backpack pack = new Backpack();
+	static MonsterLibrary_HashMap mList = new MonsterLibrary_HashMap();
 	//static RoomLibrary_HashMap rooms = new RoomLibrary_HashMap();
 
 	//Stop at 07
@@ -126,6 +128,7 @@ public class AltView {
 
 	public static void main(String[] args)
 	{
+		/*
 		mList[0] = new Monster("ML00");
 		mList[1] = new Monster("ML01");
 		mList[2] = new Monster("ML02");
@@ -134,6 +137,7 @@ public class AltView {
 		mList[5] = new Monster("ML05");
 		mList[6] = new Monster("ML06");
 		mList[7] = new Monster("ML07");
+		*/
 		Scanner playerInput = new Scanner(System.in);
 
 
@@ -144,7 +148,7 @@ public class AltView {
 		boolean gameOn = true;
 		while (gameOn == true)
 		{
-			encounterEnemy(playerInput, mList[0]);
+			encounterEnemy(playerInput, mList.monsterAL().get("ML00"));
 			//roomNavigate(playerInput);
 		}
 	}

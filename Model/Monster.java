@@ -89,6 +89,16 @@ public class Monster extends Character {
 		System.out.println("Invalid ID");
 	*/
 	
+	public boolean isAlive() {
+		return isAlive;
+	}
+
+
+	public void setAlive(boolean isAlive) {
+		this.isAlive = isAlive;
+	}
+
+
 	void attack(Player player)
 	{
 		player.health -= attackPower;

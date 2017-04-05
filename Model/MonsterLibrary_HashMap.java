@@ -3,7 +3,7 @@ package Model;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MonsterLibrary_HashMap extends Character {
+public class MonsterLibrary_HashMap {
 
 	private Map<String,Monster> monsterAL = new HashMap<String,Monster>();
 	/*
