@@ -79,7 +79,7 @@ public class AltView {
 	}
 
 	//Need to test out how the monster loop would work
-	static void encounterEnemy(Player player, Monster tempMonster)
+	static void encounterEnemy(Player player, Monster tempMonster, Backpack pack)
 	{
 		Scanner playerInput = new Scanner(System.in);
 		boolean inEncounter = true;
@@ -225,7 +225,7 @@ public class AltView {
 		boolean gameOn = true;
 		while (gameOn == true)
 		{
-			encounterEnemy(player, mList.monsterAL().get("ML00"));
+			encounterEnemy(player, mList.monsterAL().get("ML00"), pack);
 			//roomNavigate(playerInput);
 		}
 	}
