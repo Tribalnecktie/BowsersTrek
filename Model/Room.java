@@ -1,14 +1,12 @@
 package Model;
 
-import java.util.ArrayList;
-
 import View.ConsoleView;
 
 
 public class Room  {
 
 	private String rmId;
-	private String rmDoor;
+	private String rmDoor; //maybe put in an arraylist
 	private String rmName;
 	private String rmDescript;
 	private int rmLevel;
@@ -16,7 +14,7 @@ public class Room  {
 	private Puzzle puzzleObj;
 	private Artifact itemObj; 
 	private Player playerID;
-	
+
 	ConsoleView console = new ConsoleView();
 
 	public Room(int rmLevel, String rmId, String rmDoor, String rmName, Monster monsterObj, Puzzle puzzleObj, Artifact itemObj, Player playerID) {
@@ -29,10 +27,10 @@ public class Room  {
 		this.itemObj = itemObj;
 		this.playerID = playerID;
 	}
-	
+
 
 	public Player getPlayerID() {
-		return playerID;
+		return this.playerID;
 	}
 
 
@@ -43,52 +41,88 @@ public class Room  {
 
 	public String getRmDescript(String rmId) {
 		// TODO Auto-generated method stub
-		return rmDescript;
+		return this.rmDescript;
 	}
 
 	public String getRmId() {
 		// TODO Auto-generated method stub
-		return rmId;
+		return this.rmId;
 	}
 
 	public int getRmLevel() {
 		// TODO Auto-generated method stub
-		return rmLevel;
+		return this.rmLevel;
 	}
 
 	public String getRmName() {
 		// TODO Auto-generated method stub
-		return rmName;
+		return this.rmName;
 	}
 
 	public String getRmDoor() {
 		// TODO Auto-generated method stub
-		return rmDoor;
+		return this.rmDoor;
 	}
-	
+
+	public boolean hasMonster() {
+
+		if(!this.monsterObj.getID().equalsIgnoreCase(null)) {
+
+			return true;
+		}
+		return false;
+	}
+
 	public Monster getMonsterID() {
-		// TODO Auto-generated method stub
-		return monsterObj;
+		if(!this.monsterObj.getID().equalsIgnoreCase(null)) {
+			return this.monsterObj;
+		}
+		return null;
+	}
+
+	public boolean hasPuzzle() {
+
+		if(!this.puzzleObj.getID().equalsIgnoreCase(null)) {
+
+			return true;
+		}
+		return false;
 	}
 
 
 	public Puzzle getPuzzleType() {
-		// TODO Auto-generated method stub
-		return this.puzzleObj;
+
+		if(!this.puzzleObj.getID().equalsIgnoreCase(null)) {
+
+			return this.puzzleObj;
+		}
+		return null;
+	}
+
+	public boolean hasArtifact() {
+
+		if(!this.itemObj.getID().equalsIgnoreCase(null)) {
+
+			return true;
+		}
+		return false;
 	}
 
 	public Artifact getArtifactID() {
-		// TODO Auto-generated method stub
-		return itemObj;
+
+		if(!this.itemObj.getID().equalsIgnoreCase(null)) {
+			return this.itemObj;
+		}
+		return null;
 	}	
-	
+
 
 	public void printRoomInfo() {
-		String str = "Room [rmId=" + rmId + ", rmDoor=" + rmDoor + ", rmName=" + rmName + ", rmDescript=" + rmDescript
-				+ ", rmLevel=" + rmLevel + ", monsterObj=" + monsterObj + ", puzzleObj=" + puzzleObj + ", itemObj="
-				+ itemObj + "]";
-		
+		String str = "You are on Level: " + rmLevel + ".  Your in Room: " + rmId + " --> " + rmName + ".  It's Doors are: " + rmDoor + "\n"
+				+ rmDescript + "\n" + "Rooms' Monster is: " +  monsterObj + "\n" + "Rooms' Puzzle is: " + puzzleObj + "\n"
+				+ "Rooms' Artifact is: " + itemObj;
+
 		console.printConsoleView(str);
-		
+
 	}		
 }
