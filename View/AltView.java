@@ -134,13 +134,15 @@ public class AltView {
 		}
 	}
 	
-	static void puzzleSolver(Scanner playerInput, Puzzle currentPuzzle)
+	static void puzzleSolver(Puzzle currentPuzzle, Backpack pack)
 	{
 		int numOfAttempts = 0;
 		boolean inPuzzle = true;
 		
+		Scanner playerInput = new Scanner(System.in);
+		
 		System.out.println(currentPuzzle.getPzlDescription());
-		while (inPuzzle = true)
+		while (inPuzzle == true)
 		{
 			if (numOfAttempts < 5)
 			{
@@ -149,7 +151,9 @@ public class AltView {
 					System.out.println("You have correctly answer the puzzle!");
 					System.out.println(currentPuzzle.getReward() + " has been added to your inventory");
 					pack.addArtifact(currentPuzzle.getReward().getID(), currentPuzzle.getReward());
+					currentPuzzle.setIsDone(true);
 					inPuzzle = false;
+					playerInput.close();
 				}
 				else
 				{
@@ -162,7 +166,20 @@ public class AltView {
 			{
 				System.out.println("Looks like you are having a little trouble, here is a hint:");
 				System.out.println(currentPuzzle.getHint());
+				
+				if (playerInput.equals(currentPuzzle.getAnswer()))
+				{
+					System.out.println("You have correctly answer the puzzle!");
+					System.out.println(currentPuzzle.getReward() + " has been added to your inventory");
+					pack.addArtifact(currentPuzzle.getReward().getID(), currentPuzzle.getReward());
+					currentPuzzle.setIsDone(true);
+					inPuzzle = false;
+					playerInput.close();
+				}
+				else
+				{
 				numOfAttempts += 1;
+				}
 			}
 			else
 			{
@@ -174,6 +191,7 @@ public class AltView {
 				{
 					System.out.println("You can always come back and try again, have a safe journey.");
 					inPuzzle = false;
+					playerInput.close();
 				}
 				else if (command == 2)
 				{
