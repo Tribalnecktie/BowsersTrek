@@ -1,0 +1,27 @@
+Plan of Attack - Bowser's Trek
+
+
+This is meant to be a sort of priority list. just with stuff we know we gotta do to make it work or thoughts and ideas.
+An extra layer of communication thats not a chatroom. Please add anything you can think of as I'm sure I will miss things.
+Try to give a short explanation if it may be confusing or ambiguous to others. and try to keep format for easy reading.
+
+
+
+1.	(View) methods implemented in our (Model) classes.
+	a.	Explanation: As we were trying to figure out today. 
+		The purpose of the (view) class is simply to output the string. 
+		In the (Model) Objects, you will need to create an instance of the (view) ConsoleView. 
+		Once you have created this view in your (Model) Object class, you can use its method 
+		printConsoleView(String str) to print any string you can pass it. 
+		This will keep all our classes aligned with the Implementation of the MVC Architecture.
+		
+2.	MenuOptions Creation.
+	a.	I will be trying to do some of this as much as I can throughout the week
+		and will basically be adding in the (Model) object class MenuOptions which will work
+		like our other existing library classes. But this will contain the available menu options
+		that will be shown to the user. Me and Katrina talked about using a hashmap<String, ArrayList<String>>
+		so that we can key it out by RoomID and then store the options in the arraylist so we can access with a 
+		list.length() and print each one out by list[x].
+		
+3.	nextline
+	a.	Explanation.
