@@ -2,15 +2,35 @@ package Model;
 
 import java.util.HashMap;
 import java.util.Map;
+import View.ConsoleView;
 
+/**
+ * Class: RoomLibrary_HashMap
+ * 
+ * @author Katrina Smith, Tobin Crone 
+ * @version 1.1 
+ * Course : ITEC 3860 Spring 2017
+ * Written: April 4, 2017
+ *
+ *  This class – Establishes 30 Room objects along with their hard-coded room descriptions
+ *          
+ *  Purpose: – To establish the map functionality to all 30 Room Objects associate with the game. Utilizing the Model, View architecture style, we import the ConsoleView class to update the view with the Room class commands that the controller class with access. 
+ **/
 public class RoomLibrary_HashMap {
 
 	private Map<String,Room> roomsAL = new HashMap<String,Room>();
+	private String rmDescript;
 	protected Monster mID;
 	protected Puzzle pID;
 	protected Artifact aType;
 	protected Player playID;
+	ConsoleView console = new ConsoleView();
 
+	
+	/**
+	 * Constructor Method: RoomLibray_HashMap() 
+	 * Utilizes an ArrayList of Room objects to map the room identifier to the rooms complete list of attributes
+	 */
 	public RoomLibrary_HashMap()
 	{
 		this.roomsAL = roomsAL();
@@ -67,10 +87,14 @@ public class RoomLibrary_HashMap {
 		return roomsAL; //Returns 30 Rooms
 	}
 
-
+	/**
+	 * Method: getRmDescript() Getter method for the rmDescript attribute
+	 * @param String rmId room identification to call for a particular room description
+	 * @return room description in the form of a long String
+	 */
 	public String getRmDescript(String rmId) {
 
-		String rmDescript = "";
+		rmDescript = "";
 		if(rmId.equalsIgnoreCase("RM101"))
 		{
 			rmDescript = "The pink double doors in the middle of the south wall open to the main entry point to the\n mansion. This area is a full of bright colors, giving visitors a taste of the rest of the mansion. On west wall is a\n grand doorway leading to the rest of the rooms on the first level. A bright blue couch along the north wall\n faces\n the room. The walls are painted in a rainbow pattern with the colors Red, Orange,\n Yellow, Green, Blue, and Purple.";
@@ -252,5 +276,14 @@ public class RoomLibrary_HashMap {
 		}
 
 		return rmDescript;
+	}
+	
+
+	/**
+	 * Method: setRmDescript() Setter method for the rmDescript attribute
+	 * @param String rmDescript sets the room description
+	 */
+	public void setRmDescript(String rmDescript) {
+		this.rmDescript = rmDescript;
 	}
 }
