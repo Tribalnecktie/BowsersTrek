@@ -57,6 +57,7 @@ public class GameController
 			
 		//Create our initial objects needed
 			Room thisRoom = roomInfoMap.get("RM101");	//START NEW GAME ALWAYS AT RM101!!!
+			
 			Player thisPlayer = new Player();
 			Backpack thisBackpack = new Backpack();
 			Monster thisMonster = monsterMap.get("ML00");
@@ -80,13 +81,17 @@ public class GameController
 			}
 			
 		//Display the room description
-			System.out.println(thisRoom.getRmId().toString());
+			//System.out.println(thisRoom.getRmId().toString());
+			System.out.println();
 			System.out.println(roomLibrary.getRmDescript("RM101"));
 			
 		//Here is where we will pass in the room id to get the menu options and then display them.
 			//for now we are hard coding the menu options for this room.
+			MenuOptions menuOp = new MenuOptions();
 			
+		
 			thisRoom.printRoomInfo();
+			//roomLibrary.printRoomInfo();  //..Library extends room; printRoomInfo method in ...Library class
 			
 
 		//Close the scanner to avoid exceptions

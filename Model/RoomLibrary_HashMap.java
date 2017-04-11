@@ -1,5 +1,6 @@
 package Model;
 
+
 import java.util.HashMap;
 import java.util.Map;
 import View.ConsoleView;
@@ -15,7 +16,81 @@ import View.ConsoleView;
  *  This class – Establishes 30 Room objects along with their hard-coded room descriptions
  *          
  *  Purpose: – To establish the map functionality to all 30 Room Objects associate with the game. Utilizing the Model, View architecture style, we import the ConsoleView class to update the view with the Room class commands that the controller class with access. 
- **/
+ **//*
+public class RoomLibrary_HashMap extends Room {
+
+	private Map<String,Room> roomsAL = new HashMap<String,Room>();
+	private String rmDescript;
+	//protected Monster mID;
+	//protected Puzzle pID;
+	//protected Artifact aType;
+	//protected Player playID;
+	ConsoleView console = new ConsoleView();
+
+	
+	*//**
+	 * Constructor Method: RoomLibray_HashMap() 
+	 * Utilizes an ArrayList of Room objects to map the room identifier to the rooms complete list of attributes
+	 *//*
+	public RoomLibrary_HashMap()
+	{
+		super();
+		this.roomsAL = roomsAL();
+		
+	}
+
+	*//**
+	 * Method: roomsAL()
+	 * 
+	 * Holds all the Room Objects.  Room Object has a level, room ID, list of doors, name of the room, Monster Object ID, Puzzle Object ID, and Artifact Object ID
+	 * 
+	 * @return an ArrayList of Room Objects
+	 *//*
+	public Map<String, Room> roomsAL() {
+
+
+		//LEVEL ONE ROOMS ADD TO ARRAY --> 7 Rooms
+		roomsAL.put("RM101", (new Room(1, "RM101", "DR101 and DR102", "Entrance", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("HW_L1", (new Room(1, "HW_L1", "DR101, DR102,DR103, DR104, DR105, DR106, DR107, DR108", "Hallway Level 1", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM102", (new Room(1, "RM102", "DR103", "Greeting Area", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM103", (new Room(1, "RM103", "DR104", "Living Room", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM104", (new Room(1, "RM104", "DR105", "Game Room", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM105", (new Room(1, "RM105", "DR106", "Kitchen", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM106", (new Room(1, "RM106", "DR107", "Dining Room", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM107", (new Room(1, "RM107", "DR108", "Landing", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+
+		//LEVEL TWO ROOMS ADDED TO ARRAY  --> 7 Rooms
+		roomsAL.put("HW_L2", (new Room(2, "HW_L2", "DR201, DR202, DR203, DR205, DR208, DR209, DR211, DR212", "Hallway Level 2", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM201", (new Room(2, "RM201", "DR 201, DR202, DR203, DR204", "Waiting Room", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM202", (new Room(2, "RM202", "DR205", "Supply Room", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM203", (new Room(2, "RM203", "DR206, DR207", "Bedroom", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM204", (new Room(2, "RM204", "DR207, DR208", "Cleaning Supply Room", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM205", (new Room(2, "RM205", "DR209, DR206", "Music Room", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM206", (new Room(2, "RM206", "DR210, DR211", "Wine Cellar", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM207", (new Room(2, "RM207", "DR204, DR212", "Library", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+
+		//LEVEL THREE ROOMS ADDED TO ARRAY --> 6 Rooms
+		roomsAL.put("HW_L3", (new Room(3, "HW_L3", "DR300, DR301, DR302, DR303, DR304, DR306, DR307", "Hallway Level 3", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM301", (new Room(3, "RM301", "DR300, DR301", "Colorful Room", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM302", (new Room(3, "RM302", "DR302, DR303", "Library", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM303", (new Room(3, "RM303", "DR306, DR307", "Work Room", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM304", (new Room(3, "RM304", "DR304, DR305", "TV Room", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM305", (new Room(3, "RM305", "DR315, DR316", "Red Chest Room", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+
+		//LEVEL FOUR ROOMS ADDED TO ARRAY --> 8 Rooms
+		roomsAL.put("HW_L4", (new Room(4, "HW_L4", "DR401, DR402, DR403, DR405, DR407, DR408, DR409", "Hallway Level 4", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM401", (new Room(4, "RM401", "DR401", "Game Room", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM402", (new Room(4, "RM402", "DR402", "Study Room", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM403", (new Room(4, "RM403", "DR403, DR404", "Dream Room", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM404", (new Room(4, "RM404", "DR405, DR406", "Garden Room", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM405", (new Room(4, "RM405", "DR406, DR407", "Theater Room", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM406", (new Room(4, "RM406", "DR408", "Dining Room", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+		roomsAL.put("RM407", (new Room(4, "RM407", "DR409", "Dark Room", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
+
+		return roomsAL; //Returns 30 Rooms
+	}*/
+
+
 public class RoomLibrary_HashMap {
 
 	private Map<String,Room> roomsAL = new HashMap<String,Room>();
@@ -87,6 +162,8 @@ public class RoomLibrary_HashMap {
 		return roomsAL; //Returns 30 Rooms
 	}
 
+	
+
 	/**
 	 * Method: getRmDescript() Getter method for the rmDescript attribute
 	 * @param String rmId room identification to call for a particular room description
@@ -94,45 +171,45 @@ public class RoomLibrary_HashMap {
 	 */
 	public String getRmDescript(String rmId) {
 
-		rmDescript = "";
+		//rmDescript = "";
 		if(rmId.equalsIgnoreCase("RM101"))
 		{
-			rmDescript = "The pink double doors in the middle of the south wall open to the main entry point to the\n mansion. This area is a full of bright colors, giving visitors a taste of the rest of the mansion. On west wall is a\n grand doorway leading to the rest of the rooms on the first level. A bright blue couch along the north wall\n faces\n the room. The walls are painted in a rainbow pattern with the colors Red, Orange,\n Yellow, Green, Blue, and Purple.";
+			rmDescript = "The pink double doors in the middle of the south wall open to the main entry point to the mansion. This area is a full of bright colors, giving visitors a taste of the rest of the mansion. On west wall is a grand doorway leading to the rest of the rooms on the first level. A bright blue couch along the north wall faces the room. The walls are painted in a rainbow pattern with the colors Red, Orange, Yellow, Green, Blue, and Purple.";
 		}
 
 		if(rmId.equalsIgnoreCase("HW_L1"))
 		{
-			rmDescript = "You have entered the hallway to the mansion’s lower level.  There are several rooms in which\n you can freely roam on your quest.  The hallway walls are adorned with a mosaic gold leaf design. The doors that\n lead to various rooms are various shades of the rainbow.  Choose wisely!";
+			rmDescript = "You have entered the hallway to the mansion’s lower level.  There are several rooms in which you can freely roam on your quest.  The hallway walls are adorned with a mosaic gold leaf design. The doors that lead to various rooms are various shades of the rainbow.  Choose wisely!";
 		}
 
 		if(rmId.equalsIgnoreCase("RM102"))
 		{
-			rmDescript = "This room is full of comfy chairs and tables. The door on the north wall towards\n the east end of the room is solid pink. The chairs are colored Red, Orange, and Yellow. The Tables are colored Green,\n Blue, and Purple.";
+			rmDescript = "This room is full of comfy chairs and tables. The door on the north wall towards the east end of the room is solid pink. The chairs are colored Red, Orange, and Yellow. The Tables are colored Green, Blue, and Purple.";
 		}
 
 		if(rmId.equalsIgnoreCase("RM103"))
 		{
-			rmDescript = "This large room is the entertainment center. The door on the south wall of the room is bright\n blue and is directly in the middle of the wall. On the east end of the room is a stage with a television screen on the\n wall. Cabinets cover the north side of the room. In these cabinets are chairs, tables, Dvds, video games, and other\n entertainment items.";
+			rmDescript = "This large room is the entertainment center. The door on the south wall of the room is bright blue and is directly in the middle of the wall. On the east end of the room is a stage with a television screen on the wall. Cabinets cover the north side of the room. In these cabinets are chairs, tables, Dvds, video games, and other entertainment items.";
 		}
 
 		if(rmId.equalsIgnoreCase("RM104"))
 		{
-			rmDescript = "This rectangular room is full of all sorts of arcade games. A burnt sienna door is on the\n south wall towards the west end of the room. There are always loud noises and lots of activities going on. This\n is where the kids hang out while the adults talk.";
+			rmDescript = "This rectangular room is full of all sorts of arcade games. A burnt sienna door is on the south wall towards the west end of the room. There are always loud noises and lots of activities going on. This is where the kids hang out while the adults talk.";
 		}
 
 		if(rmId.equalsIgnoreCase("RM105"))
 		{
-			rmDescript = "This rectangular room is the best kitchen you’ll find in the land. A dark yellow door\n stands on the north wall. This room contains any cooking appliance or utensil one will ever need. One can often\n find cooks rushing back and forth preparing food.";
+			rmDescript = "This rectangular room is the best kitchen you’ll find in the land. A dark yellow door stands on the north wall. This room contains any cooking appliance or utensil one will ever need. One can often find cooks rushing back and forth preparing food.";
 		}
 
 		if(rmId.equalsIgnoreCase("RM106"))
 		{
-			rmDescript = "This large L-shaped room has a large dining table in the middle. A door on the south wall is a\n colored Burnt Sienna. This room is used for all the meals and anytime someone needs to eat.\n The large table can seat up to 20 and is surrounded by comfy chairs.";
+			rmDescript = "This large L-shaped room has a large dining table in the middle. A door on the south wall is a colored Burnt Sienna. This room is used for all the meals and anytime someone needs to eat. The large table can seat up to 20 and is surrounded by comfy chairs.";
 		}
 
 		if(rmId.equalsIgnoreCase("RM107"))
 		{
-			rmDescript = "This area is used as a staging area. A door on the north wall is light green.\n Closets in the west and south walls store food for the cooks.";
+			rmDescript = "This area is used as a staging area. A door on the north wall is light green. Closets in the west and south walls store food for the cooks.";
 		}
 		//end of Level One Room Descriptions
 
@@ -286,4 +363,17 @@ public class RoomLibrary_HashMap {
 	public void setRmDescript(String rmDescript) {
 		this.rmDescript = rmDescript;
 	}
+	
+	/*public void printRoomInfo() {
+		System.out.println();
+		String str = "You are on Level: " + roomsAL().get(getRmName()) + ".  You're in Room: " + super.getRmId() + " --> " + super.getRmName() + ".  It's Doors are: " + super.getRmDoor() + ".\n"
+		 + "Rooms Description is: " + rmDescript + "\n"
+		 + "Rooms' Monster is: " +  super.getMonsterObj() + ".\n" + "Rooms' Puzzle is: " + super.getPuzzleObj() + ".\n"
+		 + "Rooms' Artifact is: " + super.getArtifactObj();
+
+		console.printConsoleView(str);
+	}*/
+
+	
+	
 }

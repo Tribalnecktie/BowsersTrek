@@ -75,6 +75,7 @@ public class ConsoleView
 		System.out.println(footerline);
 		
 		this.user_selection = user_input.nextInt();
+		System.out.println();
 		
 		return this.user_selection;
 		
