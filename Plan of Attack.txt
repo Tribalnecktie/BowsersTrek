@@ -16,7 +16,7 @@ Try to give a short explanation if it may be confusing or ambiguous to others. a
 		This will keep all our classes aligned with the Implementation of the MVC Architecture.
 		
 2.	MenuOptions Creation.
-	a.	I will be trying to do some of this as much as I can throughout the week
+	a.	Explanation: I will be trying to do some of this as much as I can throughout the week
 		and will basically be adding in the (Model) object class MenuOptions which will work
 		like our other existing library classes. But this will contain the available menu options
 		that will be shown to the user. Me and Katrina talked about using a hashmap<String, ArrayList<String>>
@@ -24,4 +24,4 @@ Try to give a short explanation if it may be confusing or ambiguous to others. a
 		list.length() and print each one out by list[x].
 		
 3.	nextline
-	a.	Explanation.
+	a.	Explanation:
