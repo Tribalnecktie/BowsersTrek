@@ -1,7 +1,6 @@
 package Model;
 
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
 public class SaveState {
 
@@ -10,25 +9,45 @@ public class SaveState {
 
 	}
 
-	public void writeBin(Player player)
+	public void writeBin(Player player, RoomLibrary_HashMap rooms)
 	{
 		try 
 		{
-			ObjectOutputStream outfile = new ObjectOutputStream(new FileOutputStream("test.bin"));
+			ObjectOutputStream playerFile = new ObjectOutputStream(new FileOutputStream("playerTest.bin"));
 			//lets write the attribute of player
-			outfile.writeObject(player);
+			playerFile.writeObject(player);
 
-			outfile.close();
+			playerFile.close();
 
 		}
 		catch (Exception e)
 		{
 			e.printStackTrace();	
 		}
+		try
+		{
+			ObjectOutputStream roomsFile = new ObjectOutputStream(new FileOutputStream("roomsTest.bin"));
+			roomsFile.writeObject(rooms);
+			
+			roomsFile.close();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
-	
-	public void loadBin()
+
+	public void loadPlayer(Player player) throws IOException, ClassNotFoundException, FileNotFoundException
 	{
+		ObjectInputStream playerInFile = new ObjectInputStream(new FileInputStream("playerTest.bin"));
+		player = (Player)playerInFile.readObject();
+		playerInFile.close();
 		
+	}
+	public void loadMap(RoomLibrary_HashMap rooms) throws FileNotFoundException, IOException, ClassNotFoundException
+	{
+		ObjectInputStream roomsInFile = new ObjectInputStream(new FileInputStream("roomsTest.bin"));
+		rooms = (RoomLibrary_HashMap) roomsInFile.readObject();
+		roomsInFile.close();
 	}
 }
