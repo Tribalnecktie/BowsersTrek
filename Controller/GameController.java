@@ -87,11 +87,11 @@ public class GameController
 			
 		//Here is where we will pass in the room id to get the menu options and then display them.
 			//for now we are hard coding the menu options for this room.
-			MenuOptions menuOp = new MenuOptions();
+			//MenuOptions menuOp = new MenuOptions();
 			
 		
-			thisRoom.printRoomInfo();
-			//roomLibrary.printRoomInfo();  //..Library extends room; printRoomInfo method in ...Library class
+			//thisRoom.printRoomInfo();
+			roomLibrary.printRoomInfo();  //..Library extends room; printRoomInfo method in ...Library class
 			
 
 		//Close the scanner to avoid exceptions
