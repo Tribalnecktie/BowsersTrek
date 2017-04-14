@@ -83,15 +83,21 @@ public class GameController
 		//Display the room description
 			//System.out.println(thisRoom.getRmId().toString());
 			System.out.println();
-			System.out.println(roomLibrary.getRmDescript("RM101"));
+			
+			thisRoom.printRoomInfo(); //prints out whatever rmId is set == roomInfoMap.get("RM202")
+			
+			//System.out.println("Your are in Room 101 \n" + roomLibrary.getRmDescript("RM101")); //may not be necessary anymore...descript is being printed from printInfo()
+			System.out.println();
 			
 		//Here is where we will pass in the room id to get the menu options and then display them.
 			//for now we are hard coding the menu options for this room.
+			
 			//MenuOptions menuOp = new MenuOptions();
 			
-		
-			//thisRoom.printRoomInfo();
-			roomLibrary.printRoomInfo();  //..Library extends room; printRoomInfo method in ...Library class
+			
+			
+			
+			
 			
 
 		//Close the scanner to avoid exceptions

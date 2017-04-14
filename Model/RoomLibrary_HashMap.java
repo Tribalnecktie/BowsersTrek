@@ -20,11 +20,8 @@ import View.ConsoleView;
 public class RoomLibrary_HashMap extends Room {
 
 	private Map<String,Room> roomsAL = new HashMap<String,Room>();
-	protected int rmLevel;
-	protected String rmId;
-	protected String rmName;
-	protected String rmDoor;
-	private String rmDescript;
+	
+	protected String rmDescript;
 
 	ConsoleView console = new ConsoleView();
 
@@ -33,16 +30,20 @@ public class RoomLibrary_HashMap extends Room {
 	 * Constructor Method: RoomLibray_HashMap() 
 	 * Utilizes an ArrayList of Room objects to map the room identifier to the rooms complete list of attributes
 	 */
-	public RoomLibrary_HashMap()
+	public RoomLibrary_HashMap(int rmLevel, String rmId, String rmDoor, String rmName, Monster monsterObj, Puzzle puzzleObj, Artifact artifactObj, Player playerID)
 	{
-		super();
-		this.rmLevel = super.getRmLevel();
-		this.rmId = super.getRmId();
-		this.rmName = super.getRmName();
-		this.rmDoor = super.getRmDoor();
+		super(rmLevel, rmId, rmDoor, rmName, monsterObj, puzzleObj, artifactObj, playerID);
+		/*super.getRmLevel();
+		super.getRmId();
+		super.getRmName();
+		super.getRmDoor();*/
 		this.roomsAL = roomsAL();
 		
-
+	}
+	
+	public RoomLibrary_HashMap()
+	{
+		this.roomsAL = roomsAL();
 	}
 
 	/**
@@ -285,16 +286,6 @@ public class RoomLibrary_HashMap extends Room {
 		}
 
 		return rmDescript;
-	}
-
-	public void printRoomInfo() {
-		System.out.println();
-		String str = "You are on Level: " + rmLevel + ".  You're in Room: " + rmId + " --> " + rmName + ".  It's Doors are: " + rmDoor + ".\n"
-				 + "Room Description: " + rmDescript + "\n"
-				+ "Rooms' Monster is: " +  getMonsterObj() + ".\n" + "Rooms' Puzzle is: " + getPuzzleObj().getPzlName() + ".\n"
-				 + "Rooms' Artifact is: " + getArtifactObj().getName();
-		
-		console.printConsoleView(str);
 	}
 }
 
