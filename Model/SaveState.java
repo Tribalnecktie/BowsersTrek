@@ -8,6 +8,33 @@ public class SaveState {
 	{
 
 	}
+	
+	public void writeRooms(RoomLibrary_HashMap rooms)
+	{
+		//We need to retrieve the keys from the HashMap
+		String[] keysArray = new String[28];
+		int i = 0;
+		for (String key: rooms.roomsAL().keySet())
+		{
+			keysArray[i] = key;
+			i++;
+		}
+		
+		System.out.println("Key Reading Successful");
+		//Now we need all the objects associated with those keys
+		Room[] roomsArray = new Room[28];
+		i = 0;
+		for (String key: rooms.roomsAL().keySet())
+		{
+			roomsArray[i] = rooms.roomsAL().get(key);
+			i++;
+		}
+		
+		System.out.println("Room Reading Successful");
+		
+		
+		
+	}
 
 	public void writeBin(Player player, RoomLibrary_HashMap rooms)
 	{
