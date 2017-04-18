@@ -1,5 +1,7 @@
 package View;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -9,6 +11,8 @@ import Model.Monster;
 import Model.MonsterLibrary_HashMap;
 import Model.Player;
 import Model.Puzzle;
+import Model.RoomLibrary_HashMap;
+import Model.SaveState;
 
 public class AltView {
 	static Player player = new Player();
@@ -16,6 +20,8 @@ public class AltView {
 	static ArrayList<Artifact> iniInv = new ArrayList<Artifact>();
 	static Backpack pack = new Backpack();
 	static MonsterLibrary_HashMap mList = new MonsterLibrary_HashMap();
+	static SaveState ss = new SaveState();
+	static RoomLibrary_HashMap rooms = new RoomLibrary_HashMap();
 	//static RoomLibrary_HashMap rooms = new RoomLibrary_HashMap();
 
 	//Stop at 07
@@ -203,8 +209,18 @@ public class AltView {
 	}
 
 
-	public static void main(String[] args)
+	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException
 	{
+		System.out.println("This is where we put artifacts into the inventory");
+		pack.readinBackpack();
+		System.out.println("This is the save testing");
+		ss.writePlayer(player);
+		ss.writeInventory(pack);
+		
+		System.out.println("This is the load testing");
+		ss.loadInventory(pack);
+		ss.loadPlayer(player);
+		//ss.writeRooms(rooms);
 		/*
 		mList[0] = new Monster("ML00");
 		mList[1] = new Monster("ML01");
@@ -215,6 +231,7 @@ public class AltView {
 		mList[6] = new Monster("ML06");
 		mList[7] = new Monster("ML07");
 		*/
+		/*
 		Scanner playerInput = new Scanner(System.in);
 
 
@@ -228,6 +245,7 @@ public class AltView {
 			encounterEnemy(player, mList.monsterAL().get("ML00"), pack);
 			//roomNavigate(playerInput);
 		}
+		*/
 	}
 }
 

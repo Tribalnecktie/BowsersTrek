@@ -1,7 +1,8 @@
 package Model;
 
+import java.io.Serializable;
 
-public class Artifact {
+public class Artifact implements Serializable {
 	String ID;
 	String name;
 	String description;

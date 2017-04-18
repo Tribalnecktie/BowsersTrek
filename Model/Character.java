@@ -1,7 +1,8 @@
 package Model;
 
+import java.io.Serializable;
 
-public abstract class Character {
+public abstract class Character implements Serializable{
 	protected String name;
 	protected int health;
 	protected int attackPower;

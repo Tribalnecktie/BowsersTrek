@@ -3,6 +3,7 @@
  */
 package Model;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -15,7 +16,7 @@ import java.util.Map;
  * 			On item selection, its purpose will be evaluated, and its effect will be applied appropriately.
  *
  */
-public class Backpack {
+public class Backpack implements Serializable {
 
 	Map userBackpack = new HashMap<String,Artifact>();
 
