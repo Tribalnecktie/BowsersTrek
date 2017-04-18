@@ -43,6 +43,7 @@ public class Backpack implements Serializable {
 		userBackpack.remove(ID);
 	}
 	
+	//---------------------------This might present a problem
 	public void printBackpack()
 	{
 		

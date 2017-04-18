@@ -226,7 +226,15 @@ public class AltView {
 		Backpack pack2 = new Backpack();
 		ss.loadPlayer(player);
 		ss.loadInventory(pack2);
-		//pack2.printBackpack();
+		//-----------------------------------------------------------Here it is the problem
+		System.out.println("Reading the backpack in the altview");
+		for (String key: pack2.getBackpack().keySet())
+		{
+			if (pack2.getBackpack().get(key) != null)
+			System.out.println(pack2.getBackpack().get(key).getDescription());
+		}
+		//------------------------Actually specifically right here
+		pack2.printBackpack();
 		//ss.writeRooms(rooms);
 		/*
 		mList[0] = new Monster("ML00");

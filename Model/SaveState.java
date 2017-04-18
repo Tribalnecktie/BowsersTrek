@@ -120,6 +120,7 @@ public class SaveState {
 			pack.addArtifact(keysArray[i], artifactsArray[i]);
 		}
 		
+		System.out.println("Now reading the backpack");
 		for (String key: pack.userBackpack.keySet())
 		{
 			System.out.println(pack.userBackpack.get(key));
