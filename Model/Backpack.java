@@ -18,7 +18,7 @@ import java.util.Map;
  */
 public class Backpack implements Serializable {
 
-	Map userBackpack = new HashMap<String,Artifact>();
+	Map<String,Artifact> userBackpack = new HashMap<String,Artifact>();
 
 	/*
 	 * Thought:	How will we store this backpack to the save file for each user.
@@ -88,6 +88,16 @@ public class Backpack implements Serializable {
 		
 		return null; //Return the users backpack.
 		
+	}
+	
+	public Map<String, Artifact> getBackpack()
+	{
+		return this.userBackpack;
+	}
+	
+	public void setBackpack(Map <String, Artifact> newMap)
+	{
+		this.userBackpack = newMap;
 	}
 
 }
