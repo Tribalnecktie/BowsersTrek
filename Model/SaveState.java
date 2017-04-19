@@ -36,15 +36,7 @@ public class SaveState {
 			keysArray[i] = key;
 			i++;
 		}
-		//Reading all the artifacts of those keys to an array
-		Artifact[] artifactsArray = new Artifact[13];
-		i = 0;
-		for (String key: pack.userBackpack.keySet())
-		{
-			artifactsArray[i] = pack.userBackpack.get(key);
-			i++;
-		}
-		
+
 		//Time to read all those keys from the String array into a file
 		try
 		{
@@ -59,17 +51,6 @@ public class SaveState {
 		}
 		
 		//Time to read all those artifacts from that array into a file
-		try
-		{
-			ObjectOutputStream packFile = new ObjectOutputStream(new FileOutputStream("packArtifactsTest.bin"));
-			packFile.writeObject(artifactsArray);
-			packFile.close();
-			System.out.println("BackPack write successful");
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
 		
 		/*
 		try
@@ -117,7 +98,8 @@ public class SaveState {
 		
 		for (int i = 0; i < keysArray.length; i++)
 		{
-			pack.addArtifact(keysArray[i], artifactsArray[i]);
+			if (keysArray[i] != null)
+			pack.addArtifact(keysArray[i], new Artifact(keysArray[i]));
 		}
 		
 		System.out.println("Now reading the backpack");

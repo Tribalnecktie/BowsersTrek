@@ -234,6 +234,7 @@ public class AltView {
 			System.out.println(pack2.getBackpack().get(key).getDescription());
 		}
 		//------------------------Actually specifically right here
+		System.out.println("This is the new backpack");
 		pack2.printBackpack();
 		//ss.writeRooms(rooms);
 		/*
