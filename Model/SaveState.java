@@ -153,6 +153,7 @@ public class SaveState {
 			if (keysArray[i] != null)
 			sudoPack.put(keysArray[i], new Artifact(keysArray[i]));
 		}
+		pack.userBackpack = sudoPack;
 		
 		//pack.userBackpack = sudoPack;
 		
