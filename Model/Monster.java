@@ -20,6 +20,102 @@ public class Monster extends Character {
 		this.isAlive = true;
 	}
 	
+	public boolean isAlive() {
+		return isAlive;
+	}
+
+
+	public void setAlive(boolean isAlive) {
+		this.isAlive = isAlive;
+	}
+
+
+	void attack(Player player)
+	{
+		player.health -= attackPower;
+	}
+
+	public String getID() {
+		return ID;
+	}
+
+	public void setID(String iD) {
+		ID = iD;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Artifact getItemDrop() {
+		return itemDrop;
+	}
+
+	public void setItemDrop(Artifact itemDrop) {
+		this.itemDrop = itemDrop;
+	}
+	
+	//Need to test out how the monster loop would work
+	public void encounterEnemy(Player player, Monster tempMonster, Backpack pack)
+	{
+		Scanner playerInput = new Scanner(System.in);
+		boolean inEncounter = true;
+		//Monster tempMonster = mList[0];
+		if (tempMonster.getHealth() <= 0)
+		{
+			System.out.println("You have already slain this monster");
+			inEncounter = false;
+			playerInput.close();
+			return;
+		}
+
+		System.out.println(tempMonster.getDescription());
+		while (inEncounter == true)
+		{
+			if (player.getHealth() <= 0)
+			{
+				System.out.println("You died, Better Luck Next TIme");
+			}
+			if (tempMonster.getHealth() <= 0 && inEncounter == true)
+			{
+				System.out.println("You have slain the beast here is your reward");
+				System.out.println(tempMonster.getItemDrop() + " added to your inventory");
+				pack.addArtifact(tempMonster.getItemDrop().getID(), tempMonster.getItemDrop());
+				player.addScore(tempMonster);
+				inEncounter = false;
+				playerInput.close();
+			}
+			else
+			{
+				System.out.println("1. Attack");
+				System.out.println("2. Inventory");
+				System.out.println("3. Escape");
+				int command = playerInput.nextInt();
+				if (command == 1)
+				{
+					System.out.println("You attack for " + player.getAttackPower());
+					player.attack(tempMonster);
+					System.out.println("Monster Health " + tempMonster.getHealth());
+				}
+				else if (command == 2)
+				{
+					pack.printBackpack(); 
+					
+				}
+				else if (command == 3)
+				{
+					System.out.println("You've escaped with your life");
+					inEncounter = false;
+					playerInput.close();
+				}
+			}
+		}
+	}
+	
 
 	/*
 	if (ID.equals("ML00"))
@@ -91,98 +187,5 @@ public class Monster extends Character {
 		System.out.println("Invalid ID");
 	*/
 	
-	public boolean isAlive() {
-		return isAlive;
-	}
 
-
-	public void setAlive(boolean isAlive) {
-		this.isAlive = isAlive;
-	}
-
-
-	void attack(Player player)
-	{
-		player.health -= attackPower;
-	}
-
-	public String getID() {
-		return ID;
-	}
-
-	public void setID(String iD) {
-		ID = iD;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public Artifact getItemDrop() {
-		return itemDrop;
-	}
-
-	public void setItemDrop(Artifact itemDrop) {
-		this.itemDrop = itemDrop;
-	}
-	
-	//Need to test out how the monster loop would work
-	static void encounterEnemy(Player player, Monster tempMonster, Backpack pack)
-	{
-		Scanner playerInput = new Scanner(System.in);
-		boolean inEncounter = true;
-		//Monster tempMonster = mList[0];
-		if (tempMonster.getHealth() <= 0)
-		{
-			System.out.println("You have already slain this monster");
-			inEncounter = false;
-			playerInput.close();
-			return;
-		}
-
-		System.out.println(tempMonster.getDescription());
-		while (inEncounter == true)
-		{
-			if (player.getHealth() <= 0)
-			{
-				System.out.println("You died, Better Luck Next TIme");
-			}
-			if (tempMonster.getHealth() <= 0)
-			{
-				System.out.println("You have slain the beast here is your reward");
-				System.out.println(tempMonster.getItemDrop() + " added to your inventory");
-				pack.addArtifact(tempMonster.getItemDrop().getID(), tempMonster.getItemDrop());
-				inEncounter = false;
-				playerInput.close();
-			}
-			else
-			{
-				System.out.println("1. Attack");
-				System.out.println("2. Inventory");
-				System.out.println("3. Escape");
-				int command = playerInput.nextInt();
-				if (command == 1)
-				{
-					System.out.println("You attack for " + player.getAttackPower());
-					player.attack(tempMonster);
-					System.out.println("Monster Health " + tempMonster.getHealth());
-				}
-				else if (command == 2)
-				{
-					pack.printBackpack(); 
-					
-				}
-				else if (command == 3)
-				{
-					System.out.println("You've escaped with your life");
-					inEncounter = false;
-					playerInput.close();
-				}
-			}
-		}
-	}
 }
