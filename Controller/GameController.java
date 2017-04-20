@@ -25,7 +25,6 @@ public class GameController
 	 * 			Send appropriate object data to the View for display
 	 */
 	
-	
 	public static void main(String[] args)
 	{
 		/*BEGINNING OF GAME*/
@@ -84,7 +83,8 @@ public class GameController
 			//System.out.println(thisRoom.getRmId().toString());
 			System.out.println();
 			
-			thisRoom.printRoomInfo(); //prints out whatever rmId is set == roomInfoMap.get("RM202")
+			//thisRoom.printRoomInfo(); //prints out whatever rmId is set == roomInfoMap.get("RM202")
+			console.printConsoleView(roomLibrary.getRmDescript(thisRoom.getRmId().toString()));
 			
 			//System.out.println("Your are in Room 101 \n" + roomLibrary.getRmDescript("RM101")); //may not be necessary anymore...descript is being printed from printInfo()
 			System.out.println();
@@ -93,11 +93,6 @@ public class GameController
 			//for now we are hard coding the menu options for this room.
 			
 			//MenuOptions menuOp = new MenuOptions();
-			
-			
-			
-			
-			
 			
 
 		//Close the scanner to avoid exceptions
@@ -157,7 +152,7 @@ public class GameController
 		 * 
 		 */
 		
-		Artifact testArtifact = new Artifact("A0000");
+		/*Artifact testArtifact = new Artifact("A0000");
 		Artifact testArtifact2 = new Artifact("A0001");
 		Artifact testArtifact3 = new Artifact("A0002");
 		
@@ -178,7 +173,16 @@ public class GameController
 		
 		
 		
-		usersBackpack.printBackpack();
+		usersBackpack.printBackpack();*/
+		
+	}
+	
+	
+	
+	public Room createRoom()
+	{
+		
+		return null;
 		
 	}
 

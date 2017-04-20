@@ -107,7 +107,10 @@ public class RoomLibrary_HashMap extends Room {
 		//rmDescript = "";
 		if(rmId.equalsIgnoreCase("RM101"))
 		{
-			rmDescript = "The pink double doors in the middle of the south wall open to the main entry point to the mansion. This area is a full of bright colors, giving visitors a taste of the rest of the mansion. On west wall is a grand doorway leading to the rest of the rooms on the first level. A bright blue couch along the north wall faces the room. The walls are painted in a rainbow pattern with the colors Red, Orange, Yellow, Green, Blue, and Purple.";
+			rmDescript = "The pink double doors in the middle of the south wall open to the main entry point to the mansion. "
+						+ "\nThis area is a full of bright colors, giving visitors a taste of the rest of the mansion. "
+						+ "\nOn west wall is a grand doorway leading to the rest of the rooms on the first level. A bright blue couch "
+						+ "\nalong the north wall faces the room. The walls are painted in a rainbow pattern with the colors Red, Orange, Yellow, Green, Blue, and Purple.";
 		}
 
 		if(rmId.equalsIgnoreCase("HW_L1"))

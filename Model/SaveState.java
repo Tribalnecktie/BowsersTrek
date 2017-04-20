@@ -36,6 +36,7 @@ public class SaveState {
 			keysArray[i] = key;
 			i++;
 		}
+		
 		//Reading all the artifacts of those keys to an array
 		Artifact[] artifactsArray = new Artifact[13];
 		i = 0;
