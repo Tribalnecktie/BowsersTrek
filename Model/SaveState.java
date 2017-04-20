@@ -29,6 +29,7 @@ public class SaveState {
 		writeInventory(pack);
 	}
 	
+	//WARNING ON LOAD THE GAME, ONLY LOADS THE INVENTORY
 	/**
 	 * Method: loadTheGame
 	 * Loads the Player and Inventory from the bin files
@@ -36,7 +37,7 @@ public class SaveState {
 	 */
 	public void loadTheGame(Player player, Backpack pack) throws ClassNotFoundException, FileNotFoundException, IOException
 	{
-		loadPlayer(player);
+		//loadPlayer(player);
 		loadInventory(pack);
 	}
 
@@ -119,12 +120,15 @@ public class SaveState {
 	 * Loads the player from a file
 	 * @param Player
 	 */
-	public void loadPlayer(Player player) throws IOException, ClassNotFoundException, FileNotFoundException
+	public Player loadPlayer() throws IOException, ClassNotFoundException, FileNotFoundException
 	{
 		ObjectInputStream playerInFile = new ObjectInputStream(new FileInputStream("playerTest.bin"));
-		player = (Player)playerInFile.readObject();
+		Player player = (Player)playerInFile.readObject();
 		playerInFile.close();
+		System.out.println("In loadPlayer " + player.getHealth());
 		System.out.println("Player load successful");
+		
+		return player;
 	}
 	
 	/**

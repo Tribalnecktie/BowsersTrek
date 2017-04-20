@@ -215,26 +215,29 @@ public class AltView {
 		//pack.readinBackpack();
 		pack.addArtifact("A0001", new Artifact("A0001"));
 		pack.printBackpack();
+		System.out.println(player.getHealth());
 		System.out.println("This is the save testing");
 		ss.writePlayer(player);
 		ss.writeInventory(pack);
-		
+		System.out.println("Now we damage the player health for load testing of the player object");
+		player.setHealth(2);
+		/*
 		pack.removeArtifact("A0001");
 		pack.printBackpack();
+		*/
+		System.out.println("This is the damaged player: " + player.getHealth());
 		
 		System.out.println("This is the load testing");
-		Backpack pack2 = new Backpack();
-		ss.loadPlayer(player);
-		ss.loadInventory(pack2);
+		//Backpack pack2 = new Backpack();
+		player = ss.loadPlayer();
+		//ss.loadInventory(pack2);
+		
+		System.out.println("This player health should look like the original");
+		System.out.println(player.getHealth());
 		//-----------------------------------------------------------Here it is the problem
 		System.out.println("Reading the backpack in the altview");
-		for (String key: pack2.getBackpack().keySet())
-		{
-			if (pack2.getBackpack().get(key) != null)
-			System.out.println(pack2.getBackpack().get(key).getDescription());
-		}
 		//------------------------Actually specifically right here
-		pack2.printBackpack();
+		//pack2.printBackpack();
 		//ss.writeRooms(rooms);
 		/*
 		mList[0] = new Monster("ML00");
