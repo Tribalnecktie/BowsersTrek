@@ -2,6 +2,18 @@ package Model;
 
 import java.util.Scanner;
 
+/**
+ * Class: Room
+ * 
+ * @author Matthew Coker
+ * @version 1.2
+ * Course : ITEC 3860 Spring 2017
+ * Written: April 20, 2017
+ *
+ *  This class holds relevant information for the Monster Class
+ *          
+ *  Purpose: Allows the player to interact and retrieve items from the monster when it is defeated 
+ **/
 public class Monster extends Character {
 	
 	String ID;
@@ -9,6 +21,11 @@ public class Monster extends Character {
 	Artifact itemDrop;
 	boolean isAlive;
 	
+	/**
+	 * Constructor: Monster
+	 * Creates a Monster with all the passed attributes
+	 * @param String ID, String name, int health, int attackPower, String description, Artifact itemDrop
+	 */
 	public Monster(String ID, String name, int health, int attackPower, String description, Artifact itemDrop)
 	{
 		this.ID = ID;
@@ -20,46 +37,93 @@ public class Monster extends Character {
 		this.isAlive = true;
 	}
 	
+	/**
+	 * Method: isAlive
+	 * Returns the isAlive boolean
+	 * @return boolean
+	 */
 	public boolean isAlive() {
 		return isAlive;
 	}
 
-
+	/**
+	 * Method: setAlive
+	 * Sets the setAlive boolean through the passed argument
+	 * @param boolean
+	 */
 	public void setAlive(boolean isAlive) {
 		this.isAlive = isAlive;
 	}
 
-
+	/**
+	 * Method: attack
+	 * Enables the monster to attack the player and affect their health in relation to the monster's attack power
+	 * @param Player
+	 */
 	void attack(Player player)
 	{
 		player.health -= attackPower;
 	}
 
+	/**
+	 * Method: getID
+	 * Returns the Monster's ID
+	 * @return String
+	 */
 	public String getID() {
 		return ID;
 	}
 
+	/**
+	 * Method: setID
+	 * Sets the Monster's ID through the passed argument
+	 * @param String
+	 */
 	public void setID(String iD) {
 		ID = iD;
 	}
 
+	/**
+	 * Method: getDescription
+	 * Returns the Monster's description which is a String
+	 * @return String
+	 */
 	public String getDescription() {
 		return description;
 	}
 
+	/**
+	 * Method: setDescription
+	 * Sets the Mosnter's description through the String passed
+	 * @param String
+	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
+	/**
+	 * Method: getItemDrop
+	 * Returns the itemDrop of the Monster which is of type Artifact
+	 * @return Artifact
+	 */
 	public Artifact getItemDrop() {
 		return itemDrop;
 	}
 
+	/**
+	 * Method: setItemDrop
+	 * Sets the Artifact that the Monster is holding to the passed new Artifact
+	 * @param Player
+	 */
 	public void setItemDrop(Artifact itemDrop) {
 		this.itemDrop = itemDrop;
 	}
 	
-	//Need to test out how the monster loop would work
+	/**
+	 * Method: encounterEnemy
+	 * Runs an encounter loop that has the player battling the monster, affectiong statistics and the player backpack
+	 * @param Player, Monster, Backpack
+	 */
 	public void encounterEnemy(Player player, Monster tempMonster, Backpack pack)
 	{
 		Scanner playerInput = new Scanner(System.in);
