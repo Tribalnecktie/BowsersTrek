@@ -25,7 +25,7 @@ public class Room  {
 	protected String rmDoor; 
 	private Monster monsterObj;
 	private Puzzle puzzleObj;
-	private Artifact artifactObj; 
+	private ArtifactTest artifactObj; 
 	private Player playerID;
 	ConsoleView console = new ConsoleView();
 	private Random rand = new Random();
@@ -51,7 +51,7 @@ public class Room  {
 	 * @param artifactmObj Artifact object from the Artifact Model class
 	 * @param playerID Player object from the Player Model class
 	 */
-	public Room (int rmLevel, String rmId, String rmDoor, String rmName, Monster monsterObj, Puzzle puzzleObj, Artifact artifactObj, Player playerID) {
+	public Room (int rmLevel, String rmId, String rmDoor, String rmName, Monster monsterObj, Puzzle puzzleObj, ArtifactTest artifactObj, Player playerID) {
 		this.rmLevel = rmLevel;
 		this.rmId = rmId;
 		this.rmDoor = rmDoor;
@@ -197,27 +197,27 @@ public class Room  {
 	 * Method: getItemObj() Getter method for the itemObj attribute
 	 * @return itemObj a Artifact object and its attributes if it exists in the room, null otherwise
 	 */
-	public Artifact getArtifactObj() {
+	public ArtifactTest getArtifactObj() {
 
 		int n = rand.nextInt(5) + 1;
-		Artifact a1 = new Artifact("A0000");
-		Artifact a2 = new Artifact("A0001");
-		Artifact a3 = new Artifact("A0002");
-		Artifact a4 = new Artifact("A0003");
-		Artifact a5 = new Artifact("A0004");
-		Artifact a6 = new Artifact("A0005");
-		Artifact a7 = new Artifact("A0006");
-		Artifact a8 = new Artifact("A0007");
-		Artifact a9 = new Artifact("A0008");
-		Artifact a10 = new Artifact("A0009");
-		Artifact a11 = new Artifact("A0010");
-		Artifact a12 = new Artifact("A0011");
-		Artifact a13 = new Artifact("A0012");
+		ArtifactTest a1 = new ArtifactTest("A0000");
+		ArtifactTest a2 = new ArtifactTest("A0001");
+		ArtifactTest a3 = new ArtifactTest("A0002");
+		ArtifactTest a4 = new ArtifactTest("A0003");
+		ArtifactTest a5 = new ArtifactTest("A0004");
+		ArtifactTest a6 = new ArtifactTest("A0005");
+		ArtifactTest a7 = new ArtifactTest("A0006");
+		ArtifactTest a8 = new ArtifactTest("A0007");
+		ArtifactTest a9 = new ArtifactTest("A0008");
+		ArtifactTest a10 = new ArtifactTest("A0009");
+		ArtifactTest a11 = new ArtifactTest("A0010");
+		ArtifactTest a12 = new ArtifactTest("A0011");
+		ArtifactTest a13 = new ArtifactTest("A0012");
 
 		if (n == 1)  { //assigns items with a strength value of 2
 
 			Random r = new Random();
-			ArrayList<Artifact> possibleItems = new ArrayList<Artifact>();
+			ArrayList<ArtifactTest> possibleItems = new ArrayList<ArtifactTest>();
 			possibleItems.add(a1);
 			possibleItems.add(a3);
 			possibleItems.add(a7);
@@ -237,7 +237,7 @@ public class Room  {
 
 			Random r = new Random();
 
-			ArrayList<Artifact> possibleItems = new ArrayList<Artifact>();
+			ArrayList<ArtifactTest> possibleItems = new ArrayList<ArtifactTest>();
 			possibleItems.add(a5);
 			possibleItems.add(a10);
 			possibleItems.add(a11);
@@ -256,7 +256,7 @@ public class Room  {
 
 			Random r = new Random();
 
-			ArrayList<Artifact> possibleItems = new ArrayList<Artifact>();
+			ArrayList<ArtifactTest> possibleItems = new ArrayList<ArtifactTest>();
 			possibleItems.add(a6);
 			possibleItems.add(a12);
 
@@ -270,9 +270,9 @@ public class Room  {
 
 	/**
 	 * Method: setItemObj() Getter method for the itemObj attribute
-	 * @param Artifact itemObj sets a Artifact object 
+	 * @param ArtifactTest itemObj sets a Artifact object 
 	 */
-	public void setArtifactObj(Artifact artifactObj) {
+	public void setArtifactObj(ArtifactTest artifactObj) {
 		this.artifactObj = artifactObj;
 	}
 

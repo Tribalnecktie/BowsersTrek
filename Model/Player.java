@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Player extends Character {
 
-	public ArrayList<Artifact> inv = new ArrayList<Artifact>();
+	public ArrayList<ArtifactTest> inv = new ArrayList<ArtifactTest>();
 	
 	public Player()
 	{
@@ -13,11 +13,11 @@ public class Player extends Character {
 		attackPower = 1;
 	}
 	
-	public ArrayList<Artifact> getInv() {
+	public ArrayList<ArtifactTest> getInv() {
 		return inv;
 	}
 
-	public void setInv(ArrayList<Artifact> inv) {
+	public void setInv(ArrayList<ArtifactTest> inv) {
 		this.inv = inv;
 	}
 

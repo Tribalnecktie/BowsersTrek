@@ -6,10 +6,10 @@ public class Monster extends Character {
 	
 	String ID;
 	String description;
-	Artifact itemDrop;
+	ArtifactTest itemDrop;
 	boolean isAlive;
 	
-	public Monster(String ID, String name, int health, int attackPower, String description, Artifact itemDrop)
+	public Monster(String ID, String name, int health, int attackPower, String description, ArtifactTest itemDrop)
 	{
 		this.ID = ID;
 		this.name = name;
@@ -122,11 +122,11 @@ public class Monster extends Character {
 		this.description = description;
 	}
 
-	public Artifact getItemDrop() {
+	public ArtifactTest getItemDrop() {
 		return itemDrop;
 	}
 
-	public void setItemDrop(Artifact itemDrop) {
+	public void setItemDrop(ArtifactTest itemDrop) {
 		this.itemDrop = itemDrop;
 	}
 	

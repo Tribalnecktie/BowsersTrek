@@ -30,7 +30,7 @@ public class RoomLibrary_HashMap extends Room {
 	 * Constructor Method: RoomLibray_HashMap() 
 	 * Utilizes an ArrayList of Room objects to map the room identifier to the rooms complete list of attributes
 	 */
-	public RoomLibrary_HashMap(int rmLevel, String rmId, String rmDoor, String rmName, Monster monsterObj, Puzzle puzzleObj, Artifact artifactObj, Player playerID)
+	public RoomLibrary_HashMap(int rmLevel, String rmId, String rmDoor, String rmName, Monster monsterObj, Puzzle puzzleObj, ArtifactTest artifactObj, Player playerID)
 	{
 		super(rmLevel, rmId, rmDoor, rmName, monsterObj, puzzleObj, artifactObj, playerID);
 		/*super.getRmLevel();
@@ -56,7 +56,7 @@ public class RoomLibrary_HashMap extends Room {
 	public Map<String, Room> roomsAL() {
 
 
-		//LEVEL ONE ROOMS ADD TO ARRAY --> 7 Rooms
+		//LEVEL ONE ROOMS ADD TO ARRAY --> 8 Rooms
 		roomsAL.put("RM101", (new Room(1, "RM101", "DR101 and DR102", "Entrance", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
 		roomsAL.put("HW_L1", (new Room(1, "HW_L1", "DR101, DR102,DR103, DR104, DR105, DR106, DR107, DR108", "Hallway Level 1", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
 		roomsAL.put("RM102", (new Room(1, "RM102", "DR103", "Greeting Area", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
@@ -66,7 +66,7 @@ public class RoomLibrary_HashMap extends Room {
 		roomsAL.put("RM106", (new Room(1, "RM106", "DR107", "Dining Room", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
 		roomsAL.put("RM107", (new Room(1, "RM107", "DR108", "Landing", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
 
-		//LEVEL TWO ROOMS ADDED TO ARRAY  --> 7 Rooms
+		//LEVEL TWO ROOMS ADDED TO ARRAY  --> 8 Rooms
 		roomsAL.put("HW_L2", (new Room(2, "HW_L2", "DR201, DR202, DR203, DR205, DR208, DR209, DR211, DR212", "Hallway Level 2", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
 		roomsAL.put("RM201", (new Room(2, "RM201", "DR 201, DR202, DR203, DR204", "Waiting Room", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));
 		roomsAL.put("RM202", (new Room(2, "RM202", "DR205", "Supply Room", super.getMonsterObj(), super.getPuzzleObj(), super.getArtifactObj(), super.getPlayerID())));

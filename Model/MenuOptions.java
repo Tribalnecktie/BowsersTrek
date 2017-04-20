@@ -52,6 +52,7 @@ public class MenuOptions
 			optionsList.add("Check puzzle");
 			optionsList.add("View Inventory");
 			optionsList.add("View Stats");
+			System.out.println(optionsList);
 		}
 		else if(rmID.equals("HW_L1"))
 		{
@@ -65,6 +66,7 @@ public class MenuOptions
 			optionsList.add("DR108");
 			optionsList.add("View Inventory");
 			optionsList.add("View Stats");
+			return optionsList;
 		}
 
 		else if(rmID.equals("RM102"))
@@ -75,6 +77,7 @@ public class MenuOptions
 			optionsList.add("Check puzzle");
 			optionsList.add("View Inventory");
 			optionsList.add("View Stats");
+			return optionsList;
 		}
 		else if(rmID.equals("RM103"))
 		{
@@ -376,5 +379,7 @@ public class MenuOptions
 		optionsMap.put("RM407",addOptions("RM407"));
 
 		return optionsMap;
-	}	
+	}
 }
+
+

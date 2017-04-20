@@ -20,14 +20,14 @@ public class MonsterLibrary_HashMap {
 	public Map<String, Monster> monsterAL()
 	{
 		//All monsters into an array
-		monsterAL.put("ML00", new Monster("ML00", "Yoshi", 5, 1, getMonsterDesc("ML00"), new Artifact("A0000")));
-		monsterAL.put("ML01", new Monster("ML01", "Toad", 5, 1, getMonsterDesc("ML01"), new Artifact("A0001")));
-		monsterAL.put("ML02", new Monster("ML02", "Luigi", 8, 2, getMonsterDesc("ML02"), new Artifact("A0010")));
-		monsterAL.put("ML03", new Monster("ML03", "Daisy", 8, 2, getMonsterDesc("ML03"), new Artifact("A0006")));
-		monsterAL.put("ML04", new Monster("ML04", "Mario", 12, 3, getMonsterDesc("ML04"), new Artifact("A0011")));
-		monsterAL.put("ML05", new Monster("ML05", "Peach", 12, 3, getMonsterDesc("ML05"), new Artifact("A0007")));
-		monsterAL.put("ML06", new Monster("ML06", "Wario", 15, 4, getMonsterDesc("ML06"), new Artifact("A0007")));
-		monsterAL.put("ML07", new Monster("ML07", "Waluigi", 16, 5, getMonsterDesc("ML07"), new Artifact("A0009")));
+		monsterAL.put("ML00", new Monster("ML00", "Yoshi", 5, 1, getMonsterDesc("ML00"), new ArtifactTest("A0000")));
+		monsterAL.put("ML01", new Monster("ML01", "Toad", 5, 1, getMonsterDesc("ML01"), new ArtifactTest("A0001")));
+		monsterAL.put("ML02", new Monster("ML02", "Luigi", 8, 2, getMonsterDesc("ML02"), new ArtifactTest("A0010")));
+		monsterAL.put("ML03", new Monster("ML03", "Daisy", 8, 2, getMonsterDesc("ML03"), new ArtifactTest("A0006")));
+		monsterAL.put("ML04", new Monster("ML04", "Mario", 12, 3, getMonsterDesc("ML04"), new ArtifactTest("A0011")));
+		monsterAL.put("ML05", new Monster("ML05", "Peach", 12, 3, getMonsterDesc("ML05"), new ArtifactTest("A0007")));
+		monsterAL.put("ML06", new Monster("ML06", "Wario", 15, 4, getMonsterDesc("ML06"), new ArtifactTest("A0007")));
+		monsterAL.put("ML07", new Monster("ML07", "Waluigi", 16, 5, getMonsterDesc("ML07"), new ArtifactTest("A0009")));
 		return monsterAL;
 	}
 	

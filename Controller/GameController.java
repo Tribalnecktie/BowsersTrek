@@ -157,9 +157,9 @@ public class GameController
 		 * 
 		 */
 		
-		Artifact testArtifact = new Artifact("A0000");
-		Artifact testArtifact2 = new Artifact("A0001");
-		Artifact testArtifact3 = new Artifact("A0002");
+		ArtifactTest testArtifact = new ArtifactTest("A0000");
+		ArtifactTest testArtifact2 = new ArtifactTest("A0001");
+		ArtifactTest testArtifact3 = new ArtifactTest("A0002");
 		
 		
 		System.out.println(testArtifact.getID());
