@@ -2,19 +2,23 @@ package Model;
 
 import java.io.Serializable;
 
+
 public class Artifact implements Serializable {
+=======
+public class ArtifactTest {
+
 	String ID;
 	String name;
 	String description;
 	int strength;
 	boolean canHeal = false;
 	
-	public Artifact()
+	public ArtifactTest()
 	{
 		
 	}
 	
-	public Artifact(String ID) 
+	public ArtifactTest(String ID) 
 	{
 		
 		getArtifact(ID);
@@ -51,7 +55,7 @@ public class Artifact implements Serializable {
 		if (ID.equals("A0003"))
 		{
 			this.name = "Tri-Shroombow";
-			this.description = "This is an ordinary crossbow, but it can shoot three arrows at a time. It’s better than your normal crossbow, which can only shoot one. This crossbow can deal 3 times the damage than your normal crossbow.";
+			this.description = "This is an ordinary crossbow, but it can shoot three arrows at a time. Itï¿½s better than your normal crossbow, which can only shoot one. This crossbow can deal 3 times the damage than your normal crossbow.";
 			this.strength = 6;
 		}
 		if (ID.equals("A0004"))
@@ -63,7 +67,7 @@ public class Artifact implements Serializable {
 		if (ID.equals("A0005"))
 		{
 			this.name = "Bowser's Flaming Sword";
-			this.description = "This weapon is the rarest of them all. If found, you’re in luck. Bowsers sword does very heavy damage.";
+			this.description = "This weapon is the rarest of them all. If found, youï¿½re in luck. Bowsers sword does very heavy damage.";
 			this.strength = 10;
 		}
 		//htfytdtyd
