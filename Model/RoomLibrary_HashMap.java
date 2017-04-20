@@ -30,7 +30,7 @@ public class RoomLibrary_HashMap extends Room {
 	 * Constructor Method: RoomLibray_HashMap() 
 	 * Utilizes an ArrayList of Room objects to map the room identifier to the rooms complete list of attributes
 	 */
-	public RoomLibrary_HashMap(int rmLevel, String rmId, String rmDoor, String rmName, Monster monsterObj, Puzzle puzzleObj, ArtifactTest artifactObj, Player playerID)
+	public RoomLibrary_HashMap(int rmLevel, String rmId, String rmDoor, String rmName, Monster monsterObj, Puzzle puzzleObj, Artifact artifactObj, Player playerID)
 	{
 		super(rmLevel, rmId, rmDoor, rmName, monsterObj, puzzleObj, artifactObj, playerID);
 		/*super.getRmLevel();

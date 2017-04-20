@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Model.ArtifactTest;
+import Model.Artifact;
 import Model.Backpack;
 import Model.Monster;
 import Model.MonsterLibrary_HashMap;
@@ -17,7 +17,7 @@ import Model.SaveState;
 public class AltView {
 	static Player player = new Player();
 	//static Monster [] mList = new Monster[8];
-	static ArrayList<ArtifactTest> iniInv = new ArrayList<ArtifactTest>();
+	static ArrayList<Artifact> iniInv = new ArrayList<Artifact>();
 	static Backpack pack = new Backpack();
 	static MonsterLibrary_HashMap mList = new MonsterLibrary_HashMap();
 	static SaveState ss = new SaveState();

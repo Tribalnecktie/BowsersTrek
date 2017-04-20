@@ -197,7 +197,7 @@ public class Room  {
 	 * Method: getItemObj() Getter method for the itemObj attribute
 	 * @return itemObj a Artifact object and its attributes if it exists in the room, null otherwise
 	 */
-	public Artifact getArtifactObj(String rmID) {
+	public Artifact getArtifactObj() {
 
 		int n = rand.nextInt(5) + 1;
 		
@@ -258,7 +258,7 @@ public class Room  {
 
 			Random r = new Random();
 
-			ArrayList<ArtifactTest> possibleItems = new ArrayList<ArtifactTest>();
+			ArrayList<Artifact> possibleItems = new ArrayList<Artifact>();
 			possibleItems.add(a6);
 			possibleItems.add(a12);
 

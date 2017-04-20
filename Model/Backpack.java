@@ -18,11 +18,11 @@ import java.util.Map;
  */
 public class Backpack implements Serializable {
 
-<<<<<<< Updated upstream
+
 	Map<String,Artifact> userBackpack = new HashMap<String,Artifact>();
-=======
-	Map userBackpack = new HashMap<String,ArtifactTest>();
->>>>>>> Stashed changes
+
+	
+
 
 	/*
 	 * Thought:	How will we store this backpack to the save file for each user.
@@ -36,7 +36,7 @@ public class Backpack implements Serializable {
 		
 	}
 	
-	public void addArtifact(String ID, ArtifactTest ArtifactObj)
+	public void addArtifact(String ID, Artifact ArtifactObj)
 	{
 		userBackpack.put(ID, ArtifactObj);
 	}
@@ -56,9 +56,9 @@ public class Backpack implements Serializable {
 		while(it.hasNext())
 		{
 			
-			Map.Entry artifact = (Map.Entry<String, ArtifactTest>)it.next();
+			Map.Entry artifact = (Map.Entry<String, Artifact>)it.next();
 			
-			ArtifactTest thisItem = (ArtifactTest)artifact.getValue();
+			Artifact thisItem = (Artifact)artifact.getValue();
 			
 			
 			System.out.println(ArtifactInfoPrint(thisItem));
@@ -68,7 +68,7 @@ public class Backpack implements Serializable {
 		}
 	}
 	
-	public String ArtifactInfoPrint(ArtifactTest item)
+	public String ArtifactInfoPrint(Artifact item)
 	{
 		String ArtifactInfo = "Default Info";
 		
