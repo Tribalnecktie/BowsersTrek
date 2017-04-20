@@ -2,27 +2,16 @@ package Model;
 
 import java.io.Serializable;
 
-<<<<<<< Updated upstream:Model/Artifact.java
+
 public class Artifact implements Serializable {
-=======
-public class ArtifactTest {
->>>>>>> Stashed changes:Model/ArtifactTest.java
+
 	String ID;
 	String name;
 	String description;
 	int strength;
 	boolean canHeal = false;
 	
-	public ArtifactTest()
-	{
-		
-	}
-	
-	public ArtifactTest(String ID) 
-	{
-		
-		getArtifact(ID);
-
+	public Artifact(String rmID) {
 		
 	}
 	
