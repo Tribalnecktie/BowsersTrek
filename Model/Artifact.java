@@ -4,11 +4,7 @@ import java.io.Serializable;
 
 
 public class Artifact implements Serializable {
-<<<<<<< HEAD:Model/ArtifactTest.java
-=======
-public class ArtifactTest {
-=======
->>>>>>> origin/master:Model/Artifact.java
+
 
 	String ID;
 	String name;

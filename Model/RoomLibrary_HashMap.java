@@ -178,7 +178,7 @@ public class RoomLibrary_HashMap extends Room {
 
 		if(rmId.equalsIgnoreCase("RM203"))
 		{
-			rmDescript = "You walk in from the east side of the hallway into the west-facing door. A moderately sized room, this is the only bedroom on this level. There is a twin sized bed, a desk, an armoire, and other furniture. The bed is neatly organized. You’re not sure if someone uses it or if it hasn’t.";
+			rmDescript = "You walk in from the east side of the hallway into the west-facing door. A moderately sized room, this is the only bedroom on this level. There is a twin sized bed, a desk, an armoire, and other furniture. The bed is neatly organized. You’re not sure if someone uses it or if it hasn’t been touched in years. You notice though that there is no dust whatsoever. There is another door the west wall located at the south end of the room that leads to the cleaning supply room. Overall the room is very modest, and it seems like the person that lived here was more than likely a housemaid ";
 		}
 
 		if(rmId.equalsIgnoreCase("RM204"))
