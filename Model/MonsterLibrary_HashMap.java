@@ -3,6 +3,18 @@ package Model;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Class: MonsterLibrary_HashMap
+ * 
+ * @author Matthew Coker
+ * @version 1.0
+ * Course : ITEC 3860 Spring 2017
+ * Written: April 20, 2017
+ *
+ *  This class holds a hashmap of all the available Monsters in the game
+ *          
+ *  Purpose: So that the room classes may be able to retrieve the information and roll efficiently
+ **/
 public class MonsterLibrary_HashMap {
 
 	private Map<String,Monster> monsterAL = new HashMap<String,Monster>();
@@ -12,11 +24,20 @@ public class MonsterLibrary_HashMap {
 	protected Artifact itemDrop;
 	*/
 	
+	/**
+	 * Constructor: MonsterLibrary_HashMap
+	 * Creates a hashmap that is filled with monsters
+	 */
 	public MonsterLibrary_HashMap()
 	{
 		this.monsterAL = monsterAL();
 	}
 	
+	/**
+	 * Method: monsterAL
+	 * Sets all the Monster's attributes
+	 * @return Map<String, Monster>
+	 */
 	public Map<String, Monster> monsterAL()
 	{
 		//All monsters into an array
@@ -31,6 +52,12 @@ public class MonsterLibrary_HashMap {
 		return monsterAL;
 	}
 	
+	/**
+	 * Method: getMonsterDesc
+	 * Retrieves the Monster's description so that it may be used in the monsterAL method,
+	 * separated for convenience
+	 * @param String
+	 */
 	public String getMonsterDesc(String ID)
 	{
 		String tempDesc = "N/A";

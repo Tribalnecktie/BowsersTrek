@@ -4,13 +4,47 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Class: SaveState
+ * 
+ * @author Matthew Coker
+ * @version 1.1
+ * Course : ITEC 3860 Spring 2017
+ * Written: April 20, 2017
+ *
+ *  This class is meant to save and load the state of a player, their inventory, and their location
+ *          
+ *  Purpose: So that the player who controls their game can save their progress and load when they need to 
+ **/
 public class SaveState {
 
-	public void saveTheGame(Player player)
+	/**
+	 * Method: saveTheGame
+	 * Calls methods below in order to write the game's progress to a file
+	 * @param Player, Backpack
+	 */
+	public void saveTheGame(Player player, Backpack pack)
 	{
-
+		writePlayer(player);
+		writeInventory(pack);
+	}
+	
+	/**
+	 * Method: loadTheGame
+	 * Loads the Player and Inventory from the bin files
+	 * @param Player, Backpack
+	 */
+	public void loadTheGame(Player player, Backpack pack) throws ClassNotFoundException, FileNotFoundException, IOException
+	{
+		loadPlayer(player);
+		loadInventory(pack);
 	}
 
+	/**
+	 * Method: writePlayer
+	 * Writes the object of Player into a text file
+	 * @param Player
+	 */
 	public void writePlayer(Player player)
 	{
 		try
@@ -26,6 +60,12 @@ public class SaveState {
 		}
 	}
 	
+	/**
+	 * Method: writeInventory
+	 * Deconstructs the inventory hashmap and takes those keys
+	 * reads them into an array and then a file
+	 * @param Backpack
+	 */
 	public void writeInventory(Backpack pack)
 	{
 		//Reading all the keys to an array
@@ -59,19 +99,6 @@ public class SaveState {
 			e.printStackTrace();
 		}
 		
-		//Time to read all those artifacts from that array into a file
-		try
-		{
-			ObjectOutputStream packFile = new ObjectOutputStream(new FileOutputStream("packArtifactsTest.bin"));
-			packFile.writeObject(artifactsArray);
-			packFile.close();
-			System.out.println("BackPack write successful");
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-		
 		/*
 		try
 		{
@@ -87,7 +114,11 @@ public class SaveState {
 		*/
 	}
 	
-
+	/**
+	 * Method: loadPlayer
+	 * Loads the player from a file
+	 * @param Player
+	 */
 	public void loadPlayer(Player player) throws IOException, ClassNotFoundException, FileNotFoundException
 	{
 		ObjectInputStream playerInFile = new ObjectInputStream(new FileInputStream("playerTest.bin"));
@@ -96,6 +127,12 @@ public class SaveState {
 		System.out.println("Player load successful");
 	}
 	
+	/**
+	 * Method: loadInventory
+	 * Loads the inventory from a text file and reconstructs the hashmap using the keys
+	 * and the Artifact constructor
+	 * @param Backpack
+	 */
 	public void loadInventory(Backpack pack) throws FileNotFoundException, IOException, ClassNotFoundException
 	{
 		System.out.println("This is where we read the keys");
@@ -109,34 +146,14 @@ public class SaveState {
 		}
 		System.out.println("Backpack load successful");
 		
-		//Now we must retrieve the array of Artifacts
-		ObjectInputStream packArtifactsInFile = new ObjectInputStream(new FileInputStream("packArtifactsTest.bin"));
-		Artifact[] artifactsArray = new Artifact[13];
-		artifactsArray = (Artifact[])packArtifactsInFile.readObject();
-		
-		packArtifactsInFile.close();
-		
-		for (int i = 0; i < keysArray.length; i++)
-		{
-			pack.addArtifact(keysArray[i], artifactsArray[i]);
-		}
-		
-		System.out.println("Now reading the backpack");
-		for (String key: pack.userBackpack.keySet())
-		{
-			System.out.println(pack.userBackpack.get(key));
-		}
-		/*
+	
 		Map<String, Artifact> sudoPack = new HashMap<String, Artifact>();
 		for (int i = 0; i < keysArray.length; i++)
 		{
-			sudoPack.put(keysArray[i], artifactsArray[i]);
+			if (keysArray[i] != null)
+			sudoPack.put(keysArray[i], new Artifact(keysArray[i]));
 		}
-		for (String key: sudoPack.keySet())
-		{
-			System.out.println(sudoPack.get(key));
-		}
-		*/
+		
 		//pack.userBackpack = sudoPack;
 		
 		//pack.userBackpack = sudoPack;
