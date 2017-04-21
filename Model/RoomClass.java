@@ -7,6 +7,9 @@ import java.util.TreeMap;
 import java.util.Map.Entry;
 import java.util.Scanner;
 
+import Model.Puzzle;
+import Model.Backpack;
+
 public class RoomClass {
 
 	private int rmLevel;
@@ -15,6 +18,8 @@ public class RoomClass {
 	private String rmName;
 	private String rmDescription;
 
+	Puzzle puzzle = new Puzzle();
+	Backpack pack = new Backpack();
 
 	public RoomClass()	{		
 	}
@@ -122,8 +127,10 @@ public class RoomClass {
 
 				}
 				if(newResponse.equalsIgnoreCase("3")) {
-
-				}if(newResponse.equalsIgnoreCase("")) {
+					//call puzzleSolver
+					Puzzle.puzzleSolver(Puzzle.getID(), pack.readinBackpack());
+				}
+				if(newResponse.equalsIgnoreCase("4")) {
 
 				}
 				System.out.println();
