@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 import Model.*;
 import View.ConsoleView;
+import View.ViewConsole;
 
 /**
  * @author  Tobin Crone
@@ -27,7 +28,7 @@ public class GameController
 	
 	public static void main(String[] args)
 	{
-		/*BEGINNING OF GAME*/
+		//BEGINNING OF GAME
 		
 		//Create and start the View for the Main Menu.
 		ConsoleView console = new ConsoleView();
@@ -120,9 +121,10 @@ public class GameController
 			
 		}
 		
-		/*---------------------------------------------TestZone--------------------------------------------------*/
 		
-		/*//Creating our Room Objects with the RoomLibrary_HashMap class
+		//---------------------------------------------TestZone--------------------------------------------------
+		
+		//Creating our Room Objects with the RoomLibrary_HashMap class
 		System.out.println("\nStarting RoomLibrary_HashMap example");
 		Map<String,Room> roomInfoMap = new HashMap<String,Room>();
 		RoomLibrary_HashMap roomlibrary = new RoomLibrary_HashMap();
@@ -144,15 +146,15 @@ public class GameController
 		
 		Room CurrentRoom = roomInfoMap.get("RM101");
 		
-		System.out.println(roomlibrary.getRmDescript(CurrentRoom.getRmId()));*/		
+		System.out.println(roomlibrary.getRmDescript(CurrentRoom.getRmId()));		
 		
 		
-		/* 
-		 * Artifact Creation and Inventory List.
-		 * 
-		 */
+		 
+		 //Artifact Creation and Inventory List.
+		 
+		 
 		
-		/*Artifact testArtifact = new Artifact("A0000");
+		Artifact testArtifact = new Artifact("A0000");
 		Artifact testArtifact2 = new Artifact("A0001");
 		Artifact testArtifact3 = new Artifact("A0002");
 		
@@ -173,7 +175,7 @@ public class GameController
 		
 		
 		
-		usersBackpack.printBackpack();*/
+		usersBackpack.printBackpack();
 		
 	}
 	
