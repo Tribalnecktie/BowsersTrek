@@ -115,22 +115,31 @@ public class RoomLibrary_HashMap extends Room {
 
 		if(rmId.equalsIgnoreCase("HW_L1"))
 		{
-			rmDescript = "You have entered the hallway to the mansion’s lower level.  There are several rooms in which you can freely roam on your quest.  The hallway walls are adorned with a mosaic gold leaf design. The doors that lead to various rooms are various shades of the rainbow.  Choose wisely!";
+			rmDescript = "You have entered the hallway to the mansion’s lower level.  "
+					+ "\nThere are several rooms in which you can freely roam on your quest.  "
+					+ "\nThe hallway walls are adorned with a mosaic gold leaf design. "
+					+ "\nThe doors that lead to various rooms are various shades of the rainbow.  Choose wisely!";
 		}
 
 		if(rmId.equalsIgnoreCase("RM102"))
 		{
-			rmDescript = "This room is full of comfy chairs and tables. The door on the north wall towards the east end of the room is solid pink. The chairs are colored Red, Orange, and Yellow. The Tables are colored Green, Blue, and Purple.";
+			rmDescript = "This room is full of comfy chairs and tables. The door on the north wall towards the east end of the room is solid pink. "
+					+ "\nThe chairs are colored Red, Orange, and Yellow. The Tables are colored Green, Blue, and Purple.";
 		}
 
 		if(rmId.equalsIgnoreCase("RM103"))
 		{
-			rmDescript = "This large room is the entertainment center. The door on the south wall of the room is bright blue and is directly in the middle of the wall. On the east end of the room is a stage with a television screen on the wall. Cabinets cover the north side of the room. In these cabinets are chairs, tables, Dvds, video games, and other entertainment items.";
+			rmDescript = "This large room is the entertainment center. "
+					+ "\nThe door on the south wall of the room is bright blue and is directly in the middle of the wall. "
+					+ "\nOn the east end of the room is a stage with a television screen on the wall. Cabinets cover the north side of the room."
+					+ "\nIn these cabinets are chairs, tables, Dvds, video games, and other entertainment items.";
 		}
 
 		if(rmId.equalsIgnoreCase("RM104"))
 		{
-			rmDescript = "This rectangular room is full of all sorts of arcade games. A burnt sienna door is on the south wall towards the west end of the room. There are always loud noises and lots of activities going on. This is where the kids hang out while the adults talk.";
+			rmDescript = "This rectangular room is full of all sorts of arcade games. "
+					+ "\nA burnt sienna door is on the south wall towards the west end of the room. "
+					+ "\nThere are always loud noises and lots of activities going on. This is where the kids hang out while the adults talk.";
 		}
 
 		if(rmId.equalsIgnoreCase("RM105"))

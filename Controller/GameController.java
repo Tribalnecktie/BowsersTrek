@@ -80,6 +80,10 @@ public class GameController
 				ie.printStackTrace();
 			}
 			
+/*
+ * START ROOM 1 FOR NEW GAME			
+ */
+
 		//Display the room description
 			//System.out.println(thisRoom.getRmId().toString());
 			System.out.println();
@@ -123,7 +127,7 @@ public class GameController
 		
 		
 		//---------------------------------------------TestZone--------------------------------------------------
-		
+		/*
 		//Creating our Room Objects with the RoomLibrary_HashMap class
 		System.out.println("\nStarting RoomLibrary_HashMap example");
 		Map<String,Room> roomInfoMap = new HashMap<String,Room>();
@@ -147,14 +151,14 @@ public class GameController
 		Room CurrentRoom = roomInfoMap.get("RM101");
 		
 		System.out.println(roomlibrary.getRmDescript(CurrentRoom.getRmId()));		
-		
+		*/
 		
 		 
 		 //Artifact Creation and Inventory List.
 		 
 		 
 		
-		Artifact testArtifact = new Artifact("A0000");
+		/*Artifact testArtifact = new Artifact("A0000");
 		Artifact testArtifact2 = new Artifact("A0001");
 		Artifact testArtifact3 = new Artifact("A0002");
 		
@@ -176,7 +180,7 @@ public class GameController
 		
 		
 		usersBackpack.printBackpack();
-		
+		*/
 	}
 	
 	

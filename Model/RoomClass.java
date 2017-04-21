@@ -18,8 +18,8 @@ public class RoomClass {
 	private String rmName;
 	private String rmDescription;
 
-	Puzzle puzzle = new Puzzle();
-	Backpack pack = new Backpack();
+	Puzzle puzzle;
+	Backpack pack;
 
 	public RoomClass()	{		
 	}
@@ -30,6 +30,8 @@ public class RoomClass {
 		this.rmDoor = door;
 		this.rmName = name;
 		this.rmDescription = description;
+		this.puzzle = new Puzzle("");
+		this.pack = new Backpack();
 	}
 
 	public int getRmLevel() {
