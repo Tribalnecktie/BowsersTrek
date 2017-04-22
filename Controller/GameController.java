@@ -20,6 +20,7 @@ import View.ViewConsole;
 
 public class GameController 
 {
+	private static final int DEBUG = 1;
 	/*
 	 * TODO:	Create Model Class Objects
 	 * 			Populate with current working data set
@@ -61,10 +62,11 @@ public class GameController
 			monsterMap = monsterLibrary.monsterAL();
 
 			//Create our initial objects needed
-			Room thisRoom = roomInfoMap.get("RM101");	//START NEW GAME ALWAYS AT RM101!!! ***Maybe actually the hallway. not sure how were going to do this.
+			Room thisRoom = roomInfoMap.get("HW_L1");	//START NEW GAME ALWAYS AT RM101!!! ***Maybe actually the hallway. not sure how were going to do this.
 			Player thisPlayer = new Player();
 			Backpack thisBackpack = new Backpack();
 			Monster thisMonster = monsterMap.get("ML00");
+			Puzzle thisPuzzle = thisRoom.getPuzzleObj();
 			
 			//Get UserName and save it to the player profile
 			System.out.println("Please Enter your Character Name");
@@ -118,7 +120,18 @@ public class GameController
 				 * 
 				 */
 				
+				//set up the room variables for this room.
+				/*if(thisRoom.getMonsterObj() != null) //null point exceptions here because there is no value in there. checking the room thing for null inputs
+				{
+					thisMonster = thisRoom.getMonsterObj();
+				}
 				
+				if(thisRoom.getPuzzleObj() != null)
+				{
+					thisPuzzle = thisRoom.getPuzzleObj();
+				}
+				*/
+				console.printView("=========================================================================================");
 				//print room description
 				console.printView(roomLibrary.getRmDescript(thisRoom.getRmId().toString())); /**@note This seems a little extreme to print a room description -_____-*/
 				
@@ -131,20 +144,63 @@ public class GameController
 				String[] menu;
 				menu = menuMap.get(thisRoom.getRmId());
 				
-				console.printConsoleView(menu.length);
+				if(DEBUG==1)
+				{
+					console.printConsoleView("Menu length: " + menu.length + "\n");
+				}
 				
+				//Print the menu options for this room.
 				int x = 0;
 				while(x < menu.length)
 				{
-					console.printView( x +". " + menu[x]);
+					console.printView("\t" + x +". " + menu[x]);
 					x++;
 				}
 				
-
-
-				//Finished with game
-				GAMEON = false;
-
+				int roomchoice = newGameScan.nextInt();
+				
+				String selectedOption = menu[roomchoice];
+				
+				if(DEBUG==1)
+				{
+					console.printView("You selected " + selectedOption.substring(0, 4) + "\n");
+				}
+				
+				//Parse and deal with the selection
+				if(selectedOption.substring(0, 2).equalsIgnoreCase("DR"))
+				{
+					Room newRoom = new Room();
+					String roomNumber = selectedOption.substring(2, selectedOption.length());
+					
+					newRoom = roomInfoMap.get("RM"+roomNumber);
+					
+					//console.printView(newRoom.getRmId());
+					
+					thisRoom = newRoom;
+					
+					console.printView("\nYou succesfully walk through a door!\n");
+					//GAMEON = false;
+				}
+				else if(selectedOption.substring(0, 2).equalsIgnoreCase("Ha"))
+				{
+					Room newRoom = new Room();
+					String roomNumber = selectedOption.substring(8, selectedOption.length());
+					//console.printView("HW_" + roomNumber);
+					console.printView("");
+					
+					newRoom = roomInfoMap.get("HW_"+roomNumber);
+					
+					thisRoom = newRoom;
+					
+				}
+				else if(selectedOption.substring(0,4).equalsIgnoreCase("View"))
+				{
+					thisBackpack.printBackpack();
+					console.printView("");
+				}
+				
+				//Finished with game				
+				//GAMEON = false;
 			}			
 
 			System.exit(0);

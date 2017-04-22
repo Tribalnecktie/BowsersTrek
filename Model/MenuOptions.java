@@ -121,6 +121,9 @@ public class MenuOptions
 			this.optionsList.add("View Inventory");
 			this.optionsList.add("View Stats");
 		}
+		
+		
+		
 		else if(rmID.equals("HW_L2"))
 		{
 			this.optionsList.add("DR201");  
