@@ -211,6 +211,10 @@ public class AltView {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException
 	{
+		System.out.println(mList.getMonsterDesc("ML00"));
+		
+		
+		/*
 		System.out.println("This is where we put artifacts into the inventory");
 		//pack.readinBackpack();
 		pack.addArtifact("A0001", new Artifact("A0001"));
@@ -225,6 +229,7 @@ public class AltView {
 		pack.removeArtifact("A0001");
 		pack.printBackpack();
 		*/
+		/*
 		System.out.println("This is the damaged player: " + player.getHealth());
 		
 		System.out.println("This is the load testing");
