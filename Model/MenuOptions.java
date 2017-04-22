@@ -22,8 +22,8 @@ import java.util.Map;
 public class MenuOptions 
 {
 	
-	public Map<String, ArrayList<String>> optionsMap = new HashMap<String, ArrayList<String>>(); ; //String = Room object ID attribute, ArrayList<String> = optionsList
-	public ArrayList<String> optionsList;  //ArrayList of String objects associated with a specific Room ID
+	private Map<String, ArrayList<String>> optionsMap = new HashMap<String, ArrayList<String>>(); ; //String = Room object ID attribute, ArrayList<String> = optionsList
+	private ArrayList<String> optionsList;  //ArrayList of String objects associated with a specific Room ID
 
 	/**
 	 * Method: MenuOptions() Constructor
@@ -32,7 +32,7 @@ public class MenuOptions
 	{
 		this.optionsMap = optionsAL();
 		this.optionsList = new ArrayList<String>();
-	 
+		
 	}
 
 
@@ -47,288 +47,308 @@ public class MenuOptions
 		if(rmID.equals("RM101"))
 		{
 			optionsList.add("DR101");
-			optionsList.add("DR102");
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR102");
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("HW_L1"))
 		{
-			optionsList.add("DR101");
-			optionsList.add("DR102");
-			optionsList.add("DR103");
-			optionsList.add("DR104");
-			optionsList.add("DR105");
-			optionsList.add("DR106");
-			optionsList.add("DR107");
-			optionsList.add("DR108");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR101");
+			this.optionsList.add("DR102");
+			this.optionsList.add("DR103");
+			this.optionsList.add("DR104");
+			this.optionsList.add("DR105");
+			this.optionsList.add("DR106");
+			this.optionsList.add("DR107");
+			this.optionsList.add("DR108");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 
 		else if(rmID.equals("RM102"))
 		{
-			optionsList.add("DR102");
-			optionsList.add("DR103");
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR102");
+			this.optionsList.add("DR103");
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("RM103"))
 		{
-			optionsList.add("DR103");
-			optionsList.add("DR104");
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR103");
+			this.optionsList.add("DR104");
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("RM104"))
 		{
-			optionsList.add("DR104");
-			optionsList.add("DR105");
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR104");
+			this.optionsList.add("DR105");
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("RM105"))
 		{
-			optionsList.add("DR105");
-			optionsList.add("DR106");
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR105");
+			this.optionsList.add("DR106");
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("RM106"))
 		{
-			optionsList.add("DR106");
-			optionsList.add("DR107");
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR106");
+			this.optionsList.add("DR107");
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("RM107"))
 		{
-			optionsList.add("DR107");
-			optionsList.add("DR108");
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR107");
+			this.optionsList.add("DR108");
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("HW_L2"))
 		{
-			optionsList.add("DR201");  
-			optionsList.add("DR202");
-			optionsList.add("DR203");
-			optionsList.add("DR205");
-			optionsList.add("DR208");
-			optionsList.add("DR209");
-			optionsList.add("DR211");
-			optionsList.add("DR212");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR201");  
+			this.optionsList.add("DR202");
+			this.optionsList.add("DR203");
+			this.optionsList.add("DR205");
+			this.optionsList.add("DR208");
+			this.optionsList.add("DR209");
+			this.optionsList.add("DR211");
+			this.optionsList.add("DR212");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("DR201"))
 		{
-			optionsList.add("DR201");  
-			optionsList.add("DR202");
-			optionsList.add("DR203");
-			optionsList.add("DR204");
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR201");  
+			this.optionsList.add("DR202");
+			this.optionsList.add("DR203");
+			this.optionsList.add("DR204");
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("DR202"))
 		{
-			optionsList.add("DR205");  
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR205");  
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("DR203"))
 		{
-			optionsList.add("DR206");  
-			optionsList.add("DR207");
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR206");  
+			this.optionsList.add("DR207");
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("DR204"))
 		{
-			optionsList.add("DR207");  
-			optionsList.add("DR208");
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR207");  
+			this.optionsList.add("DR208");
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("DR205"))
 		{
-			optionsList.add("DR209");  
-			optionsList.add("DR210");
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR209");  
+			this.optionsList.add("DR210");
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("DR206"))
 		{
-			optionsList.add("DR210");  
-			optionsList.add("DR211");
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR210");  
+			this.optionsList.add("DR211");
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("DR207"))
 		{
-			optionsList.add("DR204");  
-			optionsList.add("DR212");
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR204");  
+			this.optionsList.add("DR212");
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("HW_L3"))
 		{
-			optionsList.add("DR300");  
-			optionsList.add("DR301");
-			optionsList.add("DR302");  
-			optionsList.add("DR303");
-			optionsList.add("DR304");  
-			optionsList.add("DR306");
-			optionsList.add("DR307");  
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR300");  
+			this.optionsList.add("DR301");
+			this.optionsList.add("DR302");  
+			this.optionsList.add("DR303");
+			this.optionsList.add("DR304");  
+			this.optionsList.add("DR306");
+			this.optionsList.add("DR307");  
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("DR301"))
 		{
-			optionsList.add("DR300");  
-			optionsList.add("DR301");
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR300");  
+			this.optionsList.add("DR301");
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("DR302"))
 		{
-			optionsList.add("DR302");  
-			optionsList.add("DR303");
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR302");  
+			this.optionsList.add("DR303");
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("DR303"))
 		{
-			optionsList.add("DR306");  
-			optionsList.add("DR307");
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR306");  
+			this.optionsList.add("DR307");
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("DR304"))
 		{
-			optionsList.add("DR304");  
-			optionsList.add("DR305");
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR304");  
+			this.optionsList.add("DR305");
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("DR305"))
 		{
-			optionsList.add("DR315");  
-			optionsList.add("DR316");
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR315");  
+			this.optionsList.add("DR316");
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("HW_L4"))
 		{
-			optionsList.add("DR401");  
-			optionsList.add("DR402");
-			optionsList.add("DR403");  
-			optionsList.add("DR405");
-			optionsList.add("DR407");  
-			optionsList.add("DR408");
-			optionsList.add("DR409");  
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR401");  
+			this.optionsList.add("DR402");
+			this.optionsList.add("DR403");  
+			this.optionsList.add("DR405");
+			this.optionsList.add("DR407");  
+			this.optionsList.add("DR408");
+			this.optionsList.add("DR409");  
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("DR401"))
 		{
-			optionsList.add("DR401");  
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR401");  
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("DR402"))
 		{
-			optionsList.add("DR402");  
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR402");  
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("DR403"))
 		{
-			optionsList.add("DR403"); 
-			optionsList.add("DR404");
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR403"); 
+			this.optionsList.add("DR404");
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("DR404"))
 		{
-			optionsList.add("DR405");  
-			optionsList.add("DR406");
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR405");  
+			this.optionsList.add("DR406");
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("DR405"))
 		{
-			optionsList.add("DR406");  
-			optionsList.add("DR407");
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR406");  
+			this.optionsList.add("DR407");
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("DR406"))
 		{
-			optionsList.add("DR408");  
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR408");  
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 		else if(rmID.equals("DR407"))
 		{
-			optionsList.add("DR409");  
-			optionsList.add("Attack Monster");
-			optionsList.add("Check puzzle");
-			optionsList.add("View Inventory");
-			optionsList.add("View Stats");
+			this.optionsList.add("DR409");  
+			this.optionsList.add("Attack Monster");
+			this.optionsList.add("Check puzzle");
+			this.optionsList.add("View Inventory");
+			this.optionsList.add("View Stats");
 		}
 
 		return optionsList;		
 	}
+
+	public Map<String, ArrayList<String>> getOptionsMap() {
+		return optionsMap;
+	}
+
+
+	public void setOptionsMap(Map<String, ArrayList<String>> optionsMap) {
+		this.optionsMap = optionsMap;
+	}
+
+
+	public ArrayList<String> getOptionsList() {
+		return optionsList;
+	}
+
+
+	public void setOptionsList(ArrayList<String> optionsList) {
+		this.optionsList = optionsList;
+	}
+
 
 	/**
 	 * Method: getOptionsMap() getter method for accessing optionsMap

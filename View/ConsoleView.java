@@ -41,6 +41,16 @@ public class ConsoleView
 		System.out.println(str);
 	}
 	
+	public void printConsoleView(int num)
+	{
+		System.out.println(num);
+	}
+	
+	public void printView(String str)
+	{
+		System.out.println(str);
+	}
+	
 	
 	//This method will print the menu to the user.
 	//The options show will reflect the current room.

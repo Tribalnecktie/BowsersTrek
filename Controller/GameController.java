@@ -25,52 +25,56 @@ public class GameController
 	 * 			Populate with current working data set
 	 * 			Send appropriate object data to the View for display
 	 */
-	
+
+	private static boolean GAMEON = true;
+
 	public static void main(String[] args)
 	{
-		//BEGINNING OF GAME
-		
+		/**
+		 * Game Start
+		 * 
+		 */
+
 		//Create and start the View for the Main Menu.
 		ConsoleView console = new ConsoleView();
-		
-		//show the user the main menu
+
+		//Display the Main menu
 		int choice = console.printMenu("MM00");
-		
+
 		//Process the choice for the main menu. proceed from here.		
 		//Start a new Game
 		if(choice == 1)		
 		{
-		//Start Scanner
+			//Start Scanner
 			Scanner newGameScan = new Scanner(System.in);
-			
-		//Set up the room map.
+
+			//Set up the room map.
 			Map<String,Room> roomInfoMap = new HashMap<String,Room>();
 			RoomLibrary_HashMap roomLibrary = new RoomLibrary_HashMap();
-			
-		//Set up the Monster map.
+
+			//Set up the Monster map.
 			Map<String,Monster> monsterMap = new HashMap<String,Monster>();
 			MonsterLibrary_HashMap monsterLibrary = new MonsterLibrary_HashMap();
-			
-		//Set the libraries to our Maps.
+
+			//Set the libraries to our Maps.
 			roomInfoMap = roomLibrary.roomsAL();
 			monsterMap = monsterLibrary.monsterAL();
-			
-		//Create our initial objects needed
-			Room thisRoom = roomInfoMap.get("RM101");	//START NEW GAME ALWAYS AT RM101!!!
-			
+
+			//Create our initial objects needed
+			Room thisRoom = roomInfoMap.get("RM101");	//START NEW GAME ALWAYS AT RM101!!! ***Maybe actually the hallway. not sure how were going to do this.
 			Player thisPlayer = new Player();
 			Backpack thisBackpack = new Backpack();
 			Monster thisMonster = monsterMap.get("ML00");
 			
-		//Get UserName
+			//Get UserName and save it to the player profile
 			System.out.println("Please Enter your Character Name");
 			thisPlayer.setName(newGameScan.nextLine());
+			console.printView("Ready to start the game " + thisPlayer.getName() + "?");
 			
-			console.printConsoleView("Ready to start the game " + thisPlayer.getName() + "?");
-			
-		//for dramatic effect
+			//for dramatic effect
 			try
 			{
+				console.printView("\nPutting Objects in Oven\n" );
 				Thread.sleep(800);
 				//see if we can clear the screen here also.
 			} 
@@ -79,28 +83,79 @@ public class GameController
 				// TODO Auto-generated catch block
 				ie.printStackTrace();
 			}
-			
-/*
- * START ROOM 1 FOR NEW GAME			
- */
+			finally
+			{
+				console.printView("\nQuality Check\n");
+				console.printView("\nStarting New Game\n");
+			}
 
-		//Display the room description
-			//System.out.println(thisRoom.getRmId().toString());
-			System.out.println();
-			
-			//thisRoom.printRoomInfo(); //prints out whatever rmId is set == roomInfoMap.get("RM202")
-			console.printConsoleView(roomLibrary.getRmDescript(thisRoom.getRmId().toString()));
-			
-			//System.out.println("Your are in Room 101 \n" + roomLibrary.getRmDescript("RM101")); //may not be necessary anymore...descript is being printed from printInfo()
-			System.out.println();
-			
-		//Here is where we will pass in the room id to get the menu options and then display them.
+			/*
+			 * Creating the Game loop here. Testing is below. So far most has worked. 
+			 * GAMEON = TRUE
+			 * 
+			 */
+
+			while(GAMEON)
+			{
+				/**
+				 * Thotin: okay so i imagine it like this. We start this game loop. We do a brief check in of all our objects and make sure they are set correctly
+				 * 			and then we present the menu with the correct options for that room.
+				 * 			The user will make a choice and based on that choice an action will happen. Loops for monster encounters and puzzle encounters are
+				 * 			taken care of in their respective model classes. 
+				 * 			If a door option is chosen, the doors room number will be processed.
+				 * 			During this processing we will need to:
+				 * 												Change the room object and display its description.
+				 * 												Get the associated Menu options and display them
+				 * 												wait for user input and repeat.
+				 * 
+				 * 			This should take care of it really. we can create another nested loop that looks for gamecomplete or something
+				 * 			and put it similiar to this
+				 * 			if (ROOMID = "LASTROOMID" AND someotherrequirements blah blah)
+				 * 				gamecomplete = true;
+				 * 				save game and display a message of completion.
+				 * 				back to main menu.
+				 * 												
+				 * 
+				 */
+				
+				
+				//print description
+				console.printView(roomLibrary.getRmDescript(thisRoom.getRmId().toString())); /**@note This seems a little extreme to print a room description -_____-*/
+				
+
+
+				//Finished with game
+				GAMEON = false;
+
+			}			
+
+			System.exit(0);
+
+
+			//Here is where we will pass in the room id to get the menu options and then display them.
 			//for now we are hard coding the menu options for this room.
+			//console.printConsoleView("Testing Menu Options");
 			
-			//MenuOptions menuOp = new MenuOptions();
 			
+			/*
+			MenuOptions menuOp = new MenuOptions();
+			Map<String, ArrayList<String>> menuMap = new HashMap<String, ArrayList<String>>();
 
-		//Close the scanner to avoid exceptions
+			menuMap = menuOp.optionsAL();
+			ArrayList<String> options = menuMap.get("RM101");
+
+
+			console.printConsoleView(options.size());
+			console.printConsoleView(options.toString());*/
+
+
+			//Testing Monster
+			console.printConsoleView("Testing Monster");
+			console.printConsoleView(thisMonster.getDescription());
+			thisMonster.encounterEnemy(thisPlayer, thisMonster, thisBackpack);
+
+
+			//Close the scanner to avoid exceptions
 			newGameScan.close();
 		}
 		//Load Game
@@ -111,7 +166,11 @@ public class GameController
 			System.out.println("Save Files:\n");
 			System.out.println("Tobin : Room 1");
 			
-			
+			/**
+			 * Need here a method
+			 */
+
+
 			//Start player at loaded room ID.
 		}
 		//Exit the game
@@ -122,20 +181,20 @@ public class GameController
 		//Dev team info
 		else if(choice == 4)
 		{
-			
+
 		}
-		
-		
+
+
 		//---------------------------------------------TestZone--------------------------------------------------
 		/*
 		//Creating our Room Objects with the RoomLibrary_HashMap class
 		System.out.println("\nStarting RoomLibrary_HashMap example");
 		Map<String,Room> roomInfoMap = new HashMap<String,Room>();
 		RoomLibrary_HashMap roomlibrary = new RoomLibrary_HashMap();
-		
+
 		//Set the roomInfoMap 
 		roomInfoMap = roomlibrary.roomsAL();		
-	
+
 		//Testing for roomInfoMap
 		//Loop through and print every Key in the HashMap.
 		Iterator<?> iterate = roomInfoMap.entrySet().iterator();
@@ -145,51 +204,51 @@ public class GameController
 			System.out.println(roomobj.getKey().toString());
 			//System.out.println(roomlibrary.getRmDescript(roomobj.getKey().toString()));
 		}
-		
+
 		//get the room ID.
-		
+
 		Room CurrentRoom = roomInfoMap.get("RM101");
-		
+
 		System.out.println(roomlibrary.getRmDescript(CurrentRoom.getRmId()));		
-		*/
-		
-		 
-		 //Artifact Creation and Inventory List.
-		 
-		 
-		
+		 */
+
+
+		//Artifact Creation and Inventory List.
+
+
+
 		/*Artifact testArtifact = new Artifact("A0000");
 		Artifact testArtifact2 = new Artifact("A0001");
 		Artifact testArtifact3 = new Artifact("A0002");
-		
-		
+
+
 		System.out.println(testArtifact.getID());
 		System.out.println(testArtifact.getName());
 		System.out.println(testArtifact.getStrength());
 		//Haha works wonderfully.
-		
+
 		//Now for something more difficult..inventory list.
 		Backpack usersBackpack = new Backpack();
-		
+
 		//Null pointer exception on this. wonder why. 
 		usersBackpack.addArtifact(testArtifact.getID().toString(),testArtifact);
 		usersBackpack.addArtifact(testArtifact2.getID().toString(),testArtifact2);
 		usersBackpack.addArtifact(testArtifact3.getID().toString(),testArtifact3);
 		usersBackpack.addArtifact(testArtifact.getID().toString(),testArtifact);
-		
-		
-		
+
+
+
 		usersBackpack.printBackpack();
-		*/
+		 */
 	}
-	
-	
-	
+
+
+
 	public Room createRoom()
 	{
-		
+
 		return null;
-		
+
 	}
 
 }
@@ -198,8 +257,8 @@ public class GameController
 
 /*
 	NOTES**
-	
-	
+
+
 	Okay so for the saving and loading of a game. On startup. Loop through the filenames in the save dir.
 	Store in a hash map so we can get the key and on selected then load using that key.
 	the filename list is displayed to the user if they select load game on the main menu. 
@@ -208,8 +267,8 @@ public class GameController
 	Need to probably implement Serializable into our object classes. so that we can save the object instead of just string data.
 	string data could work. but would have to be error checked to hell because users are stupid and make mistakes. 
 	i think at this point we should stick with what we have just for the sake of time.
-	
-	
-	
-	
-*/
+
+
+
+
+ */
