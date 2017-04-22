@@ -147,7 +147,7 @@ public class Monster extends Character {
 			if (tempMonster.getHealth() <= 0 && inEncounter == true)
 			{
 				System.out.println("You have slain the beast here is your reward");
-				System.out.println(tempMonster.getItemDrop() + " added to your inventory");
+				System.out.println(tempMonster.getItemDrop().getName() + " added to your inventory");
 				pack.addArtifact(tempMonster.getItemDrop().getID(), tempMonster.getItemDrop());
 				player.addScore(tempMonster);
 				inEncounter = false;
@@ -155,6 +155,8 @@ public class Monster extends Character {
 			}
 			else
 			{
+				System.out.println("Your Health " + player.getHealth() + "\n");
+				
 				System.out.println("1. Attack");
 				System.out.println("2. Inventory");
 				System.out.println("3. Escape");
@@ -164,6 +166,7 @@ public class Monster extends Character {
 					System.out.println("You attack for " + player.getAttackPower());
 					player.attack(tempMonster);
 					System.out.println("Monster Health " + tempMonster.getHealth());
+					
 				}
 				else if (command == 2)
 				{
