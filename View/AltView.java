@@ -22,7 +22,10 @@ public class AltView {
 	static MonsterLibrary_HashMap mList = new MonsterLibrary_HashMap();
 	static SaveState ss = new SaveState();
 	static RoomLibrary_HashMap rooms = new RoomLibrary_HashMap();
-	//static RoomLibrary_HashMap rooms = new RoomLibrary_HashMap();
+	
+	
+	//static Monster m1 = new Monster("");
+	//static RoomLibrary_HashMap roo;ms = new RoomLibrary_HashMap();
 
 	//Stop at 07
 	//mList[0] = (new Monster("ML00"));
@@ -212,7 +215,7 @@ public class AltView {
 	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException
 	{
 		System.out.println(mList.getMonsterDesc("ML00"));
-		
+		encounterEnemy(player, mList.monsterAL().get("ML00"), pack);
 		
 		/*
 		System.out.println("This is where we put artifacts into the inventory");
