@@ -119,8 +119,26 @@ public class GameController
 				 */
 				
 				
-				//print description
+				//print room description
 				console.printView(roomLibrary.getRmDescript(thisRoom.getRmId().toString())); /**@note This seems a little extreme to print a room description -_____-*/
+				
+				//Get and display menu options.
+				MenuLibrary menulib = new MenuLibrary();
+				Map<String,String[]> menuMap = new HashMap<String,String[]>();
+				
+				menuMap = menulib.createOptions();
+				
+				String[] menu;
+				menu = menuMap.get(thisRoom.getRmId());
+				
+				console.printConsoleView(menu.length);
+				
+				int x = 0;
+				while(x < menu.length)
+				{
+					console.printView( x +". " + menu[x]);
+					x++;
+				}
 				
 
 
@@ -167,7 +185,7 @@ public class GameController
 			System.out.println("Tobin : Room 1");
 			
 			/**
-			 * Need here a method
+			 * Need here a method to check names of all the save files.
 			 */
 
 

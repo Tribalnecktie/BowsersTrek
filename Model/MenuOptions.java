@@ -1,13 +1,13 @@
 /**
  * 
- */
+ *//*
 package Model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
+*//**
  * Class: Menu Options
  * 
  * @author Tobin Crone and Katrina Smith 
@@ -18,16 +18,16 @@ import java.util.Map;
  *  This class – Maps a list of MenuOptions to a specific Room ID that the player can choose from.
  *          
  *  Purpose: – Orient the player to the available options i.e. adjacent doors to a specified Room ID and if a Monster, Artifact and/or Puzzle is present in that particular Room. Player can also view Inventory and view their stats (health level).
- **/
+ **//*
 public class MenuOptions 
 {
 	
 	private Map<String, ArrayList<String>> optionsMap = new HashMap<String, ArrayList<String>>(); ; //String = Room object ID attribute, ArrayList<String> = optionsList
 	private ArrayList<String> optionsList;  //ArrayList of String objects associated with a specific Room ID
 
-	/**
+	*//**
 	 * Method: MenuOptions() Constructor
-	 */
+	 *//*
 	public MenuOptions()
 	{
 		this.optionsMap = optionsAL();
@@ -36,12 +36,12 @@ public class MenuOptions
 	}
 
 
-	/**
+	*//**
 	 * Method: getAddOptions() getter method for accessing optionsList 
 	 * Creates an ArrayList of Strings that represent available menu options for the player to choose from
 	 * @param rmID rmID from Room object
 	 * @return optionsList of type ArrayList<String>
-	 */
+	 *//*
 	public ArrayList<String> addOptions(String rmID)
 	{
 		if(rmID.equals("RM101"))
@@ -51,7 +51,7 @@ public class MenuOptions
 			this.optionsList.add("Attack Monster");
 			this.optionsList.add("Check puzzle");
 			this.optionsList.add("View Inventory");
-			this.optionsList.add("View Stats");
+			this.optionsList[6] = ("View Stats");
 		}
 		else if(rmID.equals("HW_L1"))
 		{
@@ -350,11 +350,11 @@ public class MenuOptions
 	}
 
 
-	/**
+	*//**
 	 * Method: getOptionsMap() getter method for accessing optionsMap
 	 * Creates an HashMap of room options based on a specific Room object ID
 	 * @return optionsMap of type HashMap<String, ArrayList<String>()
-	 */
+	 *//*
 	public Map<String, ArrayList<String>> optionsAL()
 	{
 		//OPTIONS FOR LEVEL 1 ROOMS
@@ -398,3 +398,4 @@ public class MenuOptions
 		return optionsMap;
 	}	
 }
+*/
