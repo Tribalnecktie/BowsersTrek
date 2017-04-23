@@ -105,7 +105,7 @@ public class MenuLibrary
 		
 		//LEVEL TWO MENU OPTIONS
 		
-		String[] hwl2list = new String[11];
+		/*String[] hwl2list = new String[11];
 		hwl1list[0] = ("DR201");
 		hwl1list[1] = ("DR202");
 		hwl1list[2] = ("DR203");
@@ -154,7 +154,7 @@ public class MenuLibrary
 		rm107list[3] = ("Check puzzle");
 		rm107list[4] = ("View Inventory");
 		rm107list[5] = ("Check Stats");
-		optionlist.put("RM204",rm204list);
+		optionlist.put("RM204",rm204list);*/
 
 
 		return optionlist;

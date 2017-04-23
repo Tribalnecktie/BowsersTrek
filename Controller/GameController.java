@@ -122,7 +122,6 @@ public class GameController
 	
 				thisMonster = thisRoom.rollMonster();	
 				
-				
 				console.printView("=========================================================================================");
 				//print room description
 				console.printView(roomLibrary.getRmDescript(thisRoom.getRmId().toString())); /**@note This seems a little extreme to print a room description -_____-*/
@@ -149,8 +148,8 @@ public class GameController
 					x++;
 				}
 				
-				
 				int roomchoice = newGameScan.nextInt();
+				
 				
 				String selectedOption = menu[roomchoice];
 				
@@ -206,10 +205,14 @@ public class GameController
 					}
 					else
 					{
+						
 						thisMonster.encounterEnemy(thisPlayer, thisMonster, thisBackpack);
+			
 					}
 					
 				}
+				
+				newGameScan = new Scanner(System.in);
 				
 				//Finished with game				
 				//GAMEON = false;
