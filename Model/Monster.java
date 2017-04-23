@@ -66,7 +66,7 @@ public class Monster extends Character {
 	 * Enables the monster to attack the player and affect their health in relation to the monster's attack power
 	 * @param Player
 	 */
-	void attack(Player player)
+	public void attack(Player player)
 	{
 		player.health -= attackPower;
 	}

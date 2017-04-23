@@ -77,7 +77,10 @@ public class GameController
 			try
 			{
 				console.printView("\nPutting Objects in Oven\n" );
-				Thread.sleep(800);
+				
+				//Thread.sleep(800);
+				//THIS IS THE OTHER PART COKER TOUCHED CUZ IT TOOK TO DAMN LONG TO RUN EVERY TIME
+				Thread.sleep(0);
 				//see if we can clear the screen here also.
 			} 
 			catch (InterruptedException ie)
@@ -147,7 +150,8 @@ public class GameController
 					console.printView("\t" + x +". " + menu[x]);
 					x++;
 				}
-				
+				//newGameScan.close();
+				//Scanner newGameScan1 = new Scanner(System.in);
 				int roomchoice = newGameScan.nextInt();
 				
 				
@@ -199,7 +203,11 @@ public class GameController
 				}
 				else if(selectedOption.substring(0,6).equalsIgnoreCase("Attack")) //Attack the mosnter
 				{
-					if(thisMonster == null)
+					//THIS IS THE PART COKER TOUCHED, I MOVED AROUND A FEW THINGS FOR GETTING THE LOOP TO ACTUALLY WORK
+					
+					//thisMonster.encounterEnemy(thisPlayer, thisMonster, thisBackpack);
+					/*
+					if(thisMonster.getHealth() <= 0)
 					{
 						console.printView("This monster ain't up for another fight");
 					}
@@ -209,6 +217,94 @@ public class GameController
 						thisMonster.encounterEnemy(thisPlayer, thisMonster, thisBackpack);
 						newGameScan.close();
 					}
+					*/
+					/*
+					boolean isLooping = true;
+					while (isLooping)
+					{
+						int potato = newGameScan.nextInt();
+						if (potato == 0)
+						{
+							System.out.println("you ran the loop again");
+						}
+						else
+						{
+							System.out.println("You kicked yourself out");
+							isLooping = false;
+						}
+					}
+					*/
+
+					//Scanner playerInput = new Scanner(System.in);
+					boolean inEncounter = true;
+					//Monster tempMonster = mList[0];
+					if (thisMonster.getHealth() <= 0)
+					{
+						System.out.println("You have already slain this monster");
+						thisMonster.setAlive(false);
+						//playerInput.close();
+						inEncounter = false;
+						return;
+					}
+
+					System.out.println(thisMonster.getDescription());
+					while (inEncounter == true)
+					{
+						if (thisPlayer.getHealth() <= 0)
+						{
+							System.out.println("You died, Better Luck Next TIme");
+							inEncounter = false;
+							//playerInput.close();
+						}
+						else if (thisMonster.getHealth() <= 0 && inEncounter == true)
+						{
+							System.out.println("You have slain the beast here is your reward");
+							System.out.println(thisMonster.getItemDrop().getName() + " added to your inventory");
+							thisBackpack.addArtifact(thisMonster.getItemDrop().getID(), thisMonster.getItemDrop());
+							thisPlayer.addScore(thisMonster);
+							thisMonster.setAlive(false);
+							inEncounter = false;
+							//playerInput.close();
+						}
+						else
+						{
+							System.out.println("\nYour Health " + thisPlayer.getHealth() + "\n");
+							
+							System.out.println("1. Attack");
+							System.out.println("2. Inventory");
+							System.out.println("3. Examine Monster");
+							System.out.println("4. Escape");
+							int command = newGameScan.nextInt();
+							if (command == 1)
+							{
+								System.out.println("You attack for " + thisPlayer.getAttackPower());
+								thisPlayer.attack(thisMonster);
+								System.out.println("Monster Health " + thisMonster.getHealth());
+								System.out.println(thisMonster.getName() + " attacks you for " + thisMonster.getAttackPower() + " Health");
+								thisMonster.attack(thisPlayer);
+								
+							}
+							else if (command == 2)
+							{
+								thisBackpack.printBackpack(); 
+								
+							}
+							else if (command == 3)
+							{
+								System.out.println("Monster Health: " + thisMonster.getHealth());
+								System.out.println("Monster Attack Power: " + thisMonster.getAttackPower());
+								System.out.println("Monster's Held Item: " + thisMonster.getItemDrop().getName());
+								//System.out.println("");
+							}
+							else if (command == 4)
+							{
+								System.out.println("You've escaped with your life");
+								inEncounter = false;
+								//playerInput.close();
+							}
+						}
+					}
+					System.out.println("Monster loop done");
 					
 				}
 				
@@ -240,8 +336,9 @@ public class GameController
 
 			//Testing Monster
 			console.printConsoleView("Testing Monster");
-			console.printConsoleView(thisMonster.getDescription());
-			thisMonster.encounterEnemy(thisPlayer, thisMonster, thisBackpack);
+			//console.printConsoleView(thisMonster.getDescription());
+			//thisMonster.encounterEnemy(thisPlayer, thisMonster, thisBackpack);
+			//thisMonster.encounterEnemy(thisPlayer, thisMonster, thisBackpack, newGameScan);
 
 
 			//Close the scanner to avoid exceptions
