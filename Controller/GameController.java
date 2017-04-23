@@ -167,7 +167,7 @@ public class GameController
 				}
 				
 				//Parse and deal with the selection
-				if(selectedOption.substring(0, 2).equalsIgnoreCase("DR"))
+				if(selectedOption.substring(0, 2).equalsIgnoreCase("DR")) //Door
 				{
 					Room newRoom = new Room();
 					String roomNumber = selectedOption.substring(2, selectedOption.length());
@@ -181,7 +181,7 @@ public class GameController
 					console.printView("\nYou succesfully walk through a door!\n");
 					//GAMEON = false;
 				}
-				else if(selectedOption.substring(0, 2).equalsIgnoreCase("Ha"))
+				else if(selectedOption.substring(0, 2).equalsIgnoreCase("Ha")) //hallway
 				{
 					Room newRoom = new Room();
 					String roomNumber = selectedOption.substring(8, selectedOption.length());
@@ -193,10 +193,18 @@ public class GameController
 					thisRoom = newRoom;
 					
 				}
-				else if(selectedOption.substring(0,4).equalsIgnoreCase("View"))
+				else if(selectedOption.substring(0,4).equalsIgnoreCase("View")) //see inventory
 				{
 					thisBackpack.printBackpack();
 					console.printView("");
+				}
+				else if(selectedOption.substring(0,5).equalsIgnoreCase("Check")) //Check player status
+				{
+					thisPlayer.viewStatus();
+				}
+				else if(selectedOption.substring(0,6).equalsIgnoreCase("Attack")) //Attack the mosnter
+				{
+					thisMonster.encounterEnemy(thisPlayer, thisMonster, thisBackpack);
 				}
 				
 				//Finished with game				

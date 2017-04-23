@@ -34,7 +34,7 @@ public class MenuLibrary
 		rm101list[2] =("Attack Monster");
 		rm101list[3] =("Check puzzle");
 		rm101list[4] =("View Inventory");
-		rm101list[5] = ("View Stats");		
+		rm101list[5] = ("Check Stats");		
 		optionlist.put("RM101",rm101list);
 
 		String[] hwl1list = new String[9];
@@ -46,7 +46,7 @@ public class MenuLibrary
 		hwl1list[5] = ("DR106");
 		hwl1list[6] = ("DR107");
 		hwl1list[7] = ("View Inventory");
-		hwl1list[8] = ("View Stats");
+		hwl1list[8] = ("Check Stats");
 		optionlist.put("HW_L1",hwl1list);
 
 		String[] rm102list = new String[6];
@@ -55,7 +55,7 @@ public class MenuLibrary
 		rm102list[2] = ("Attack Monster");
 		rm102list[3] = ("Check puzzle");
 		rm102list[4] = ("View Inventory");
-		rm102list[5] = ("View Stats");
+		rm102list[5] = ("Check Stats");
 		optionlist.put("RM102",rm102list);
 		
 		String[] rm103list = new String[6];
@@ -64,7 +64,7 @@ public class MenuLibrary
 		rm103list[2] = ("Attack Monster");
 		rm103list[3] = ("Check puzzle");
 		rm103list[4] = ("View Inventory");
-		rm103list[5] = ("View Stats");
+		rm103list[5] = ("Check Stats");
 		optionlist.put("RM103",rm103list);
 		
 		String[] rm104list = new String[6];
@@ -73,7 +73,7 @@ public class MenuLibrary
 		rm104list[2] = ("Attack Monster");
 		rm104list[3] = ("Check puzzle");
 		rm104list[4] = ("View Inventory");
-		rm104list[5] = ("View Stats");
+		rm104list[5] = ("Check Stats");
 		optionlist.put("RM104",rm104list);
 		
 		String[] rm105list = new String[6];		
@@ -82,7 +82,7 @@ public class MenuLibrary
 		rm105list[2] = ("Attack Monster");
 		rm105list[3] = ("Check puzzle");
 		rm105list[4] = ("View Inventory");
-		rm105list[5] = ("View Stats");
+		rm105list[5] = ("Check Stats");
 		optionlist.put("RM105",rm105list);
 			
 		String[] rm106list = new String[6];	
@@ -91,7 +91,7 @@ public class MenuLibrary
 		rm106list[2] = ("Attack Monster");
 		rm106list[3] = ("Check puzzle");
 		rm106list[4] = ("View Inventory");
-		rm106list[5] = ("View Stats");
+		rm106list[5] = ("Check Stats");
 		optionlist.put("RM106",rm106list);
 		
 		String[] rm107list = new String[6];	
@@ -100,7 +100,7 @@ public class MenuLibrary
 		rm107list[2] = ("Attack Monster");
 		rm107list[3] = ("Check puzzle");
 		rm107list[4] = ("View Inventory");
-		rm107list[5] = ("View Stats");
+		rm107list[5] = ("Check Stats");
 		optionlist.put("RM107",rm107list);
 
 
