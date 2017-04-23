@@ -166,6 +166,8 @@ public class Monster extends Character {
 					System.out.println("You attack for " + player.getAttackPower());
 					player.attack(tempMonster);
 					System.out.println("Monster Health " + tempMonster.getHealth());
+					System.out.println(tempMonster.getName() + " attacks you for " + tempMonster.getAttackPower() + " Health");
+					tempMonster.attack(player);
 					
 				}
 				else if (command == 2)
