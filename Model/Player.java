@@ -93,4 +93,9 @@ public class Player extends Character {
 		}
 	}
 	
+	public void viewStatus()
+	{
+		System.out.println("Player Health: " + this.health + " Score: " + this.score);
+	}
+	
 }

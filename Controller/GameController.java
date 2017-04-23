@@ -20,7 +20,7 @@ import View.ViewConsole;
 
 public class GameController 
 {
-	private static final int DEBUG = 1;
+	private static final int DEBUG = 0;
 	/*
 	 * TODO:	Create Model Class Objects
 	 * 			Populate with current working data set
@@ -121,7 +121,7 @@ public class GameController
 				 */
 				
 				//set up the room variables for this room.
-				/*if(thisRoom.getMonsterObj() != null) //null point exceptions here because there is no value in there. checking the room thing for null inputs
+				if(thisRoom.getMonsterObj() != null) //null point exceptions here because there is no value in there. checking the room thing for null inputs
 				{
 					thisMonster = thisRoom.getMonsterObj();
 				}
@@ -130,7 +130,7 @@ public class GameController
 				{
 					thisPuzzle = thisRoom.getPuzzleObj();
 				}
-				*/
+				
 				console.printView("=========================================================================================");
 				//print room description
 				console.printView(roomLibrary.getRmDescript(thisRoom.getRmId().toString())); /**@note This seems a little extreme to print a room description -_____-*/
