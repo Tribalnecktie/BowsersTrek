@@ -159,6 +159,7 @@ public class Monster extends Character {
 				System.out.println(tempMonster.getItemDrop().getName() + " added to your inventory");
 				pack.addArtifact(tempMonster.getItemDrop().getID(), tempMonster.getItemDrop());
 				player.addScore(tempMonster);
+				tempMonster.setAlive(false);
 				inEncounter = false;
 				playerInput.close();
 			}

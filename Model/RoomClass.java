@@ -23,7 +23,7 @@ public class RoomClass {
 	Puzzle puzzle;
 	Backpack pack;
 	ConsoleView console = new ConsoleView();
-	Commands command = new Commands();
+	//Commands command = new Commands();
 
 
 	public RoomClass()	{		
@@ -103,7 +103,7 @@ public class RoomClass {
 
 		if(currentRmLevel == 1) 
 		{
-			RetrieveLevelOneRoomOptions levelOneOps = new RetrieveLevelOneRoomOptions();
+			//RetrieveLevelOneRoomOptions levelOneOps = new RetrieveLevelOneRoomOptions();
 			
 			System.out.println("\tRoom options for Level " + currentRmLevel + "\n\t");
 			ArrayList<RoomClass> levelOneRooms = new ArrayList<RoomClass>();
@@ -118,7 +118,7 @@ public class RoomClass {
 				}
 			}
 
-			levelOneOps.getLevelOneOptions();
+			//levelOneOps.getLevelOneOptions();
 			
 
 			if(currentRmLevel == 2) 
