@@ -131,8 +131,29 @@ public class Room  {
 	 * @return monsterObj a monster object and its attributes if it exists in the room, null otherwise
 	 */
 	public Monster getMonsterObj() {
-		return monsterObj;
+		return rollMonster();
 	}
+	
+	public Monster rollMonster()
+	{
+		String [] monsterKeys = new String [8];
+		monsterKeys[0] = "ML00";
+		monsterKeys[1] = "ML01";
+		monsterKeys[2] = "ML02";
+		monsterKeys[3] = "ML03";
+		monsterKeys[4] = "ML04";
+		monsterKeys[5] = "ML05";
+		monsterKeys[6] = "ML06";
+		monsterKeys[7] = "ML07";
+		MonsterLibrary_HashMap monster = new MonsterLibrary_HashMap();
+		int roll = rand.nextInt(7);
+		return monster.monsterAL().get(monsterKeys[roll]);
+		/*
+		int roll = rand.nextInt(7);
+		Monster mon = new Monster(monsterKeys));
+		*/
+		
+				}
 
 
 	/**
