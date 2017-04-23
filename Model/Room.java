@@ -131,6 +131,7 @@ public class Room  {
 	 * @return monsterObj a monster object and its attributes if it exists in the room, null otherwise
 	 */
 	public Monster getMonsterObj() {
+		//originally return monster
 		return rollMonster();
 	}
 	
