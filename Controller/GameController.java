@@ -305,6 +305,10 @@ public class GameController
 									inEncounter = false;
 									//playerInput.close();
 								}
+								else
+								{
+									System.out.println("Invalid Input, please try again");
+								}
 							}
 						}
 						//System.out.println("Monster loop done");
