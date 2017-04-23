@@ -317,6 +317,12 @@ public class GameController
 					
 				}
 				
+				if(thisPlayer.getHealth() == 0)
+				{
+					console.printView("Aww good try! Thanks for playing :) \nEat more vegetables and grow big and strong and try again one day!");
+					GAMEON = false;
+				}
+				
 				newGameScan = new Scanner(System.in);
 				
 				//Finished with game				
