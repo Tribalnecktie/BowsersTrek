@@ -123,7 +123,10 @@ public class GameController
 				 * 
 				 */
 	
-				thisMonster = thisRoom.rollMonster();	
+				if(thisMonster.isAlive())
+				{
+					thisMonster = thisRoom.rollMonster();	
+				}
 				
 				console.printView("=========================================================================================");
 				//print room description
@@ -153,7 +156,6 @@ public class GameController
 				//newGameScan.close();
 				//Scanner newGameScan1 = new Scanner(System.in);
 				int roomchoice = newGameScan.nextInt();
-				
 				
 				String selectedOption = menu[roomchoice];
 				
@@ -234,77 +236,84 @@ public class GameController
 						}
 					}
 					*/
-
-					//Scanner playerInput = new Scanner(System.in);
-					boolean inEncounter = true;
-					//Monster tempMonster = mList[0];
-					if (thisMonster.getHealth() <= 0)
+					if(thisMonster.isAlive())
 					{
-						System.out.println("You have already slain this monster");
-						thisMonster.setAlive(false);
-						//playerInput.close();
-						inEncounter = false;
-						return;
-					}
-
-					System.out.println(thisMonster.getDescription());
-					while (inEncounter == true)
-					{
-						if (thisPlayer.getHealth() <= 0)
+						//Scanner playerInput = new Scanner(System.in);
+						boolean inEncounter = true;
+						//Monster tempMonster = mList[0];
+						if (thisMonster.getHealth() <= 0)
 						{
-							System.out.println("You died, Better Luck Next TIme");
-							inEncounter = false;
-							//playerInput.close();
-						}
-						else if (thisMonster.getHealth() <= 0 && inEncounter == true)
-						{
-							System.out.println("You have slain the beast here is your reward");
-							System.out.println(thisMonster.getItemDrop().getName() + " added to your inventory");
-							thisBackpack.addArtifact(thisMonster.getItemDrop().getID(), thisMonster.getItemDrop());
-							thisPlayer.addScore(thisMonster);
+							System.out.println("You have already slain this monster");
 							thisMonster.setAlive(false);
-							inEncounter = false;
 							//playerInput.close();
+							inEncounter = false;
+							return;
 						}
-						else
+
+						System.out.println(thisMonster.getDescription());
+						while (inEncounter == true)
 						{
-							System.out.println("\nYour Health " + thisPlayer.getHealth() + "\n");
-							
-							System.out.println("1. Attack");
-							System.out.println("2. Inventory");
-							System.out.println("3. Examine Monster");
-							System.out.println("4. Escape");
-							int command = newGameScan.nextInt();
-							if (command == 1)
+							if (thisPlayer.getHealth() <= 0)
 							{
-								System.out.println("You attack for " + thisPlayer.getAttackPower());
-								thisPlayer.attack(thisMonster);
-								System.out.println("Monster Health " + thisMonster.getHealth());
-								System.out.println(thisMonster.getName() + " attacks you for " + thisMonster.getAttackPower() + " Health");
-								thisMonster.attack(thisPlayer);
-								
-							}
-							else if (command == 2)
-							{
-								thisBackpack.printBackpack(); 
-								
-							}
-							else if (command == 3)
-							{
-								System.out.println("Monster Health: " + thisMonster.getHealth());
-								System.out.println("Monster Attack Power: " + thisMonster.getAttackPower());
-								System.out.println("Monster's Held Item: " + thisMonster.getItemDrop().getName());
-								//System.out.println("");
-							}
-							else if (command == 4)
-							{
-								System.out.println("You've escaped with your life");
+								System.out.println("You died, Better Luck Next TIme");
 								inEncounter = false;
 								//playerInput.close();
 							}
+							else if (thisMonster.getHealth() <= 0 && inEncounter == true)
+							{
+								System.out.println("You have slain the beast here is your reward");
+								System.out.println(thisMonster.getItemDrop().getName() + " added to your inventory");
+								thisBackpack.addArtifact(thisMonster.getItemDrop().getID(), thisMonster.getItemDrop());
+								thisPlayer.addScore(thisMonster);
+								thisMonster.setAlive(false);
+								inEncounter = false;
+								//playerInput.close();
+							}
+							else
+							{
+								System.out.println("\nYour Health " + thisPlayer.getHealth() + "\n");
+								
+								System.out.println("1. Attack");
+								System.out.println("2. Inventory");
+								System.out.println("3. Examine Monster");
+								System.out.println("4. Escape");
+								int command = newGameScan.nextInt();
+								if (command == 1)
+								{
+									System.out.println("You attack for " + thisPlayer.getAttackPower());
+									thisPlayer.attack(thisMonster);
+									System.out.println("Monster Health " + thisMonster.getHealth());
+									System.out.println(thisMonster.getName() + " attacks you for " + thisMonster.getAttackPower() + " Health");
+									thisMonster.attack(thisPlayer);
+									
+								}
+								else if (command == 2)
+								{
+									thisBackpack.printBackpack(); 
+									
+								}
+								else if (command == 3)
+								{
+									System.out.println("Monster Health: " + thisMonster.getHealth());
+									System.out.println("Monster Attack Power: " + thisMonster.getAttackPower());
+									System.out.println("Monster's Held Item: " + thisMonster.getItemDrop().getName());
+									//System.out.println("");
+								}
+								else if (command == 4)
+								{
+									System.out.println("You've escaped with your life");
+									inEncounter = false;
+									//playerInput.close();
+								}
+							}
 						}
+						//System.out.println("Monster loop done");
 					}
-					System.out.println("Monster loop done");
+					else
+					{
+						console.printView("You've already killt this boi!");
+					}
+					
 					
 				}
 				
