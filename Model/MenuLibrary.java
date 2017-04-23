@@ -27,7 +27,7 @@ public class MenuLibrary
 	 */
 	public Map<String, String[]> createOptions()
 	{
-
+		//LEVEL ONE MENU OPTIONS
 		String[] rm101list = new String[6];			
 		rm101list[0] = ("Hallway L1");
 		rm101list[1] =("DR102");
@@ -102,6 +102,59 @@ public class MenuLibrary
 		rm107list[4] = ("View Inventory");
 		rm107list[5] = ("Check Stats");
 		optionlist.put("RM107",rm107list);
+		
+		//LEVEL TWO MENU OPTIONS
+		
+		String[] hwl2list = new String[11];
+		hwl1list[0] = ("DR201");
+		hwl1list[1] = ("DR202");
+		hwl1list[2] = ("DR203");
+		hwl1list[3] = ("DR205");
+		hwl1list[4] = ("DR208");
+		hwl1list[5] = ("DR209");
+		hwl1list[6] = ("DR211");
+		hwl1list[7] = ("DR212");
+		hwl1list[8] = ("DR213");
+		hwl1list[9] = ("View Inventory");
+		hwl1list[10] = ("Check Stats");
+		optionlist.put("HW_L2",hwl2list);
+		
+		String[] rm201list = new String[6];	
+		rm107list[0] = ("DR204");
+		rm107list[1] = ("Hallway L2");
+		rm107list[2] = ("Attack Monster");
+		rm107list[3] = ("Check puzzle");
+		rm107list[4] = ("View Inventory");
+		rm107list[5] = ("Check Stats");
+		optionlist.put("RM201",rm201list);
+		
+		String[] rm202list = new String[6];	
+		rm107list[0] = ("DR206");
+		rm107list[1] = ("Hallway L2");
+		rm107list[2] = ("Attack Monster");
+		rm107list[3] = ("Check puzzle");
+		rm107list[4] = ("View Inventory");
+		rm107list[5] = ("Check Stats");
+		optionlist.put("RM202",rm202list);
+		
+		String[] rm203list = new String[7];			
+		rm107list[0] = ("DR206");
+		rm107list[0] = ("DR207");
+		rm107list[1] = ("Hallway L2");
+		rm107list[2] = ("Attack Monster");
+		rm107list[3] = ("Check puzzle");
+		rm107list[4] = ("View Inventory");
+		rm107list[5] = ("Check Stats");
+		optionlist.put("RM203",rm203list);
+		
+		String[] rm204list = new String[6];	
+		rm107list[0] = ("DR207");
+		rm107list[1] = ("Hallway L2");
+		rm107list[2] = ("Attack Monster");
+		rm107list[3] = ("Check puzzle");
+		rm107list[4] = ("View Inventory");
+		rm107list[5] = ("Check Stats");
+		optionlist.put("RM204",rm204list);
 
 
 		return optionlist;
