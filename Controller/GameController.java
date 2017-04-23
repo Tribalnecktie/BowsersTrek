@@ -119,17 +119,9 @@ public class GameController
 				 * 												
 				 * 
 				 */
+	
+				thisMonster = thisRoom.rollMonster();	
 				
-				//set up the room variables for this room.
-				if(thisRoom.getMonsterObj() != null) //null point exceptions here because there is no value in there. checking the room thing for null inputs
-				{
-					thisMonster = thisRoom.getMonsterObj();
-				}
-				
-				if(thisRoom.getPuzzleObj() != null)
-				{
-					thisPuzzle = thisRoom.getPuzzleObj();
-				}
 				
 				console.printView("=========================================================================================");
 				//print room description
@@ -178,6 +170,9 @@ public class GameController
 					//console.printView(newRoom.getRmId());
 					
 					thisRoom = newRoom;
+					thisMonster = thisRoom.rollMonster();
+					thisRoom.setMonsterObj(thisMonster);				
+					
 					
 					console.printView("\nYou succesfully walk through a door!\n");
 					//GAMEON = false;
@@ -205,7 +200,15 @@ public class GameController
 				}
 				else if(selectedOption.substring(0,6).equalsIgnoreCase("Attack")) //Attack the mosnter
 				{
-					thisMonster.encounterEnemy(thisPlayer, thisMonster, thisBackpack);
+					if(thisMonster == null)
+					{
+						console.printView("This monster ain't up for another fight");
+					}
+					else
+					{
+						thisMonster.encounterEnemy(thisPlayer, thisMonster, thisBackpack);
+					}
+					
 				}
 				
 				//Finished with game				

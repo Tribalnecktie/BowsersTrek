@@ -138,8 +138,9 @@ public class Monster extends Character {
 		if (tempMonster.getHealth() <= 0)
 		{
 			System.out.println("You have already slain this monster");
-			inEncounter = false;
+			this.isAlive = false;
 			playerInput.close();
+			inEncounter = false;
 			return;
 		}
 
