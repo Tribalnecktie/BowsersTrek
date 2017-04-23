@@ -1,15 +1,9 @@
 package Model;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Set;
-import java.util.TreeMap;
-import java.util.Map.Entry;
-import java.util.Scanner;
+
 
 import Model.Puzzle;
 import View.ConsoleView;
-import View.ViewConsole;
 import Model.Backpack;
 
 public class RoomClass {
@@ -83,81 +77,5 @@ public class RoomClass {
 	@Override
 	public String toString() {
 		return "Room ==> Current Level: " + rmLevel + ". Your in the "  + rmName + ".\n\n\t" + rmDescription + "\n";
-	}
-
-	public void printRoomDetails() {
-		LoadRoomObj loadRmList = new LoadRoomObj();
-		HashMap<String, RoomClass> roomInventory = new HashMap<String, RoomClass>();
-		roomInventory = loadRmList.loadRooms("roomObjects.txt");
-		TreeMap<String, RoomClass> sortedRoomMap = new TreeMap<String, RoomClass>(roomInventory);
-		Set<Entry<String, RoomClass>> keyValueSet = sortedRoomMap.entrySet();   
-
-		@SuppressWarnings("resource")
-		Scanner input = new Scanner(System.in).useDelimiter("\\s*");
-		String currentRmID = roomInventory.get("RM101").getRmID();
-
-		int currentRmLevel = roomInventory.get("RM101").getRmLevel();
-		int numOptions = 1;      //displays a number value next to array of options
-
-		console.printView("Where would you like to go on this level? ");
-
-		if(currentRmLevel == 1) 
-		{
-			//RetrieveLevelOneRoomOptions levelOneOps = new RetrieveLevelOneRoomOptions();
-			
-			System.out.println("\tRoom options for Level " + currentRmLevel + "\n\t");
-			ArrayList<RoomClass> levelOneRooms = new ArrayList<RoomClass>();
-
-			for(Entry<String, RoomClass> entry: keyValueSet) {
-				levelOneRooms.add(entry.getValue());
-			}
-			for(RoomClass rm : levelOneRooms) {
-				if(rm.rmLevel == 1) {
-					System.out.println("[" + numOptions + "] " + rm.rmName);
-					numOptions++;
-				}
-			}
-
-			//levelOneOps.getLevelOneOptions();
-			
-
-			if(currentRmLevel == 2) 
-			{
-				System.out.println("\tRoom options for Level " + currentRmLevel + "\n\t");
-				ArrayList<RoomClass> levelTwoRooms = new ArrayList<RoomClass>();
-
-				for(Entry<String, RoomClass> entry: keyValueSet) {
-					if(entry.getValue().equals("1")) {
-						levelTwoRooms.add(entry.getValue());
-					}
-				}
-				for(RoomClass rm : levelTwoRooms) {
-					if(rm.rmLevel == 1) {
-						System.out.println("[" + numOptions + "] " + rm.rmName);
-						numOptions++;
-					}
-				}
-			}
-
-			if(currentRmLevel == 3) 
-			{
-				System.out.println("\tRoom options for Level " + currentRmLevel + "\n\t");
-				for(Entry<String, RoomClass> entry: keyValueSet) {
-					if(entry.getValue().equals(3)) {
-						System.out.println("[" + numOptions + "] " + entry.getKey());	
-						numOptions++;
-					}
-				}
-			}
-			if(currentRmLevel == 4) {
-				System.out.println("\tRoom options for Level " + currentRmLevel + "\n\t");
-				for(Entry<String, RoomClass> entry: keyValueSet) {
-					if(entry.getValue().equals(1)) {
-						System.out.println("[" + numOptions + "] " + entry.getKey());	
-						numOptions++;
-					}
-				}
-			}
-		}
 	}
 }
