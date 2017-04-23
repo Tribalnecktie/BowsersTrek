@@ -163,11 +163,12 @@ public class Monster extends Character {
 			}
 			else
 			{
-				System.out.println("Your Health " + player.getHealth() + "\n");
+				System.out.println("\nYour Health " + player.getHealth() + "\n");
 				
 				System.out.println("1. Attack");
 				System.out.println("2. Inventory");
-				System.out.println("3. Escape");
+				System.out.println("3. Examine Monster");
+				System.out.println("4. Escape");
 				int command = playerInput.nextInt();
 				if (command == 1)
 				{
@@ -184,6 +185,13 @@ public class Monster extends Character {
 					
 				}
 				else if (command == 3)
+				{
+					System.out.println("Upon examining " + tempMonster.getName() + " you see:");
+					System.out.println("Monster Health: " + tempMonster.getHealth());
+					System.out.println("Monster Attack Power: " + tempMonster.getAttackPower());
+					System.out.println("Item held: " + tempMonster.getItemDrop().name);
+				}
+				else if (command == 4)
 				{
 					System.out.println("You've escaped with your life");
 					inEncounter = false;
