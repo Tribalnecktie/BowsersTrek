@@ -147,7 +147,23 @@ public class Room  {
 		monsterKeys[6] = "ML06";
 		monsterKeys[7] = "ML07";
 		MonsterLibrary_HashMap monster = new MonsterLibrary_HashMap();
-		int roll = rand.nextInt(7);
+		int roll = 0;
+		if (this.rmLevel == 1)
+		{
+			roll = rand.nextInt(1);
+		}
+		else if (this.rmLevel == 2)
+		{
+			roll = rand.nextInt(2);
+		}
+		else if (this.rmLevel == 3)
+		{
+			roll = rand.nextInt(4);
+		}
+		else if (this.rmLevel == 4)
+		{
+			roll = rand.nextInt(7);
+		}
 		return monster.monsterAL().get(monsterKeys[roll]);
 		/*
 		int roll = rand.nextInt(7);
