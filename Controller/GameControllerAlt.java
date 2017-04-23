@@ -69,24 +69,7 @@ public class GameControllerAlt {
 
 					room.printRoomDetails();
 					break;
-				/*case "2":  test case is working
-					//attack monster code
-					MonsterTest m = new MonsterTest();
-					newStr = "Are you ready to Rummmmble....You asked for it!!! ";
-					if(room.getRmID().equalsIgnoreCase("HW_L1")) {
-						newStr = "No Monster in this room";
-					}
-					else {
-					m.attackMonster();
-					}
-					break;
-				case "3": test case is working
-					//solve puzzle code
-					PuzzleTest puzzle = new PuzzleTest();
-					newStr = "You have entered the Puzzle zone\n";	
-					view.print(newStr);
-					puzzle.printPuzzle();
-					break;*/
+				
 
 				case "2": 
 					//equip item

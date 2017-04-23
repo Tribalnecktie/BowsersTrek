@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.Scanner;
+
 import View.ConsoleView;
 
 public class Commands {
@@ -35,4 +37,8 @@ public class Commands {
 		console.printView("\t[4]  Escape");
 	}
 
+	public void getRandomPuzzles() {
+
+
+	}
 }
