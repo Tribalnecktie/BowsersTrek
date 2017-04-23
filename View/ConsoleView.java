@@ -59,8 +59,14 @@ public class ConsoleView
 	{
 		Scanner user_input = new Scanner(System.in);
 		
+		
 		String menutitle = "\t\t\t\t\t\t\tMain Menu:";
 		String headerline = "=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=";
+		
+		System.out.println("\t\t\t\t\tWelcome to Bowser’s Trek through Waluigi’s Mansion\n");
+		System.out.println(" Bower is a curious kid and is always looking for an adventure.  The problem with Bower is that not much ever scares this kid.\n  While out on one of his many adventurous walks, Bower stumbles upon a peculiarly painted mansion at the bottom of a hill\n next to a stream his never seen before.  Although dusk is approaching and Bower should be heading home, curiosity\n gets the best of him as he gazes up at the colossal purple mansion before his eyes…wondering…. what’s lies inside.\n");
+		
+		
 		ArrayList<String> MenuOptions = new ArrayList<String>();
 		
 		String footerline = "=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=\n";
