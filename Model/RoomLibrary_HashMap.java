@@ -26,9 +26,7 @@ import View.ConsoleView;
 public class RoomLibrary_HashMap extends Room {
 
 	private Map<String,Room> roomsAL = new HashMap<String,Room>();
-
 	protected String rmDescript;
-
 	ConsoleView console = new ConsoleView();
 
 
@@ -304,121 +302,6 @@ public class RoomLibrary_HashMap extends Room {
 		}
 
 		return rmDescript;
-	}
-
-
-	public void printRoomDetails() {
-		LoadRoomObj loadRmList = new LoadRoomObj();
-		HashMap<String, RoomClass> roomInventory = new HashMap<String, RoomClass>();
-		roomInventory = loadRmList.loadRooms("roomObjects.txt");
-		TreeMap<String, RoomClass> sortedRoomMap = new TreeMap<String, RoomClass>(roomInventory);
-		Set<Entry<String, RoomClass>> keyValueSet = sortedRoomMap.entrySet();   
-
-		@SuppressWarnings("resource")
-		Scanner input = new Scanner(System.in).useDelimiter("\\s*");
-		String currentRmID = roomInventory.get("RM101").getRmID();
-
-		int currentRmLevel = roomInventory.get("RM101").getRmLevel();
-		int numOptions = 1;      //displays a number value next to array of options
-
-		System.out.println("Where would you like to go on this level? ");
-
-		if(currentRmLevel == 1) 
-		{
-			System.out.println("\tRoom options for Level " + currentRmLevel + "\n\t");
-			ArrayList<RoomClass> levelOneRooms = new ArrayList<RoomClass>();
-
-			for(Entry<String, RoomClass> entry: keyValueSet) {
-				levelOneRooms.add(entry.getValue());
-			}
-			for(RoomClass rm : levelOneRooms) {
-				if(rm.getRmLevel() == 1) {
-					System.out.println("[" + numOptions + "] " + rm.getRmName());
-					numOptions++;
-				}
-			}
-
-			String response = input.nextLine();
-			switch(response) {
-			case "1":
-				roomInventory.get("RM101").setRmID("RM101");
-				System.out.println(roomInventory.get("RM101").getRmDescription() + "\n\n");
-				System.out.println("\t[1]  Search Room");
-				System.out.println("\t[2]  Attack Monster");
-				System.out.println("\t[3]  Solve Puzzle");
-				System.out.println("\t[4]  Exit Room");
-
-				String newResponse = input.nextLine();
-				if(newResponse.equalsIgnoreCase("1")) {
-
-				}
-				if(newResponse.equalsIgnoreCase("2")) {
-
-				}
-				if(newResponse.equalsIgnoreCase("3")) {
-					//call puzzleSolver
-					Backpack pack = new Backpack();
-					Puzzle.puzzleSolver(Puzzle.getID(), pack.readinBackpack());
-				}
-				if(newResponse.equalsIgnoreCase("4")) {
-
-				}
-				System.out.println();
-				System.out.println();System.out.println(roomInventory.get("RM101").getRmDescription());
-				System.out.println();
-
-				break;
-
-			case "2":
-				roomInventory.get("RM101").setRmID("RM101");
-				break;
-
-			case "3":
-
-				break;
-
-			default: 
-				System.out.println("Invalid");
-			}			
-
-		}
-		if(currentRmLevel == 2) 
-		{
-			System.out.println("\tRoom options for Level " + currentRmLevel + "\n\t");
-			ArrayList<RoomClass> levelTwoRooms = new ArrayList<RoomClass>();
-
-			for(Entry<String, RoomClass> entry: keyValueSet) {
-				if(entry.getValue().equals("1")) {
-					levelTwoRooms.add(entry.getValue());
-				}
-			}
-			for(RoomClass rm : levelTwoRooms) {
-				if(rm.getRmLevel() == 1) {
-					System.out.println("[" + numOptions + "] " + rm.getRmName());
-					numOptions++;
-				}
-			}
-		}
-
-		if(currentRmLevel == 3) 
-		{
-			System.out.println("\tRoom options for Level " + currentRmLevel + "\n\t");
-			for(Entry<String, RoomClass> entry: keyValueSet) {
-				if(entry.getValue().equals(3)) {
-					System.out.println("[" + numOptions + "] " + entry.getKey());	
-					numOptions++;
-				}
-			}
-		}
-		if(currentRmLevel == 4) {
-			System.out.println("\tRoom options for Level " + currentRmLevel + "\n\t");
-			for(Entry<String, RoomClass> entry: keyValueSet) {
-				if(entry.getValue().equals(1)) {
-					System.out.println("[" + numOptions + "] " + entry.getKey());	
-					numOptions++;
-				}
-			}
-		}
 	}
 }
 

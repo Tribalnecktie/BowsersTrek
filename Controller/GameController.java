@@ -151,11 +151,16 @@ public class GameController
 				
 				//Print the menu options for this room.
 				int x = 0;
-				while(x < menu.length)
+				/*while(x < menu.length)
 				{
 					console.printView("\t" + x +". " + menu[x]);
 					x++;
-				}
+				}*/
+				
+				//TEST katrina rooms print method
+				RoomClass rc = new RoomClass();
+				rc.printRoomDetails();  
+				
 				
 				int roomchoice = newGameScan.nextInt();
 				

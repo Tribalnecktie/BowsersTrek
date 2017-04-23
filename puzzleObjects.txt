@@ -1,0 +1,7 @@
+PL0001* false* Shiny days* What people can go five days without sleep?* Sleeping during...* Sleeping during the night* A0000
+PL0002* false* Fire* If you enter into the 'dark room'. Inside the room has oil lamp, kindling wood, match, and candle. Which one do you light first?* Not the candle* Match* A0003
+PL0003* false* Up and Down* What goes up and down but remains in the same place?* Sta...* Stairs* A0012
+PL0004* false* Quarter* What has a head and a tail?* A pair of them can jingle in your pocket* A coin* A0011
+PL0005* false* Light* You feed me and I live, but you gave me drink and I die. Who am I?* ... and Ice* A0004
+PL0006* false* Mirrors* Imagine you are in a beautiful garden, full of gorgeous flowers, you see a building at the end of the garden. You enter to the building, mirrors are everywhere you just see yourself. You are scared. How do you get out???* Imagine* Stop Imagining* A0001
+PL0007* Special Room* What room does not have a door/window, and no one can enter?* Aren't these puzzles Fun, Gus?* Mushroom* A0000

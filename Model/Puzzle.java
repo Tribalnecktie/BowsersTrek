@@ -14,6 +14,12 @@ public class Puzzle extends RoomClass
 	private Artifact reward;
 	private String rmID;
 	
+	/**
+	 * Default constructor
+	 */
+	public Puzzle() {
+		
+	}
 	public Puzzle (Puzzle ID, String pzlName, String pzlDescription, String pzlHint, String answer, Artifact reward){
 		Puzzle.currentPuzzleID = ID;
 		this.pzlName = pzlName;

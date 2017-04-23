@@ -22,6 +22,12 @@ public class Monster extends Character {
 	boolean isAlive;
 	
 	/**
+	 * Default constructor
+	 */
+	public Monster () {
+		
+	}
+	/**
 	 * Constructor: Monster
 	 * Creates a Monster with all the passed attributes
 	 * @param String ID, String name, int health, int attackPower, String description, Artifact itemDrop
