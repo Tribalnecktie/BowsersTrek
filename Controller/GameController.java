@@ -207,7 +207,7 @@ public class GameController
 					{
 						
 						thisMonster.encounterEnemy(thisPlayer, thisMonster, thisBackpack);
-			
+						newGameScan.close();
 					}
 					
 				}
