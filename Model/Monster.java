@@ -143,8 +143,10 @@ public class Monster extends Character {
 			if (player.getHealth() <= 0)
 			{
 				System.out.println("You died, Better Luck Next TIme");
+				inEncounter = false;
+				playerInput.close();
 			}
-			if (tempMonster.getHealth() <= 0 && inEncounter == true)
+			else if (tempMonster.getHealth() <= 0 && inEncounter == true)
 			{
 				System.out.println("You have slain the beast here is your reward");
 				System.out.println(tempMonster.getItemDrop().getName() + " added to your inventory");
