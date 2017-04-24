@@ -9,7 +9,7 @@ public class Puzzle extends RoomClass
 	private String pzlDescription;
 	private String pzlHint;
 	private String answer;
-	private boolean pzlStatus;
+	public boolean pzlStatus;
 	private Artifact reward;
 	private String rmID;
 	
@@ -102,6 +102,7 @@ public class Puzzle extends RoomClass
 		int numOfAttempts = 0;
 		boolean inPuzzle = true;
 		
+		getIsDone();
 		/*System.out.println(getPzlDescription());
 		String answer = getAnswer();
 		getHint();
