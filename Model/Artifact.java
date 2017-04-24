@@ -80,6 +80,7 @@ public class Artifact implements Serializable {
 		}
 		if (ID.equals("A0003"))
 		{
+			this.ID = ID;
 			this.name = "Tri-Shroombow";
 			this.description = "This is an ordinary crossbow. With three times the arrows per shot";
 			this.strength = 6;
@@ -89,6 +90,7 @@ public class Artifact implements Serializable {
 		}
 		if (ID.equals("A0004"))
 		{
+			this.ID = ID;
 			this.name = "Fire Flower";
 			this.description = "The fire flower is very useful if you want to keep your distance from your enemy.";
 			this.strength = 5;
@@ -98,6 +100,7 @@ public class Artifact implements Serializable {
 		}
 		if (ID.equals("A0005"))
 		{
+			this.ID = ID;
 			this.name = "Bowser's Flaming Sword";
 			this.description = "This weapon is the rarest of them all. If found, you're in luck. Bowsers sword does very heavy damage.";
 			this.strength = 25;
@@ -107,6 +110,7 @@ public class Artifact implements Serializable {
 		}
 		if (ID.equals("A0006"))
 		{
+			this.ID = ID;
 			this.name = "Shroom Sword";
 			this.description = "A long white piece of mushroom dotted with red spots and sharpened.";
 			this.strength = 2;
@@ -116,6 +120,7 @@ public class Artifact implements Serializable {
 		}
 		if (ID.equals("A0007"))
 		{
+			this.ID = ID;
 			this.name = "Shroom Bow";
 			this.description = "A curved piece of brown mushroom with a string connecting the two ends.";
 			this.strength = 2;
@@ -125,6 +130,7 @@ public class Artifact implements Serializable {
 		}
 		if (ID.equals("A0008"))
 		{
+			this.ID = ID;
 			this.name = "Shroom Hammer";
 			this.description = "A short mushroom stick with a very wide and dense end.";
 			this.strength = 2;
@@ -134,6 +140,7 @@ public class Artifact implements Serializable {
 		}
 		if (ID.equals("A0009"))
 		{
+			this.ID = ID;
 			this.name = "Shroom Gun";
 			this.description = "A small, hollow curved mushroom with small mechanical components.";
 			this.strength = 5;
@@ -144,6 +151,7 @@ public class Artifact implements Serializable {
 		}
 		if (ID.equals("A0010"))
 		{
+			this.ID = ID;
 			this.name = "Coin of Constitution";
 			this.description = "A green coin that shimmers and hums with magical energy";
 			this.strength = 5;
@@ -152,6 +160,7 @@ public class Artifact implements Serializable {
 		}
 		if (ID.equals("A0011"))
 		{
+			this.ID = ID;
 			this.name = "Coin of Toughness";
 			this.description = "A red coin that shimmers and hums with magical energy";
 			this.strength = 10;
@@ -160,6 +169,7 @@ public class Artifact implements Serializable {
 		}
 		if (ID.equals("A0012"))
 		{
+			this.ID = ID;
 			this.name = "Coin of Brutality";
 			this.description = "A blue coin that shimmers and \nhums with magical energy";
 			this.strength = 5;
