@@ -1,13 +1,19 @@
 package Controller;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
 
-import Model.*;
+import Model.Artifact;
+import Model.Backpack;
+import Model.MenuLibrary;
+import Model.Monster;
+import Model.MonsterLibrary_HashMap;
+import Model.Player;
+import Model.Puzzle;
+import Model.Room;
+import Model.RoomLibrary_HashMap;
+
 import View.ConsoleView;
 
 
