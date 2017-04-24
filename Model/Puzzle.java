@@ -90,10 +90,6 @@ public class Puzzle extends RoomClass
 			reward = new Artifact("A0000");
 		}	
 		
-		if(ID.equals("PL0008")) {
-			pzlDescription = "There is no puzzle in this room.";
-			pzlStatus = true;
-		}
 	}
 	
 	
