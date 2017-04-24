@@ -270,7 +270,7 @@ public class MenuLibrary
 		
 		//LEVEL FOUR MENU OPTIONS
 		
-		String[] hwl4list = new String[10];
+		String[] hwl4list = new String[11];
 		hwl4list[0] = ("DR401");  
 		hwl4list[1] = ("DR402");
 		hwl4list[2] = ("DR403");  
@@ -278,9 +278,10 @@ public class MenuLibrary
 		hwl4list[4] = ("DR405");  
 		hwl4list[5] = ("DR406");
 		hwl4list[6] = ("DR407");  
-		hwl4list[7] = ("View Inventory");
-		hwl4list[8] = ("Check Stats");
-		hwl4list[9] = ("Save Game");
+		hwl4list[7] = ("Hallway L3");
+		hwl4list[8] = ("View Inventory");
+		hwl4list[9] = ("Check Stats");
+		hwl4list[10] = ("Save Game");
 		optionlist.put("HW_L4",hwl4list);
 		
 		String[] rm401list = new String[6];
