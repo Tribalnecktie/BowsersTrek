@@ -102,8 +102,13 @@ public class MenuLibrary
 		rm107list[4] = ("View Inventory");
 		rm107list[5] = ("Check Stats");
 		optionlist.put("RM107",rm107list);
-
+		
+		
 		//LEVEL TWO MENU OPTIONS
+		String[] staircaseL2List = new String[3];
+		staircaseL2List[0] = ("Hallway L1");
+		staircaseL2List[1] = ("Hallway L2");
+		staircaseL2List[2] = ("DR213");
 
 		String[] hwl2list = new String[10];
 		hwl2list[0] = ("DR201");  
@@ -183,7 +188,14 @@ public class MenuLibrary
 		rm207list[5] = ("Check Stats");
 		optionlist.put("DR207",rm207list);
 		
+		
 		//LEVEL THREE MENU OPTIONS
+		String[] staircaseL3List = new String[5];
+		staircaseL3List[0] = ("Hallway L2");
+		staircaseL3List[1] = ("Hallway L3");
+		staircaseL3List[2] = ("DR213");
+		staircaseL3List[3] = ("DR301");
+		staircaseL3List[4] = ("DR302");
 		
 		String[] hwl3list = new String[9];
 		hwl3list[0] = ("DR300");  
@@ -242,7 +254,15 @@ public class MenuLibrary
 		rm305list[5] = ("Check Stats");
 		optionlist.put("DR305",rm305list);
 		
+		
 		//LEVEL FOUR MENU OPTIONS
+		String[] staircaseL4List = new String[2];
+		staircaseL4List[0] = ("Hallway L3");
+		staircaseL4List[0] = ("Hallway L4");
+		staircaseL4List[1] = ("DR301");
+		staircaseL4List[1] = ("DR401");
+		staircaseL4List[2] = ("DR402");
+		
 		String[] hwl4list = new String[9];
 		hwl4list[0] = ("DR401");  
 		hwl4list[1] = ("DR402");
