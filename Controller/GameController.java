@@ -119,7 +119,7 @@ public class GameController
 					thisRoom.setPuzzleObj(thisPuzzle);
 				}
 				
-				console.printView("=========================================================================================");
+				console.printView("\n=========================================================================================");
 				//print room description
 				console.printView(roomLibrary.getRmDescript(thisRoom.getRmId().toString())); /**@note This seems a little extreme to print a room description -_____-*/
 				
@@ -233,9 +233,17 @@ public class GameController
 					//Scanner inventoryScan = new Scanner(System.in);
 					
 					
-					System.out.println(" HERE I AM ");
+					//System.out.println(" HERE I AM ");
 					//int userPick = newGameScan.nextInt();
-					thisBackpack.printBackpack();
+					
+					try
+					{
+						thisBackpack.printBackpack();
+					}
+					catch(Exception e)
+					{
+						e.printStackTrace();
+					}
 					boolean inVentory = true;
 					//System.out.println(" HERE I AM ");
 					//String userPick = newGameScan.nextLine();
@@ -345,7 +353,7 @@ public class GameController
 								if (userAnswer.equals(answer))
 								{
 									System.out.println("You have correctly answer the puzzle!");
-									System.out.println(thisPuzzle.getReward() + " has been added to your inventory");
+									System.out.println(thisPuzzle.getReward().getName() + " has been added to your inventory");
 									thisBackpack.addArtifact(thisPuzzle.getReward().getID(), thisPuzzle.getReward());
 									thisPuzzle.setIsDone(true);
 									inPuzzle = false;
