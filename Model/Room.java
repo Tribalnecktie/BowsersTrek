@@ -188,7 +188,7 @@ public class Room  {
 	 */
 	public Puzzle getPuzzleObj() {
 
-		int n = rand.nextInt(120) + 1;
+		int n = rand.nextInt(100) + 1;
 		Puzzle p1 = new Puzzle("PL0001");
 		Puzzle p2 = new Puzzle("PL0002");
 		Puzzle p3 = new Puzzle("PL0003");
@@ -196,7 +196,7 @@ public class Room  {
 		Puzzle p5 = new Puzzle("PL0005");
 		Puzzle p6 = new Puzzle("PL0006");
 		Puzzle p7 = new Puzzle("PL0007");
-		Puzzle p8 = new Puzzle("PL0008");
+		
 
 		if(n <= 16) {
 			puzzleObj = p1;	
@@ -219,9 +219,7 @@ public class Room  {
 		else if(n > 91 && n <= 101) {
 			puzzleObj = p7;
 		}
-		else if(n > 101){
-			puzzleObj = p8;
-		}
+		
 
 		return puzzleObj;
 	}

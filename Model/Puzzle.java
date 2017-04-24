@@ -25,7 +25,6 @@ public class Puzzle extends RoomClass
 		this.pzlHint = pzlHint;
 		this.answer = answer;
 		this.reward = reward;
-		
 	}
 	
 	public Puzzle(String ID ) {
@@ -90,10 +89,7 @@ public class Puzzle extends RoomClass
 			reward = new Artifact("A0000");
 		}	
 		
-		if(ID.equals("PL0008")) {
-			pzlDescription = "There is no puzzle in this room.";
-			pzlStatus = true;
-		}
+		
 	}
 	
 	

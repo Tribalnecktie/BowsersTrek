@@ -323,6 +323,8 @@ public class GameController
 					newGameScan.nextLine();
 					while (inPuzzle == true && thisPuzzle.pzlStatus == false)
 					{
+						
+						
 						System.out.println(thisPuzzle.getPzlDescription());
 						String answer = thisPuzzle.getAnswer();
 						String hint = thisPuzzle.getHint();
@@ -331,8 +333,6 @@ public class GameController
 
 						if (numOfAttempts < 5)
 						{
-
-
 							if (userAnswer.equals(answer))
 							{
 								System.out.println("You have correctly answer the puzzle!");
@@ -344,7 +344,6 @@ public class GameController
 							else
 							{
 								System.out.println("That is not the correct answer, please try again.");
-
 								numOfAttempts += 1;
 							}
 						}
@@ -1111,8 +1110,9 @@ public class GameController
 			System.out.println("Tobin Crone (Szechuan Sauce)");
 			System.out.println("Matthew Coker (The Great and Powerful)");
 			System.out.println("Katrina Smith (Herbivore)");
-			System.out.println("Tony Neese (Peanut Butter Crackers");
+			System.out.println("Tony Neese (Peanut Butter Crackers)");
 			System.out.println("\nEND OF THE LINE MATE");
+			
 		}		
 			
 		
