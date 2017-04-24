@@ -1107,7 +1107,14 @@ public class GameController
 		//Dev team info
 		else if(choice == 4)
 		{
-
+			System.out.println("Developers");
+			System.out.println("Tobin Crone (Szechuan Sauce)");
+			System.out.println("Matthew Coker (The Great and Powerful)");
+			System.out.println("Katrina Smith (Herbivore)");
+			System.out.println("Tony Neese (Peanut Butter Crackers");
+			System.out.println("\nEND OF THE LINE MATE");
 		}		
+			
+		
 	}
 }
