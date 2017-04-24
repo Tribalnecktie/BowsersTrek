@@ -241,7 +241,7 @@ public class Room  {
 	 */
 	public Artifact getArtifactObj() {
 
-		int n = rand.nextInt(5) + 1;
+		/*int n = rand.nextInt(5) + 1;
 		Artifact a1 = new Artifact("A0000");
 		Artifact a2 = new Artifact("A0001");
 		Artifact a3 = new Artifact("A0002");
@@ -305,7 +305,7 @@ public class Room  {
 			int x = r.nextInt(possibleItems.size());
 			artifactObj = possibleItems.get(x);	
 		}
-
+*/
 
 		return artifactObj;
 	}	
