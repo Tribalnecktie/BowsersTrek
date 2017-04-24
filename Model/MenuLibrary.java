@@ -205,7 +205,123 @@ public class MenuLibrary
 		rm301list[4] = ("View Inventory");
 		rm301list[5] = ("Check Stats");
 		optionlist.put("DR301",rm301list);
-			
+		
+		String[] rm302list = new String[6];
+		rm302list[0] = ("DR302");  
+		rm302list[1] = ("DR303");
+		rm302list[2] = ("Attack Monster");
+		rm302list[3] = ("Solve puzzle");
+		rm302list[4] = ("View Inventory");
+		rm302list[5] = ("Check Stats");
+		optionlist.put("DR302",rm302list);
+		
+		String[] rm303list = new String[6];
+		rm303list[0] = ("DR306");  
+		rm303list[1] = ("DR307");
+		rm303list[2] = ("Attack Monster");
+		rm303list[3] = ("Solve puzzle");
+		rm303list[4] = ("View Inventory");
+		rm303list[5] = ("Check Stats");
+		optionlist.put("DR303",rm303list);
+		
+		String[] rm304list = new String[6];
+		rm304list[0] = ("DR304");  
+		rm304list[1] = ("DR305");
+		rm304list[2] = ("Attack Monster");
+		rm304list[3] = ("Solve puzzle");
+		rm304list[4] = ("View Inventory");
+		rm304list[5] = ("Check Stats");
+		optionlist.put("DR304",rm304list);
+		
+		String[] rm305list = new String[6];
+		rm305list[0] = ("DR315");  
+		rm305list[1] = ("DR316");
+		rm305list[2] = ("Attack Monster");
+		rm305list[3] = ("Solve puzzle");
+		rm305list[4] = ("View Inventory");
+		rm305list[5] = ("Check Stats");
+		optionlist.put("DR305",rm305list);
+		
+		//LEVEL FOUR MENU OPTIONS
+		String[] hwl4list = new String[9];
+		hwl4list[0] = ("DR401");  
+		hwl4list[1] = ("DR402");
+		hwl4list[2] = ("DR403");  
+		hwl4list[3] = ("DR405");
+		hwl4list[4] = ("DR407");  
+		hwl4list[5] = ("DR408");
+		hwl4list[6] = ("DR409");  
+		hwl4list[7] = ("View Inventory");
+		hwl4list[8] = ("Check Stats");
+		optionlist.put("HW_L4",hwl4list);
+		
+		String[] rm401list = new String[6];
+		rm401list[0] = ("Hallway L4");  
+		rm401list[1] = ("DR401");
+		rm401list[2] = ("Attack Monster");
+		rm401list[3] = ("Solve puzzle");
+		rm401list[4] = ("View Inventory");
+		rm401list[5] = ("Check Stats");
+		optionlist.put("DR401",rm401list);
+		
+		String[] rm402list = new String[6];
+		rm402list[0] = ("Hallway L4");  
+		rm402list[1] = ("DR402");
+		rm402list[2] = ("Attack Monster");
+		rm402list[3] = ("Solve puzzle");
+		rm402list[4] = ("View Inventory");
+		rm402list[5] = ("Check Stats");
+		optionlist.put("DR402",rm402list);
+		
+		String[] rm403list = new String[7];
+		rm403list[0] = ("Hallway L4");  
+		rm403list[1] = ("DR403");
+		rm403list[2] = ("DR404");
+		rm403list[3] = ("Attack Monster");
+		rm403list[4] = ("Solve puzzle");
+		rm403list[5] = ("View Inventory");
+		rm403list[6] = ("Check Stats");
+		optionlist.put("DR403",rm403list);
+		
+		String[] rm404list = new String[8];
+		rm404list[0] = ("Hallway L4");  
+		rm404list[1] = ("DR404");
+		rm404list[2] = ("DR405");
+		rm404list[3] = ("DR406");
+		rm404list[4] = ("Attack Monster");
+		rm404list[5] = ("Solve puzzle");
+		rm404list[6] = ("View Inventory");
+		rm404list[7] = ("Check Stats");
+		optionlist.put("DR404",rm404list);
+		
+		String[] rm405list = new String[7];
+		rm405list[0] = ("Hallway L4");  
+		rm405list[1] = ("DR406");
+		rm405list[2] = ("DR407");
+		rm405list[3] = ("Attack Monster");
+		rm405list[4] = ("Solve puzzle");
+		rm405list[5] = ("View Inventory");
+		rm405list[6] = ("Check Stats");
+		optionlist.put("DR405",rm405list);
+		
+		String[] rm406list = new String[6];
+		rm406list[0] = ("Hallway L4");  
+		rm406list[1] = ("DR408");
+		rm406list[2] = ("Attack Monster");
+		rm406list[3] = ("Solve puzzle");
+		rm406list[4] = ("View Inventory");
+		rm406list[5] = ("Check Stats");
+		optionlist.put("DR406",rm406list);
+		
+		String[] rm407list = new String[6];
+		rm407list[0] = ("Hallway L4");  
+		rm407list[1] = ("DR409");
+		rm407list[2] = ("Attack Monster");
+		rm407list[3] = ("Solve puzzle");
+		rm407list[4] = ("View Inventory");
+		rm407list[5] = ("Check Stats");
+		optionlist.put("DR407",rm407list);
+		
 		return optionlist;
 
 	}
