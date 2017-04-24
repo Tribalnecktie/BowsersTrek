@@ -135,7 +135,7 @@ public class MenuLibrary
 		optionlist.put("HW_L2",hwl2list);
 
 		String[] rm201list = new String[7];
-		rm201list[0] = ("Hallway L2");  
+		rm201list[0] = ("Hallway L2");
 		rm201list[1] = ("DR207");
 		rm201list[2] = ("Attack Monster");
 		rm201list[3] = ("Solve puzzle");

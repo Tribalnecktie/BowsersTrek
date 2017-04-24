@@ -179,12 +179,11 @@ public class RoomLibrary_HashMap extends Room {
 
 		if(rmId.equalsIgnoreCase("RM201"))
 		{
-			rmDescript = "As you enter this room from the west, right away you notice that it’s simply an eye pleaser. It feels cozy, kind like a waiting area. There are cabinets and furniture that remind you of a coffeehouse. There are old magazines lying atop the few circular tables laid out throughout the room. There are lamps, fans, a stove; you are oddly attracted to this room. Something tells you you’ll be coming back to this room later on, as there are four doors." +  
-
-			"DR201: South door leads to the main hallway on level 2 (RM208). There are several extravagant rooms to choose to explore from here.\n" +
-			"DR202: West door leads back out to west-side hallway and the stairs, but on the other side to the hallway is the wine cellar (RM 206)\n" +
-			"DR 203: East door lets you out into the east-side of the main hallway which grants you access to the supply room (RM 202)\n" + 
-			"DR204: North door leads you directly into the Library (RM207), so be very quiet when you enter.";
+			rmDescript = "As you enter this room from the west, right away you notice that it’s simply an eye pleaser. "
+					+ "It feels cozy, kind like a waiting area. There are cabinets and furniture that remind you of a coffeehouse. "
+					+ "There are old magazines lying atop the few circular tables laid out throughout the room. "
+					+ "There are lamps, fans, a stove; you are oddly attracted to this room. "
+					+ "Something tells you you’ll be coming back to this room later on, as there are four doors.";
 		}
 
 		if(rmId.equalsIgnoreCase("RM202"))
