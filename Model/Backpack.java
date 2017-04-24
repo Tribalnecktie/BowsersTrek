@@ -76,7 +76,7 @@ public class Backpack implements Serializable {
 	{
 		String ArtifactInfo = "Default Info";
 		
-		ArtifactInfo = "ID:" + item.getID().toString() + " " + item.getName().toString()
+		ArtifactInfo = "ID#:" + item.getID().toString().substring(3,4) + " " + item.getName().toString()
 				+ " " + item.getStrength() + " " + item.getDescription();
 		
 		
