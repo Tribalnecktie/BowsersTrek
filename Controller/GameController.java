@@ -297,7 +297,7 @@ public class GameController
 						boolean inPuzzle = true;
 						
 						thisPuzzle.getIsDone();
-						
+						newGameScan.nextLine();
 						while (inPuzzle == true && thisPuzzle.pzlStatus == false)
 						{
 							System.out.println(thisPuzzle.getPzlDescription());
@@ -305,7 +305,7 @@ public class GameController
 							String hint = thisPuzzle.getHint();
 							//newGameScan.nextInt();
 							//newGameScan.nextInt();
-							newGameScan.nextLine();
+							//newGameScan.nextLine();
 							String userAnswer = newGameScan.nextLine();
 							
 							//SCANNERRRRRRRRRRRRRRRRRRRRRRRRR???????????????????
