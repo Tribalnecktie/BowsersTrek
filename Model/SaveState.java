@@ -40,6 +40,32 @@ public class SaveState {
 		//loadPlayer(player);
 		loadInventory(pack);
 	}
+	
+	public void writeRoom(String rm)
+	{
+		try
+		{
+			ObjectOutputStream roomFile = new ObjectOutputStream(new FileOutputStream("roomTest.bin"));
+			roomFile.writeObject(rm);
+			roomFile.close();
+			System.out.println("Room write successful");
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public String loadTheRoom() throws ClassNotFoundException, IOException
+	{
+		ObjectInputStream roomInFile = new ObjectInputStream(new FileInputStream("roomTest.bin"));
+		String room = (String)roomInFile.readObject();
+		roomInFile.close();
+		System.out.println("Room load success");
+		//System.out.println("");
+		
+		return room;
+	}
 
 	/**
 	 * Method: writePlayer

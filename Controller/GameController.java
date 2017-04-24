@@ -94,7 +94,7 @@ public class GameController
 				
 				//Thread.sleep(800);
 				//THIS IS THE OTHER PART COKER TOUCHED CUZ IT TOOK TO DAMN LONG TO RUN EVERY TIME
-				Thread.sleep(0);
+				Thread.sleep(500);
 				//see if we can clear the screen here also.
 			} 
 			catch (InterruptedException ie)
@@ -527,6 +527,7 @@ public class GameController
 				else if(selectedOption.substring(0,4).equalsIgnoreCase("Save"))
 				{
 					ss.saveTheGame(thisPlayer, thisBackpack);
+					ss.writeRoom(thisRoom.getRmId());
 				}
 				
 				if(thisPlayer.getHealth() == 0)
@@ -563,7 +564,7 @@ public class GameController
 			monsterMap = monsterLibrary.monsterAL();
 
 			//Create our initial objects needed
-			Room thisRoom = roomInfoMap.get("HW_L1");	//START NEW GAME ALWAYS AT RM101!!! ***Maybe actually the hallway. not sure how were going to do this.
+			Room thisRoom = roomInfoMap.get(ss.loadTheRoom());	//START NEW GAME ALWAYS AT RM101!!! ***Maybe actually the hallway. not sure how were going to do this.
 			//thisPlayer = new Player();
 			//thisBackpack = new Backpack();
 			Monster thisMonster = monsterMap.get("ML00");
@@ -1004,6 +1005,7 @@ public class GameController
 				else if(selectedOption.substring(0,4).equalsIgnoreCase("Save"))
 				{
 					ss.saveTheGame(thisPlayer, thisBackpack);
+					ss.writeRoom(thisRoom.getRmId());
 				}
 				
 				if(thisPlayer.getHealth() == 0)
