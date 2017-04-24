@@ -209,7 +209,7 @@ public class GameController
 						
 						int userPick = newGameScan.nextInt();
 						
-						if(userPick == 99)
+						if(userPick < 0 || userPick >= thisBackpack.getBackpack().size())
 						{
 							inVentory = false;
 						}
@@ -533,7 +533,7 @@ public class GameController
 										//System.out.println(" HERE I AM ");
 										//String userPick = newGameScan.nextLine();
 										//String userChoicsad = Integer.parseInt(userPick);
-										if(userPick == 99)
+										if(userPick < 0 || userPick >= thisBackpack.getBackpack().size())
 										{
 											inVentory = false;
 											//break;
