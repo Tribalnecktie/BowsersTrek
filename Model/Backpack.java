@@ -58,9 +58,7 @@ public class Backpack implements Serializable {
 			
 			
 			System.out.println(ArtifactInfoPrint(thisItem));
-			//System.out.println(artifact.getKey().toString());
-			
-			
+			//System.out.println(artifact.getKey().toString());			
 		}
 	}
 	
@@ -68,28 +66,13 @@ public class Backpack implements Serializable {
 	{
 		String ArtifactInfo = "Default Info";
 		
-		ArtifactInfo = item.getID().toString() + " " + item.getName().toString()
+		ArtifactInfo = "ID:" + item.getID().toString() + " " + item.getName().toString()
 				+ " " + item.getStrength() + " " + item.getDescription();
 		
 		
-		return ArtifactInfo;
-		
+		return ArtifactInfo;	
 	}
 	
-	/*
-	 * This method should be given the players name or ID or something.
-	 * Then go and look for the backpack file. and load it in.
-	 * I may have this done as a recreation of the backpack depending on how we read it in.
-	 * Store only the item id into a file. and read in each one and create the objects and add them
-	 * to the list here.
-	 */
-	public Backpack readinBackpack()
-	{
-		
-		
-		return null; //Return the users backpack.
-		
-	}
 	
 	public Map<String, Artifact> getBackpack()
 	{
@@ -99,6 +82,12 @@ public class Backpack implements Serializable {
 	public void setBackpack(Map <String, Artifact> newMap)
 	{
 		this.userBackpack = newMap;
+	}
+	
+	public Artifact getItem(String artID)
+	{
+		
+		return this.userBackpack.get(artID);
 	}
 
 }

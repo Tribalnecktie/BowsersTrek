@@ -100,28 +100,11 @@ public class GameController
 			 * 
 			 */
 
+			
 			while(GAMEON)
-			{
-				/**
-				 * Thotin: okay so i imagine it like this. We start this game loop. We do a brief check in of all our objects and make sure they are set correctly
-				 * 			and then we present the menu with the correct options for that room.
-				 * 			The user will make a choice and based on that choice an action will happen. Loops for monster encounters and puzzle encounters are
-				 * 			taken care of in their respective model classes. 
-				 * 			If a door option is chosen, the doors room number will be processed.
-				 * 			During this processing we will need to:
-				 * 												Change the room object and display its description.
-				 * 												Get the associated Menu options and display them
-				 * 												wait for user input and repeat.
-				 * 
-				 * 			This should take care of it really. we can create another nested loop that looks for gamecomplete or something
-				 * 			and put it similiar to this
-				 * 			if (ROOMID = "LASTROOMID" AND someotherrequirements blah blah)
-				 * 				gamecomplete = true;
-				 * 				save game and display a message of completion.
-				 * 				back to main menu.
-				 * 												
-				 * 
-				 */
+			{			
+				Scanner newLoopScan = new Scanner(System.in);
+
 				//SET UP THE NEW VARIABLES
 				if(thisMonster.isAlive())
 				{
@@ -151,11 +134,6 @@ public class GameController
 				String[] menu;
 				menu = menuMap.get(thisRoom.getRmId());
 				
-				if(DEBUG==1)
-				{
-					console.printConsoleView("Menu length: " + menu.length + "\n");
-				}
-				
 				//Print the menu options for this room.
 				int x = 0;
 				while(x < menu.length)
@@ -163,16 +141,9 @@ public class GameController
 					console.printView("\t" + x +". " + menu[x]);
 					x++;
 				}
-				//newGameScan.close();
-				//Scanner newGameScan1 = new Scanner(System.in);
-				int roomchoice = newGameScan.nextInt();
-				
+
+				int roomchoice = newLoopScan.nextInt();
 				String selectedOption = menu[roomchoice];
-				
-				if(DEBUG==1)
-				{
-					console.printView("You selected " + selectedOption.substring(0, 4) + "\n");
-				}
 				
 				//Parse and deal with the selection
 				//GOING THROUGH A DOOR TO NEW ROOM!
@@ -183,45 +154,80 @@ public class GameController
 					
 					newRoom = roomInfoMap.get("RM"+roomNumber);
 					
-					//console.printView(newRoom.getRmId());
-					
 					thisRoom = newRoom;
 					thisMonster = thisRoom.rollMonster();
 					thisRoom.setMonsterObj(thisMonster);
-					thisRoom.getMonsterObj().setAlive(true);
-					
+					thisRoom.getMonsterObj().setAlive(true);					
 					
 					console.printView("\nYou succesfully walk through a door!\n");
-					//GAMEON = false;
+					newLoopScan.close();
 				}
 				//GOING INTO THE HALLWAY!
 				else if(selectedOption.substring(0, 2).equalsIgnoreCase("Ha")) //hallway
 				{
 					Room newRoom = new Room();
 					String roomNumber = selectedOption.substring(8, selectedOption.length());
-					//console.printView("HW_" + roomNumber);
 					console.printView("");
 					
 					newRoom = roomInfoMap.get("HW_"+roomNumber);
 					
 					thisRoom = newRoom;
+					newLoopScan.close();
 					
 				}
 				//SELECTED VIEW INVENTORY
 				else if(selectedOption.substring(0,4).equalsIgnoreCase("View")) //see inventory
-				{
+				{	
+					newLoopScan.close();
+					Scanner inventoryScan = new Scanner(System.in);
 					thisBackpack.printBackpack();
-					console.printView("");
+					boolean inVentory = true;
+					
+					while(inVentory)
+					{
+						console.printView("");
+						console.printView("Choose an item ID to apply effect \nOr type 0 to exit the inventory");
+						
+						String userPick = inventoryScan.nextLine();
+						
+						if(userPick.equalsIgnoreCase("0"))
+						{
+							inventoryScan.close();
+							inVentory = false;
+						}
+						else
+						{
+							//get the artifact using its id given by user.
+							Artifact tempItem = thisBackpack.getItem(userPick);
+							
+							//apply its effect to thisPlayer
+							if(tempItem.isCanHeal())
+							{
+								int itemStrength = tempItem.getStrength();
+								thisPlayer.setHealth(thisPlayer.getHealth() + itemStrength);
+								inventoryScan.close();
+							}
+							else if(tempItem.isAddAtk())
+							{
+								int itemAttack = tempItem.getStrength();
+								thisPlayer.setAttackPower(thisPlayer.getAttackPower() + itemAttack);
+								inventoryScan.close();
+							}
+						}
+						break;
+					}
 				}
 				//SELECTED CHECK STATUS
 				else if(selectedOption.substring(0,5).equalsIgnoreCase("Check")) //Check player status
 				{
 					thisPlayer.viewStatus();
+					newLoopScan.close();
 				}
 				//Attempt the Puzzle
 				else if(selectedOption.substring(0,5).equalsIgnoreCase("Solve")) //Solve the Puzzle
 				{
-					thisPuzzle.puzzleSolver(thisPuzzle.getID(), thisBackpack);
+					Puzzle.puzzleSolver(Puzzle.getID(), thisBackpack);
+					newLoopScan.close();
 				}
 				//SELECTED ATTACK MONSTER
 				else if(selectedOption.substring(0,6).equalsIgnoreCase("Attack")) //Attack the mosnter
@@ -238,6 +244,7 @@ public class GameController
 							thisMonster.setAlive(false);
 							//playerInput.close();
 							inEncounter = false;
+							newLoopScan.close();
 							return;
 						}
 
@@ -258,7 +265,6 @@ public class GameController
 								thisPlayer.addScore(thisMonster);
 								thisMonster.setAlive(false);
 								inEncounter = false;
-								//playerInput.close();
 							}
 							else
 							{
@@ -275,26 +281,22 @@ public class GameController
 									thisPlayer.attack(thisMonster);
 									System.out.println("Monster Health " + thisMonster.getHealth());
 									System.out.println(thisMonster.getName() + " attacks you for " + thisMonster.getAttackPower() + " Health");
-									thisMonster.attack(thisPlayer);
-									
+									thisMonster.attack(thisPlayer);	
 								}
 								else if (command == 2)
 								{
 									thisBackpack.printBackpack(); 
-									
 								}
 								else if (command == 3)
 								{
 									System.out.println("Monster Health: " + thisMonster.getHealth());
 									System.out.println("Monster Attack Power: " + thisMonster.getAttackPower());
 									System.out.println("Monster's Held Item: " + thisMonster.getItemDrop().getName());
-									//System.out.println("");
 								}
 								else if (command == 4)
 								{
 									System.out.println("You've escaped with your life");
 									inEncounter = false;
-									//playerInput.close();
 								}
 								else
 								{
@@ -302,57 +304,23 @@ public class GameController
 								}
 							}
 						}
-						//System.out.println("Monster loop done");
 					}
 					else
 					{
 						console.printView("You've already killt this boi!");
-					}
-					
-					
+					}					
+					newLoopScan.close();				
 				}
 				
 				if(thisPlayer.getHealth() == 0)
 				{
 					console.printView("Aww good try! Thanks for playing :) \nEat more vegetables and grow big and strong and try again one day!");
+					newLoopScan.close();
 					GAMEON = false;
 				}
-				
-				newGameScan = new Scanner(System.in);
-				
-				//Finished with game				
-				//GAMEON = false;
+				newLoopScan.close();
+				newLoopScan = new Scanner(System.in);
 			}			
-
-			System.exit(0);
-
-
-			//Here is where we will pass in the room id to get the menu options and then display them.
-			//for now we are hard coding the menu options for this room.
-			//console.printConsoleView("Testing Menu Options");
-			
-			
-			/*
-			MenuOptions menuOp = new MenuOptions();
-			Map<String, ArrayList<String>> menuMap = new HashMap<String, ArrayList<String>>();
-
-			menuMap = menuOp.optionsAL();
-			ArrayList<String> options = menuMap.get("RM101");
-
-
-			console.printConsoleView(options.size());
-			console.printConsoleView(options.toString());*/
-
-
-			//Testing Monster
-			console.printConsoleView("Testing Monster");
-			//console.printConsoleView(thisMonster.getDescription());
-			//thisMonster.encounterEnemy(thisPlayer, thisMonster, thisBackpack);
-			//thisMonster.encounterEnemy(thisPlayer, thisMonster, thisBackpack, newGameScan);
-
-
-			//Close the scanner to avoid exceptions
-			newGameScan.close();
 		}
 		//Load Game
 		else if(choice == 2)	
@@ -365,8 +333,8 @@ public class GameController
 			/**
 			 * Need here a method to check names of all the save files.
 			 */
-
-
+			
+			
 			//Start player at loaded room ID.
 		}
 		//Exit the game
@@ -379,92 +347,5 @@ public class GameController
 		{
 
 		}
-
-
-		//---------------------------------------------TestZone--------------------------------------------------
-		/*
-		//Creating our Room Objects with the RoomLibrary_HashMap class
-		System.out.println("\nStarting RoomLibrary_HashMap example");
-		Map<String,Room> roomInfoMap = new HashMap<String,Room>();
-		RoomLibrary_HashMap roomlibrary = new RoomLibrary_HashMap();
-
-		//Set the roomInfoMap 
-		roomInfoMap = roomlibrary.roomsAL();		
-
-		//Testing for roomInfoMap
-		//Loop through and print every Key in the HashMap.
-		Iterator<?> iterate = roomInfoMap.entrySet().iterator();
-		while(iterate.hasNext())
-		{
-			Map.Entry roomobj = (Map.Entry<String, Room>)iterate.next();
-			System.out.println(roomobj.getKey().toString());
-			//System.out.println(roomlibrary.getRmDescript(roomobj.getKey().toString()));
-		}
-
-		//get the room ID.
-
-		Room CurrentRoom = roomInfoMap.get("RM101");
-
-		System.out.println(roomlibrary.getRmDescript(CurrentRoom.getRmId()));		
-		 */
-
-
-		//Artifact Creation and Inventory List.
-
-
-
-		/*Artifact testArtifact = new Artifact("A0000");
-		Artifact testArtifact2 = new Artifact("A0001");
-		Artifact testArtifact3 = new Artifact("A0002");
-
-
-		System.out.println(testArtifact.getID());
-		System.out.println(testArtifact.getName());
-		System.out.println(testArtifact.getStrength());
-		//Haha works wonderfully.
-
-		//Now for something more difficult..inventory list.
-		Backpack usersBackpack = new Backpack();
-
-		//Null pointer exception on this. wonder why. 
-		usersBackpack.addArtifact(testArtifact.getID().toString(),testArtifact);
-		usersBackpack.addArtifact(testArtifact2.getID().toString(),testArtifact2);
-		usersBackpack.addArtifact(testArtifact3.getID().toString(),testArtifact3);
-		usersBackpack.addArtifact(testArtifact.getID().toString(),testArtifact);
-
-
-
-		usersBackpack.printBackpack();
-		 */
 	}
-
-
-
-	public Room createRoom()
-	{
-
-		return null;
-
-	}
-
 }
-
-
-
-/*
-	NOTES**
-
-
-	Okay so for the saving and loading of a game. On startup. Loop through the filenames in the save dir.
-	Store in a hash map so we can get the key and on selected then load using that key.
-	the filename list is displayed to the user if they select load game on the main menu. 
-	user will choose a name and that names key will be used to select and read in that file.
-	The data read in from this file will create the objects necessary to start the player from the last place they left off.
-	Need to probably implement Serializable into our object classes. so that we can save the object instead of just string data.
-	string data could work. but would have to be error checked to hell because users are stupid and make mistakes. 
-	i think at this point we should stick with what we have just for the sake of time.
-
-
-
-
- */
