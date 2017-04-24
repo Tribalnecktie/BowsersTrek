@@ -98,19 +98,21 @@ public class Puzzle extends RoomClass
 	}
 	
 	
-	public static void puzzleSolver(Puzzle currentPuzzleID, Backpack pack)
+	public void puzzleSolver(Puzzle puzzleObj, Backpack pack)
 	{
 		int numOfAttempts = 0;
 		boolean inPuzzle = true;
 		
-		Scanner playerInput = new Scanner(System.in);
+		System.out.println(getPzlDescription());
 		
-		System.out.println(currentPuzzleID.getPzlDescription());
+		Scanner playerInput = new Scanner(System.in);
+		String playerAnswer = playerInput.nextLine();
+		
 		while (inPuzzle == true)
 		{
 			if (numOfAttempts < 5)
 			{
-				if (playerInput.equals(currentPuzzleID.getAnswer()))
+				if (playerAnswer.equals(puzzleObj.getAnswer()))
 				{
 					System.out.println("You have correctly answer the puzzle!");
 					System.out.println(currentPuzzleID.getReward() + " has been added to your inventory");
@@ -122,16 +124,16 @@ public class Puzzle extends RoomClass
 				else
 				{
 					System.out.println("That is not the correct answer, please try again.");
-					System.out.println(currentPuzzleID.getPzlDescription());
+					System.out.println(getPzlDescription());
 					numOfAttempts += 1;
 				}
 			}
 			else if (numOfAttempts >= 5 && numOfAttempts <= 10)
 			{
 				System.out.println("Looks like you are having a little trouble, here is a hint:");
-				System.out.println(currentPuzzleID.getHint());
+				System.out.println(puzzleObj.getHint());
 				
-				if (playerInput.equals(currentPuzzleID.getAnswer()))
+				if (playerAnswer.equals(currentPuzzleID.getAnswer()))
 				{
 					System.out.println("You have correctly answer the puzzle!");
 					System.out.println(currentPuzzleID.getReward() + " has been added to your inventory");
@@ -166,13 +168,16 @@ public class Puzzle extends RoomClass
 		}
 	}
 
-	public static Puzzle getID() {
-		return currentPuzzleID;
+	public Puzzle getID() {
+		Room rm = new Room();
+		
+		return rm.getPuzzleObj();
+		
 	}
 
-	public void setPzlId(Puzzle ID) {
-		Puzzle.currentPuzzleID = ID;
-	}
+	//public void setPzlId(Puzzle ID) {
+		//Puzzle.currentPuzzleID = ID;
+	//}
 
 	public String getPzlName() {
 		return pzlName;
@@ -194,17 +199,17 @@ public class Puzzle extends RoomClass
 		return pzlDescription;
 	}
 
-	public void setPzlDescription(String pzlDescription) {
-		this.pzlDescription = getPzlDescription();
-	}
+	//public void setPzlDescription(String pzlDescription) {
+		//this.pzlDescription = getPzlDescription();
+	//}
 	
 	public String getHint(){
 		return pzlHint;
 	}
 	
-	public void setHint(String pzlHint){
-		this.pzlHint = pzlHint;
-	}
+	//public void setHint(String pzlHint){
+		//this.pzlHint = pzlHint;
+	//}
 
 	public String getAnswer() {
 		return answer;
