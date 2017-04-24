@@ -28,7 +28,7 @@ public class SaveState {
 		writePlayer(player);
 		writeInventory(pack);
 	}
-
+	
 	//WARNING ON LOAD THE GAME, ONLY LOADS THE INVENTORY
 	/**
 	 * Method: loadTheGame
@@ -60,7 +60,7 @@ public class SaveState {
 			e.printStackTrace();
 		}
 	}
-
+	
 	/**
 	 * Method: writeInventory
 	 * Deconstructs the inventory hashmap and takes those keys
@@ -69,48 +69,16 @@ public class SaveState {
 	 */
 	public void writeInventory(Backpack pack)
 	{
-		//Reading all the keys to an array with their quantities 
+		//Reading all the keys to an array
 		String[] keysArray = new String[13];
-		int[] quantArray = new int [13];
 		int i = 0;
 		for (String key: pack.userBackpack.keySet())
 		{
 			keysArray[i] = key;
-			quantArray[i] = pack.userBackpack.get(key).getQuantity();
 			i++;
 		}
-
-		try
-		{
-			ObjectOutputStream packFile = new ObjectOutputStream(new FileOutputStream("packKeysTest.bin"));
-			packFile.writeObject(keysArray);
-			packFile.close();
-			System.out.println("BackPack Key write successful");
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-
-		//Writing the quantities
-		try
-		{
-			ObjectOutputStream packQFile = new ObjectOutputStream(new FileOutputStream("packQTest.bin"));
-			packQFile.writeObject(quantArray);
-			packQFile.close();
-			System.out.println("BackPack Key write successful");
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-
-
-
-
-
+		
 		//Reading all the artifacts of those keys to an array
-		/*
 		Artifact[] artifactsArray = new Artifact[13];
 		i = 0;
 		for (String key: pack.userBackpack.keySet())
@@ -118,11 +86,20 @@ public class SaveState {
 			artifactsArray[i] = pack.userBackpack.get(key);
 			i++;
 		}
-		 */
-
+		
 		//Time to read all those keys from the String array into a file
-
-
+		try
+		{
+			ObjectOutputStream packFile = new ObjectOutputStream(new FileOutputStream("packKeysTest.bin"));
+			packFile.writeObject(keysArray);
+			packFile.close();
+			System.out.println("BackPack write successful");
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		
 		/*
 		try
 		{
@@ -135,9 +112,9 @@ public class SaveState {
 		{
 			e.printStackTrace();
 		}
-		 */
+		*/
 	}
-
+	
 	/**
 	 * Method: loadPlayer
 	 * Loads the player from a file
@@ -150,10 +127,10 @@ public class SaveState {
 		playerInFile.close();
 		System.out.println("In loadPlayer " + player.getHealth());
 		System.out.println("Player load successful");
-
+		
 		return player;
 	}
-
+	
 	/**
 	 * Method: loadInventory
 	 * Loads the inventory from a text file and reconstructs the hashmap using the keys
@@ -172,25 +149,19 @@ public class SaveState {
 			System.out.println(keysArray[i]);
 		}
 		System.out.println("Backpack load successful");
-
-		//We must read the quantities of items
-		ObjectInputStream packQInFile = new ObjectInputStream(new FileInputStream("packQKeysTest.bin"));
-		int [] qArray = new int[13];
-		qArray = (int[])packQInFile.readObject();
-		packQInFile.close();
 		
+	
 		Map<String, Artifact> sudoPack = new HashMap<String, Artifact>();
 		for (int i = 0; i < keysArray.length; i++)
 		{
 			if (keysArray[i] != null)
-				sudoPack.put(keysArray[i], new Artifact(keysArray[i]));
-			sudoPack.get(keysArray[i]).setQuantity(qArray[i]);;
+			sudoPack.put(keysArray[i], new Artifact(keysArray[i]));
 		}
 		pack.userBackpack = sudoPack;
-
+		
 		//pack.userBackpack = sudoPack;
-
+		
 		//pack.userBackpack = sudoPack;
-
+		
 	}
 }

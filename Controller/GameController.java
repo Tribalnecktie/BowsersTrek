@@ -209,7 +209,7 @@ public class GameController
 						
 						int userPick = newGameScan.nextInt();
 						
-						if(userPick < 0 || userPick >= thisBackpack.getBackpack().size())
+						if(userPick == 99)
 						{
 							inVentory = false;
 						}
@@ -293,7 +293,7 @@ public class GameController
 							{
 								
 								
-								if (userAnswer.equalsIgnoreCase(answer))
+								if (userAnswer.equals(answer))
 								{
 									System.out.println("You have correctly answer the puzzle!");
 									System.out.println(thisPuzzle.getReward().getName() + " has been added to your inventory");
@@ -313,7 +313,7 @@ public class GameController
 								System.out.print("Looks like you are having a little trouble, here is a hint: ");
 								System.out.print(hint + " ");
 								
-								if (userAnswer.equalsIgnoreCase(answer))
+								if (userAnswer.equals(answer))
 								{
 									System.out.println("You have correctly answer the puzzle!");
 									System.out.println(thisPuzzle.getReward() + " has been added to your inventory");
@@ -403,126 +403,9 @@ public class GameController
 								}
 								else if (command == 2)
 								{
-									/*
-									while (true)
-									{
-										System.out.println("HERE I AM");
-										String potato = newGameScan.nextLine();
-										System.out.println("lets print potato");
-										System.out.println(potato);
-										
-									}
-									*/
-									//thisBackpack.addArtifact(thisMonster.getItemDrop().getID(), new Artifact(thisMonster.getItemDrop().getID()));
-									//thisBackpack.printBackpack();
-									//Scanner inventoryScan = new Scanner(System.in);
-									
-									
-									//System.out.println(" HERE I AM ");
-									//int userPick = newGameScan.nextInt();
 									thisBackpack.printBackpack();
 									boolean inVentory = true;
-									//System.out.println(" HERE I AM ");
-									//String userPick = newGameScan.nextLine();
-									/*while(inVentory == true)
-									{
-										console.printView("");
-										System.out.println("Choose an item ID to apply effect \nOr type 99 to exit the inventory");
-										
-										int userPick = newGameScan.nextInt();
-										//String userPick = inventoryScan.nextLine();
-										//System.out.println(" HERE I AM ");
-										//String userPick = newGameScan.nextLine();
-										//String userChoicsad = Integer.parseInt(userPick);
-										if(userPick == 0)
-										{
-											inVentory = false;
-											//break;
-										}
-										else if (!thisBackpack.isEmpty())
-										{
-											//get the artifact using its id given by user.
-											String invChoice = "" + userPick;
-											Artifact tempItem = thisBackpack.getItem(userPick + "");
-											
-											//apply its effect to thisPlayer
-											if(tempItem.isCanHeal())
-											{
-												int itemStrength = tempItem.getStrength();
-												thisPlayer.setHealth(thisPlayer.getHealth() + itemStrength);
-												console.printView("Added " + itemStrength + " to Health");
-												break;
-											}
-											else if(tempItem.isAddAtk())
-											{
-												int itemAttack = tempItem.getStrength();
-												thisPlayer.setAttackPower(thisPlayer.getAttackPower() + itemAttack);
-												console.printView("Added " + itemAttack + " to Attack");
-												break;
-											}
-										}
-										break;
-									}*/
-									//inventoryScan.close();
-									/*while(inVentory == true)
-									{
-										console.printView("");
-										System.out.println("Choose an item ID to apply effect by typing in its number \nOr type 99 to exit the inventory");
-										
-										int userPick = newGameScan.nextInt();
-										//String userPick = inventoryScan.nextLine();
-										//System.out.println(" HERE I AM ");
-										//String userPick = newGameScan.nextLine();
-										//String userChoicsad = Integer.parseInt(userPick);
-										if(userPick == 99)
-										{
-											inVentory = false;
-											//break;
-										}
-										else if (!thisBackpack.isEmpty())
-										{
-											//get the artifact using its id given by user.
-											String invChoice = "" + userPick;
-											Artifact tempItem = thisBackpack.getItem("A000"+userPick);
-											
-											//apply its effect to thisPlayer
-											if(tempItem.isCanHeal())
-											{
-												int itemStrength = tempItem.getStrength();
-												thisPlayer.setHealth(thisPlayer.getHealth() + itemStrength);
-												console.printView("Added " + itemStrength + " to Health");
-												
-												if(tempItem.getQuantity() != 0)
-												{
-													tempItem.setQuantity(tempItem.getQuantity()-1);
-												}
-												else
-												{
-													thisBackpack.removeArtifact("A000"+userPick);	
-												}
-												
-												break;
-											}
-											else if(tempItem.isAddAtk())
-											{
-												int itemAttack = tempItem.getStrength();
-												thisPlayer.setAttackPower(thisPlayer.getAttackPower() + itemAttack);
-												console.printView("Added " + itemAttack + " to Attack");
-												
-												if(tempItem.getQuantity() != 0)
-												{
-													tempItem.setQuantity(tempItem.getQuantity()-1);
-												}
-												else
-												{
-													thisBackpack.removeArtifact("A000"+userPick);	
-												}
-												
-												break;
-											}
-										}
-										break;
-									}*/
+									
 									while(inVentory == true)
 									{
 										console.printView("");
@@ -533,7 +416,7 @@ public class GameController
 										//System.out.println(" HERE I AM ");
 										//String userPick = newGameScan.nextLine();
 										//String userChoicsad = Integer.parseInt(userPick);
-										if(userPick < 0 || userPick >= thisBackpack.getBackpack().size())
+										if(userPick == 99)
 										{
 											inVentory = false;
 											//break;
