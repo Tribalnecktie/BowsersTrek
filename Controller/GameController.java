@@ -139,9 +139,34 @@ public class GameController
 					x++;
 				}
 
-				int roomchoice = newGameScan.nextInt();
-				String selectedOption = menu[roomchoice];
-				
+				//int roomchoice = newGameScan.nextInt();
+				/*
+				//String selectedOption = null;
+				try
+				{
+					//String selectedOption = menu[roomchoice];
+					selectedOption = menu[roomchoice];
+				}
+				catch (ArrayIndexOutOfBoundsException e)
+				{
+					e.printStackTrace();
+				}
+				*/
+				String selectedOption = null;
+				boolean menuValidInput = false;
+				while (menuValidInput == false)
+				{
+					int roomchoice = newGameScan.nextInt();
+					if (roomchoice > menu.length - 1)
+					{
+						System.out.println("Please enter a valid input");
+					}
+					else
+					{
+						selectedOption = menu[roomchoice];
+						menuValidInput = true;
+					}
+				}
 				//Parse and deal with the selection
 				//GOING THROUGH A DOOR TO NEW ROOM!
 				if(selectedOption.substring(0, 2).equalsIgnoreCase("DR")) //Door
