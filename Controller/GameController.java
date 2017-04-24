@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 import Model.*;
 import View.ConsoleView;
-import View.ViewConsole;
+
 
 /**
  * @author  Tobin Crone
@@ -162,7 +162,7 @@ public class GameController
 				String selectedOption = menu[roomChoice];
 				
 				//Parse and deal with the selection
-				//GOING THROUGH A DOOR TO NEW ROOM!
+	//GOING THROUGH A DOOR TO NEW ROOM!
 				if(selectedOption.substring(0, 2).equalsIgnoreCase("DR")) //Door
 				{
 					Room newRoom = new Room();
@@ -177,7 +177,7 @@ public class GameController
 					
 					console.printView("\nYou succesfully walk through a door!\n");
 				}
-				//GOING INTO THE HALLWAY!
+	//GOING INTO THE HALLWAY!
 				else if(selectedOption.substring(0, 2).equalsIgnoreCase("Ha")) //hallway
 				{
 					Room newRoom = new Room();
@@ -188,7 +188,7 @@ public class GameController
 					
 					thisRoom = newRoom;					
 				}
-				//SELECTED VIEW INVENTORY
+	//SELECTED VIEW INVENTORY
 				else if(selectedOption.substring(0,4).equalsIgnoreCase("View")) //see inventory
 				{	
 					
@@ -268,12 +268,12 @@ public class GameController
 						break;
 					}					
 				}
-				//SELECTED CHECK STATUS
+	//SELECTED CHECK STATUS
 				else if(selectedOption.substring(0,5).equalsIgnoreCase("Check")) //Check player status
 				{
 					thisPlayer.viewStatus();
 				}
-				//Attempt the Puzzle
+	//Attempt the Puzzle
 				else if(selectedOption.substring(0,5).equalsIgnoreCase("Solve")) //Solve the Puzzle
 				{					
 						int numOfAttempts = 0;
@@ -348,7 +348,7 @@ public class GameController
 						
 					
 				}
-				//SELECTED ATTACK MONSTER
+	//SELECTED ATTACK MONSTER
 				else if(selectedOption.substring(0,6).equalsIgnoreCase("Attack")) //Attack the monster
 				{
 					//Enter Monster loop if this monster is alive.
@@ -500,6 +500,11 @@ public class GameController
 					{
 						console.printView("You've already killt this boi!");
 					}								
+				}
+	///SAVE GAME
+				else if(selectedOption.substring(0,4).equalsIgnoreCase("Save"))
+				{
+					
 				}
 				
 				if(thisPlayer.getHealth() == 0)
