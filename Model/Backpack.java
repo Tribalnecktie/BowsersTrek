@@ -43,6 +43,7 @@ public class Backpack implements Serializable {
 	
 	public void addArtifact(String ID, Artifact ArtifactObj)
 	{
+		ArtifactObj.setQuantity(ArtifactObj.getQuantity() + 1);
 		userBackpack.put(ID, ArtifactObj);
 		this.isEmpty = false;
 	}
@@ -76,8 +77,8 @@ public class Backpack implements Serializable {
 	{
 		String ArtifactInfo = "Default Info";
 		
-		ArtifactInfo = "ID#:" + item.getID().toString().substring(3,4) + " " + item.getName().toString()
-				+ " " + item.getStrength() + " " + item.getDescription();
+		ArtifactInfo = "ID#:" + item.getID().toString().substring(2,4) + " Name: " + item.getName().toString() + " Quantity: " + item.getQuantity() 
+				+ " Strength: " + item.getStrength() + " Description: " + item.getDescription();
 		
 		
 		return ArtifactInfo;	

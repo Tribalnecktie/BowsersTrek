@@ -242,14 +242,14 @@ public class GameController
 					while(inVentory == true)
 					{
 						console.printView("");
-						System.out.println("Choose an item ID to apply effect by typing in its number \nOr type 9 to exit the inventory");
+						System.out.println("Choose an item ID to apply effect by typing in its number \nOr type 99 to exit the inventory");
 						
 						int userPick = newGameScan.nextInt();
 						//String userPick = inventoryScan.nextLine();
 						//System.out.println(" HERE I AM ");
 						//String userPick = newGameScan.nextLine();
 						//String userChoicsad = Integer.parseInt(userPick);
-						if(userPick == 9)
+						if(userPick == 99)
 						{
 							inVentory = false;
 							//break;
@@ -401,7 +401,8 @@ public class GameController
 							{
 								System.out.println("You have slain the beast here is your reward");
 								System.out.println(thisMonster.getItemDrop().getName() + " added to your inventory");
-								thisBackpack.addArtifact(thisMonster.getItemDrop().getID(), thisMonster.getItemDrop());
+								Artifact monsterDrop = thisMonster.getItemDrop();
+								thisBackpack.addArtifact(thisMonster.getItemDrop().getID(), monsterDrop);
 								thisPlayer.addScore(thisMonster);
 								thisMonster.setAlive(false);
 								inEncounter = false;
@@ -440,7 +441,7 @@ public class GameController
 									//Scanner inventoryScan = new Scanner(System.in);
 									
 									
-									System.out.println(" HERE I AM ");
+									//System.out.println(" HERE I AM ");
 									//int userPick = newGameScan.nextInt();
 									thisBackpack.printBackpack();
 									boolean inVentory = true;
