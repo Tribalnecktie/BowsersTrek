@@ -167,14 +167,7 @@ public class RoomLibrary_HashMap extends Room {
 
 		if(rmId.equalsIgnoreCase("HW_L2"))
 		{
-			rmDescript = "You managed to reach this floor along the western side of the house, but the tiny hallway is deceiving.  You actually have a plethora of decorated rooms to choose from. As you look around the corner on this level you realize this floor has a massive open space with two narrow hallways on both side of the space. It also seems to have been recently renovated… Something is odd about this floor. The primitive looking revolving door catches your eye because it smells like it was freshly painted, a very hot maroon color. You aren’t sure whether the lighting is coming from hidden light bulbs or from sunlight. You’re also not sure if you hear a piano being played in the distance or if your mind is playing tricks on you. The East hallway seems to be very clean and well lit, and the West hallway appears to have less light, and the further into it you look, the darker it seems. You browse around and notice both hallways have doors, and there are nine total doors in this space. One way or another, you judge that going north to the room with the revolving door is the best step to take.  The choice is yours!\n" +
-					"DR201, DR202, DR203: Leads to the waiting room\n" +
-					"DR205: Leads to the supply room\n" +
-					"DR206: Leads to the bedroom\n" +
-					"DR208: Leads to the cleaning supply room\n" +
-					"DR209: Leads to the music Room\n" +
-					"DR211: Leads to the wine cellar\n" +
-					"DR212: Leads to the library";
+			rmDescript = "You managed to reach this floor along the western side of the house, but the tiny hallway is deceiving.  You actually have a plethora of decorated rooms to choose from. As you look around the corner on this level you realize this floor has a massive open space with two narrow hallways on both side of the space. It also seems to have been recently renovated… Something is odd about this floor. The primitive looking revolving door catches your eye because it smells like it was freshly painted, a very hot maroon color. You aren’t sure whether the lighting is coming from hidden light bulbs or from sunlight. You’re also not sure if you hear a piano being played in the distance or if your mind is playing tricks on you. The East hallway seems to be very clean and well lit, and the West hallway appears to have less light, and the further into it you look, the darker it seems. You browse around and notice both hallways have doors, and there are nine total doors in this space. One way or another, you judge that going north to the room with the revolving door is the best step to take.  The choice is yours!\n";
 		}
 
 		if(rmId.equalsIgnoreCase("RM201"))
@@ -219,13 +212,7 @@ public class RoomLibrary_HashMap extends Room {
 
 		if(rmId.equalsIgnoreCase("HW_L3"))
 		{
-			rmDescript = "Your have reached the creative level of the mansion.  This is a four-way hallway with 8 rooms to rummage through.  Each with their own flare and inspirations. But wait, this is no ordinary hallway. There are two rooms on the West side and 2 rooms on the East side, but the East side has a hidden gem of a room further down the hallway. The carpet is blood red, and the hallway smells of old popcorn.\n" + 
-
-			"DR300, DR301: Leads to the Colorful Room (RM301)\n" +
-			"DR302, DR303: Leads to the Library (RM302)\n" +
-			"DR304: Leads to the Work Room (RM303)\n" +
-			"DR306: Leads to the TV Room (RM304)\n" +
-			"DR307: Leads to the Red Chest Room (RM305)";
+			rmDescript = "Your have reached the creative level of the mansion.  This is a four-way hallway with 8 rooms to rummage through.  Each with their own flare and inspirations. But wait, this is no ordinary hallway. There are two rooms on the West side and 2 rooms on the East side, but the East side has a hidden gem of a room further down the hallway. The carpet is blood red, and the hallway smells of old popcorn.\n";
 		}
 
 		if(rmId.equalsIgnoreCase("RM301"))
@@ -257,15 +244,7 @@ public class RoomLibrary_HashMap extends Room {
 
 		if(rmId.equalsIgnoreCase("HW_L4"))
 		{
-			rmDescript = "The walls are higher than 7 foot, there is a big mirror on the right side of the hall and on the other side is a dark room. The only light in this wide landing is coming from the window above the landing that overlooks the garden.  In the southeastern corner of the landing is a colorful Tiffany lamp that’s dimly lit.  As you look around the last level of the mansion there is one long hallway leading to several other rooms.  In the middle of the hall is a big round table, which is covered by a silk cover, and there is one big flowerpot full of flowers on the table. The floor is all wooden. The color of the walls is yellowish white. On the floor, there is handcrafted carpet.   So many rooms to explore.\n" +
-
-			"DR401: Leads to the Game Room\n" +
-			"DR402, Leads to Study Room\n" +
-			"DR403, Leads to Dream Room\n" +
-			"DR405, Leads to Garden Room\n" +
-			"DR407, Leads to the Dark Room\n" +
-			"DR408, Leads Dining Room\n" +
-			"DR409, Leads to Dark Room";
+			rmDescript = "The walls are higher than 7 foot, there is a big mirror on the right side of the hall and on the other side is a dark room. The only light in this wide landing is coming from the window above the landing that overlooks the garden.  In the southeastern corner of the landing is a colorful Tiffany lamp that’s dimly lit.  As you look around the last level of the mansion there is one long hallway leading to several other rooms.  In the middle of the hall is a big round table, which is covered by a silk cover, and there is one big flowerpot full of flowers on the table. The floor is all wooden. The color of the walls is yellowish white. On the floor, there is handcrafted carpet.   So many rooms to explore.\n";
 		}
 
 		if(rmId.equalsIgnoreCase("RM401"))
