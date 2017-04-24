@@ -256,12 +256,12 @@ public class MenuLibrary
 		
 		
 		//LEVEL FOUR MENU OPTIONS
-		String[] staircaseL4List = new String[2];
+		String[] staircaseL4List = new String[5];
 		staircaseL4List[0] = ("Hallway L3");
-		staircaseL4List[0] = ("Hallway L4");
-		staircaseL4List[1] = ("DR301");
-		staircaseL4List[1] = ("DR401");
-		staircaseL4List[2] = ("DR402");
+		staircaseL4List[1] = ("Hallway L4");
+		staircaseL4List[2] = ("DR301");
+		staircaseL4List[3] = ("DR401");
+		staircaseL4List[4] = ("DR402");
 		
 		String[] hwl4list = new String[9];
 		hwl4list[0] = ("DR401");  
