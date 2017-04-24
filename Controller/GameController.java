@@ -304,7 +304,8 @@ public class GameController
 							String answer = thisPuzzle.getAnswer();
 							String hint = thisPuzzle.getHint();
 							//newGameScan.nextInt();
-							newGameScan.nextInt();
+							//newGameScan.nextInt();
+							newGameScan.nextLine();
 							String userAnswer = newGameScan.nextLine();
 							
 							//SCANNERRRRRRRRRRRRRRRRRRRRRRRRR???????????????????
