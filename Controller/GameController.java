@@ -45,6 +45,7 @@ public class GameController
 		//Start Scanner
 		Scanner newGameScan;
 
+		//POTATO
 		//Process the choice for the main menu. proceed from here.		
 		//Start a new Game
 		if(choice == 1)		
