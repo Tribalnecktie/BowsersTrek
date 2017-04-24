@@ -92,7 +92,7 @@ public class Backpack implements Serializable {
 	{
 		String ArtifactInfo = "Default Info";
 		
-		ArtifactInfo = "ID#:" + item.getID().toString().substring(2,4) + " Name: " + item.getName().toString() + " \n\tQuantity: " + item.getQuantity() 
+		ArtifactInfo = "ID#:" + item.getID().toString().substring(3,5) + " Name: " + item.getName().toString() + " \n\tQuantity: " + item.getQuantity() 
 				+ " \n\tStrength: " + item.getStrength() + " \n\tDescription: " + item.getDescription();
 		
 		
