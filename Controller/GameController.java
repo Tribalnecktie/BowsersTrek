@@ -334,6 +334,7 @@ public class GameController
 							//newGameScan.nextInt();
 							//newGameScan.nextInt();
 							//newGameScan.nextLine();
+							System.out.print("Your Answer: ");
 							String userAnswer = newGameScan.nextLine();
 							
 							//SCANNERRRRRRRRRRRRRRRRRRRRRRRRR???????????????????
