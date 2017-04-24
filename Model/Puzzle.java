@@ -77,7 +77,7 @@ public class Puzzle extends RoomClass
 		if(ID.equals("PL0006")) {
 			pzlStatus = false;
 			pzlName = "Mirrors";
-			pzlDescription = "Imagine you are in a beautiful garden, full of gorgeous flowers, you see a building at the end of the garden. You enter to the building, mirrors are everywhere you just see yourself. You are scared.'How do you get out???'";
+			pzlDescription = "Imagine you are in a beautiful garden, full of gorgeous flowers, \n you see a building at the end of the garden. You enter to the building, mirrors are everywhere you just see yourself. \n You are scared.'How do you get out???'";
 			pzlHint = "'Imagine'";
 			answer = "Stop Imagining";
 			reward = new Artifact("A0001");
@@ -94,6 +94,7 @@ public class Puzzle extends RoomClass
 		
 		if(ID.equals("PL0008")) {
 			pzlDescription = "There is no puzzle in this room.";
+			pzlStatus = true;
 		}
 	}
 	
@@ -103,16 +104,26 @@ public class Puzzle extends RoomClass
 		int numOfAttempts = 0;
 		boolean inPuzzle = true;
 		
-		System.out.println(getPzlDescription());
+		/*System.out.println(getPzlDescription());
+		String answer = getAnswer();
+		getHint();
 		
 		Scanner playerInput = new Scanner(System.in);
-		String playerAnswer = playerInput.nextLine();
+		String playerAnswer = playerInput.nextLine();*/
 		
-		while (inPuzzle == true)
+		while (inPuzzle == true && pzlStatus == false)
 		{
+			System.out.println(getPzlDescription());
+			String answer = getAnswer();
+			String hint = getHint();
+			
+			Scanner playerInput = new Scanner(System.in);
+			String playerAnswer = playerInput.nextLine();
 			if (numOfAttempts < 5)
 			{
-				if (playerAnswer.equals(puzzleObj.getAnswer()))
+				
+				
+				if (playerAnswer.equals(answer))
 				{
 					System.out.println("You have correctly answer the puzzle!");
 					System.out.println(puzzleObj.getReward() + " has been added to your inventory");
@@ -124,16 +135,16 @@ public class Puzzle extends RoomClass
 				else
 				{
 					System.out.println("That is not the correct answer, please try again.");
-					System.out.println(getPzlDescription());
+					
 					numOfAttempts += 1;
 				}
 			}
 			else if (numOfAttempts >= 5 && numOfAttempts <= 10)
 			{
-				System.out.println("Looks like you are having a little trouble, here is a hint:");
-				System.out.println(puzzleObj.getHint());
+				System.out.print("Looks like you are having a little trouble, here is a hint: ");
+				System.out.print(hint);
 				
-				if (playerAnswer.equals(puzzleObj.getAnswer()))
+				if (playerAnswer.equals(answer))
 				{
 					System.out.println("You have correctly answer the puzzle!");
 					System.out.println(puzzleObj.getReward() + " has been added to your inventory");
@@ -166,7 +177,7 @@ public class Puzzle extends RoomClass
 				}
 			}
 		}
-		playerInput.close();
+		//playerInput.close();
 	}
 
 	public static Puzzle getID() {
