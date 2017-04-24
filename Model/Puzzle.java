@@ -115,9 +115,9 @@ public class Puzzle extends RoomClass
 				if (playerAnswer.equals(puzzleObj.getAnswer()))
 				{
 					System.out.println("You have correctly answer the puzzle!");
-					System.out.println(currentPuzzleID.getReward() + " has been added to your inventory");
-					pack.addArtifact(currentPuzzleID.getReward().getID(), currentPuzzleID.getReward());
-					currentPuzzleID.setIsDone(true);
+					System.out.println(puzzleObj.getReward() + " has been added to your inventory");
+					pack.addArtifact(puzzleObj.getReward().getID(), puzzleObj.getReward());
+					puzzleObj.setIsDone(true);
 					inPuzzle = false;
 					playerInput.close();
 				}
@@ -133,12 +133,12 @@ public class Puzzle extends RoomClass
 				System.out.println("Looks like you are having a little trouble, here is a hint:");
 				System.out.println(puzzleObj.getHint());
 				
-				if (playerAnswer.equals(currentPuzzleID.getAnswer()))
+				if (playerAnswer.equals(puzzleObj.getAnswer()))
 				{
 					System.out.println("You have correctly answer the puzzle!");
-					System.out.println(currentPuzzleID.getReward() + " has been added to your inventory");
-					pack.addArtifact(currentPuzzleID.getReward().getID(), currentPuzzleID.getReward());
-					currentPuzzleID.setIsDone(true);
+					System.out.println(puzzleObj.getReward() + " has been added to your inventory");
+					pack.addArtifact(puzzleObj.getReward().getID(), puzzleObj.getReward());
+					puzzleObj.setIsDone(true);
 					inPuzzle = false;
 					playerInput.close();
 				}
@@ -166,6 +166,7 @@ public class Puzzle extends RoomClass
 				}
 			}
 		}
+		playerInput.close();
 	}
 
 	public Puzzle getID() {
