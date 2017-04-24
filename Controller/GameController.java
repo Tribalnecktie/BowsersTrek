@@ -217,7 +217,7 @@ public class GameController
 					while(inVentory == true)
 					{
 						console.printView("");
-						System.out.println("Choose an item ID to apply effect by typing in its number \nOr type 99 to exit the inventory");
+						System.out.println("Choose an item ID to apply effect by typing in its number \nOr type any other number to exit");
 						
 						int userPick = newGameScan.nextInt();
 						
@@ -428,7 +428,7 @@ public class GameController
 										//System.out.println(" HERE I AM ");
 										//String userPick = newGameScan.nextLine();
 										//String userChoicsad = Integer.parseInt(userPick);
-										if(userPick == 99)
+										if(userPick < 0 || userPick >= thisBackpack.getBackpack().size() || userPick == 99)
 										{
 											inVentory = false;
 											//break;
@@ -571,7 +571,7 @@ public class GameController
 				
 				//Thread.sleep(800);
 				//THIS IS THE OTHER PART COKER TOUCHED CUZ IT TOOK TO DAMN LONG TO RUN EVERY TIME
-				Thread.sleep(0);
+				Thread.sleep(500);
 				//see if we can clear the screen here also.
 			} 
 			catch (InterruptedException ie)
@@ -898,14 +898,14 @@ public class GameController
 									while(inVentory == true)
 									{
 										console.printView("");
-										System.out.println("Choose an item ID to apply effect by typing in its number \nOr type 99 to exit the inventory");
+										System.out.println("Choose an item ID to apply effect by typing in its number \nOr type any other number to exit");
 										
 										int userPick = newGameScan.nextInt();
 										//String userPick = inventoryScan.nextLine();
 										//System.out.println(" HERE I AM ");
 										//String userPick = newGameScan.nextLine();
 										//String userChoicsad = Integer.parseInt(userPick);
-										if(userPick == 99)
+										if(userPick < 0 || userPick >= thisBackpack.getBackpack().size() || userPick == 99)
 										{
 											inVentory = false;
 											//break;
