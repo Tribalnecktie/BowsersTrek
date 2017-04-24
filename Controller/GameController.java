@@ -289,7 +289,81 @@ public class GameController
 				//Attempt the Puzzle
 				else if(selectedOption.substring(0,5).equalsIgnoreCase("Solve")) //Solve the Puzzle
 				{
-					thisPuzzle.puzzleSolver(thisPuzzle.getID(), thisBackpack);
+					//thisPuzzle.puzzleSolver(thisPuzzle.getID(), thisBackpack);
+					
+						int numOfAttempts = 0;
+						boolean inPuzzle = true;
+						
+						thisPuzzle.getIsDone();
+						
+						while (inPuzzle == true && thisPuzzle.pzlStatus == false)
+						{
+							System.out.println(thisPuzzle.getPzlDescription());
+							String answer = thisPuzzle.getAnswer();
+							String hint = thisPuzzle.getHint();
+							
+							//SCANNERRRRRRRRRRRRRRRRRRRRRRRRR???????????????????
+							if (numOfAttempts < 5)
+							{
+								
+								
+								if (newGameScan.equals(answer))
+								{
+									System.out.println("You have correctly answer the puzzle!");
+									System.out.println(thisPuzzle.getReward() + " has been added to your inventory");
+									thisBackpack.addArtifact(thisPuzzle.getReward().getID(), thisPuzzle.getReward());
+									thisPuzzle.setIsDone(true);
+									inPuzzle = false;
+									newGameScan.close();
+								}
+								else
+								{
+									System.out.println("That is not the correct answer, please try again.");
+									
+									numOfAttempts += 1;
+								}
+							}
+							else if (numOfAttempts >= 5 && numOfAttempts <= 10)
+							{
+								System.out.print("Looks like you are having a little trouble, here is a hint: ");
+								System.out.print(hint + " ");
+								
+								if (newGameScan.equals(answer))
+								{
+									System.out.println("You have correctly answer the puzzle!");
+									System.out.println(thisPuzzle.getReward() + " has been added to your inventory");
+									thisBackpack.addArtifact(thisPuzzle.getReward().getID(), thisPuzzle.getReward());
+									thisPuzzle.setIsDone(true);
+									inPuzzle = false;
+									newGameScan.close();
+								}
+								else
+								{
+								numOfAttempts += 1;
+								}
+							}
+							else
+							{
+								System.out.println("Would you like to come back to this puzzle later?");
+								System.out.println("1. Come back to puzzle later");
+								System.out.println("2. Keep trying");
+								int command = newGameScan.nextInt();
+								///////////////////////////////////////////Fix scanner??
+								if (command == 1)
+								{
+									System.out.println("You can always come back and try again, have a safe journey.");
+									inPuzzle = false;
+									newGameScan.close();
+								}
+								else if (command == 2)
+								{
+									System.out.println("I like the spirit, lets keep trying.");
+									numOfAttempts = 5;
+								}
+							}
+						}
+						
+					
 				}
 				//SELECTED ATTACK MONSTER
 				else if(selectedOption.substring(0,6).equalsIgnoreCase("Attack")) //Attack the monster
