@@ -183,6 +183,11 @@ public class GameController
 				}
 
 				String selectedOption = menu[roomChoice];
+				
+				if(selectedOption == "EXIT")
+				{
+					System.exit(0);
+				}
 
 				//Parse and deal with the selection
 				//GOING THROUGH A DOOR TO NEW ROOM!
