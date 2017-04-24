@@ -142,7 +142,7 @@ public class MenuLibrary
 		rm201list[4] = ("View Inventory");
 		rm201list[5] = ("Check Stats");
 		rm201list[6] = ("Save Game");
-		optionlist.put("DR201",rm201list);
+		optionlist.put("RM201",rm201list);
 
 		String[] rm202list = new String[7];
 		rm202list[0] = ("Hallway L2");
@@ -152,7 +152,7 @@ public class MenuLibrary
 		rm202list[4] = ("View Inventory");
 		rm202list[5] = ("Check Stats");
 		rm202list[6] = ("Save Game");
-		optionlist.put("DR202",rm202list);
+		optionlist.put("RM202",rm202list);
 
 		String[] rm203list = new String[7];
 		rm203list[0] = ("DR202");  
@@ -162,7 +162,7 @@ public class MenuLibrary
 		rm203list[4] = ("View Inventory");
 		rm203list[5] = ("Check Stats");
 		rm203list[6] = ("Save Game");
-		optionlist.put("DR203",rm203list);
+		optionlist.put("RM203",rm203list);
 		
 		String[] rm204list = new String[7];
 		rm204list[0] = ("Hallway L2");  
@@ -172,7 +172,7 @@ public class MenuLibrary
 		rm204list[4] = ("View Inventory");
 		rm204list[5] = ("Check Stats");
 		rm204list[6] = ("Save Game");
-		optionlist.put("DR204",rm204list);
+		optionlist.put("RM204",rm204list);
 		
 		String[] rm205list = new String[7];
 		rm205list[0] = ("Hallway L2");  
@@ -182,7 +182,7 @@ public class MenuLibrary
 		rm205list[4] = ("View Inventory");
 		rm205list[5] = ("Check Stats");
 		rm205list[6] = ("Save Game");
-		optionlist.put("DR205",rm205list);
+		optionlist.put("RM205",rm205list);
 
 		String[] rm206list = new String[7];
 		rm206list[0] = ("Hallway L2");  
@@ -192,7 +192,7 @@ public class MenuLibrary
 		rm206list[4] = ("View Inventory");
 		rm206list[5] = ("Check Stats");
 		rm206list[6] = ("Save Game");
-		optionlist.put("DR206",rm206list);
+		optionlist.put("RM206",rm206list);
 		
 		String[] rm207list = new String[7];
 		rm207list[0] = ("Hallway L2");  
@@ -202,7 +202,7 @@ public class MenuLibrary
 		rm207list[4] = ("View Inventory");
 		rm207list[5] = ("Check Stats");
 		rm207list[6] = ("Save Game");
-		optionlist.put("DR207",rm207list);
+		optionlist.put("RM207",rm207list);
 		
 		
 		//LEVEL THREE MENU OPTIONS
@@ -214,7 +214,7 @@ public class MenuLibrary
 		hwl3list[3] = ("DR304");  
 		hwl3list[4] = ("DR305");
 		hwl3list[5] = ("Hallway L2");
-		hwl3list[6] = ("Hallway L3");
+		hwl3list[6] = ("Hallway L4");
 		hwl3list[7] = ("View Inventory");
 		hwl3list[8] = ("Check Stats");
 		hwl3list[9] = ("Save Game");
@@ -227,7 +227,7 @@ public class MenuLibrary
 		rm301list[3] = ("View Inventory");
 		rm301list[4] = ("Check Stats");
 		rm301list[5] = ("Save Game");
-		optionlist.put("DR301",rm301list);
+		optionlist.put("RM301",rm301list);
 		
 		String[] rm302list = new String[6];
 		rm302list[0] = ("Hallway L3");  
@@ -236,7 +236,7 @@ public class MenuLibrary
 		rm302list[3] = ("View Inventory");
 		rm302list[4] = ("Check Stats");
 		rm302list[5] = ("Save Game");
-		optionlist.put("DR302",rm302list);
+		optionlist.put("RM302",rm302list);
 		
 		String[] rm303list = new String[7];
 		rm303list[0] = ("Hallway L3");  
@@ -246,7 +246,7 @@ public class MenuLibrary
 		rm303list[4] = ("View Inventory");
 		rm303list[5] = ("Check Stats");
 		rm303list[6] = ("Save Game");
-		optionlist.put("DR303",rm303list);
+		optionlist.put("RM303",rm303list);
 		
 		String[] rm304list = new String[7];
 		rm304list[0] = ("Hallway L3");  
@@ -256,7 +256,7 @@ public class MenuLibrary
 		rm304list[4] = ("View Inventory");
 		rm304list[5] = ("Check Stats");
 		rm304list[6] = ("Save Game");
-		optionlist.put("DR304",rm304list);
+		optionlist.put("RM304",rm304list);
 		
 		String[] rm305list = new String[6];
 		rm305list[0] = ("Hallway L3");  
@@ -265,7 +265,7 @@ public class MenuLibrary
 		rm305list[3] = ("View Inventory");
 		rm305list[4] = ("Check Stats");
 		rm305list[5] = ("Save Game");
-		optionlist.put("DR305",rm305list);
+		optionlist.put("RM305",rm305list);
 		
 		
 		//LEVEL FOUR MENU OPTIONS
@@ -290,7 +290,7 @@ public class MenuLibrary
 		rm401list[3] = ("View Inventory");
 		rm401list[4] = ("Check Stats");
 		rm401list[5] = ("Save Game");
-		optionlist.put("DR401",rm401list);
+		optionlist.put("RM401",rm401list);
 		
 		String[] rm402list = new String[6];
 		rm402list[0] = ("Hallway L4");  
@@ -299,7 +299,7 @@ public class MenuLibrary
 		rm402list[3] = ("View Inventory");
 		rm402list[4] = ("Check Stats");
 		rm402list[5] = ("Save Game");
-		optionlist.put("DR402",rm402list);
+		optionlist.put("RM402",rm402list);
 		
 		String[] rm403list = new String[7];
 		rm403list[0] = ("Hallway L4");  
@@ -309,7 +309,7 @@ public class MenuLibrary
 		rm403list[4] = ("View Inventory");
 		rm403list[5] = ("Check Stats");
 		rm403list[6] = ("Save Game");
-		optionlist.put("DR403",rm403list);
+		optionlist.put("RM403",rm403list);
 		
 		String[] rm404list = new String[8];
 		rm404list[0] = ("Hallway L4");  
@@ -320,7 +320,7 @@ public class MenuLibrary
 		rm404list[5] = ("View Inventory");
 		rm404list[6] = ("Check Stats");
 		rm404list[7] = ("Save Game");
-		optionlist.put("DR404",rm404list);
+		optionlist.put("RM404",rm404list);
 		
 		String[] rm405list = new String[7];
 		rm405list[0] = ("Hallway L4");  
@@ -330,7 +330,7 @@ public class MenuLibrary
 		rm405list[4] = ("View Inventory");
 		rm405list[5] = ("Check Stats");
 		rm405list[6] = ("Save Game");
-		optionlist.put("DR405",rm405list);
+		optionlist.put("RM405",rm405list);
 		
 		String[] rm406list = new String[6];
 		rm406list[0] = ("Hallway L4");  
@@ -339,7 +339,7 @@ public class MenuLibrary
 		rm406list[3] = ("View Inventory");
 		rm406list[4] = ("Check Stats");
 		rm406list[5] = ("Save Game");
-		optionlist.put("DR406",rm406list);
+		optionlist.put("RM406",rm406list);
 		
 		String[] rm407list = new String[6];
 		rm407list[0] = ("Hallway L4");  
@@ -348,7 +348,7 @@ public class MenuLibrary
 		rm407list[3] = ("View Inventory");
 		rm407list[4] = ("Check Stats");
 		rm407list[5] = ("Save Game");
-		optionlist.put("DR407",rm407list);
+		optionlist.put("RM407",rm407list);
 		
 		return optionlist;
 
