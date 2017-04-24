@@ -41,14 +41,16 @@ public class GameController
 
 		//Display the Main menu
 		int choice = console.printMenu("MM00");
+		
+		//Start Scanner
+		Scanner newGameScan;
 
 		//Process the choice for the main menu. proceed from here.		
 		//Start a new Game
 		if(choice == 1)		
 		{
-			//Start Scanner
-			Scanner newGameScan = new Scanner(System.in);
-
+			
+			newGameScan = new Scanner(System.in);
 			//Set up the room map.
 			Map<String,Room> roomInfoMap = new HashMap<String,Room>();
 			RoomLibrary_HashMap roomLibrary = new RoomLibrary_HashMap();
@@ -99,12 +101,8 @@ public class GameController
 			 * GAMEON = TRUE
 			 * 
 			 */
-
-			
 			while(GAMEON)
 			{			
-				Scanner newLoopScan = new Scanner(System.in);
-
 				//SET UP THE NEW VARIABLES
 				if(thisMonster.isAlive())
 				{
@@ -119,7 +117,6 @@ public class GameController
 					thisPuzzle.setIsDone(false);
 					thisRoom.setPuzzleObj(thisPuzzle);
 				}
-				
 				
 				console.printView("=========================================================================================");
 				//print room description
@@ -142,7 +139,7 @@ public class GameController
 					x++;
 				}
 
-				int roomchoice = newLoopScan.nextInt();
+				int roomchoice = newGameScan.nextInt();
 				String selectedOption = menu[roomchoice];
 				
 				//Parse and deal with the selection
@@ -160,7 +157,6 @@ public class GameController
 					thisRoom.getMonsterObj().setAlive(true);					
 					
 					console.printView("\nYou succesfully walk through a door!\n");
-					newLoopScan.close();
 				}
 				//GOING INTO THE HALLWAY!
 				else if(selectedOption.substring(0, 2).equalsIgnoreCase("Ha")) //hallway
@@ -171,15 +167,12 @@ public class GameController
 					
 					newRoom = roomInfoMap.get("HW_"+roomNumber);
 					
-					thisRoom = newRoom;
-					newLoopScan.close();
-					
+					thisRoom = newRoom;					
 				}
 				//SELECTED VIEW INVENTORY
 				else if(selectedOption.substring(0,4).equalsIgnoreCase("View")) //see inventory
 				{	
-					newLoopScan.close();
-					Scanner inventoryScan = new Scanner(System.in);
+					//Scanner inventoryScan = new Scanner(System.in);
 					thisBackpack.printBackpack();
 					boolean inVentory = true;
 					
@@ -188,11 +181,10 @@ public class GameController
 						console.printView("");
 						console.printView("Choose an item ID to apply effect \nOr type 0 to exit the inventory");
 						
-						String userPick = inventoryScan.nextLine();
+						String userPick = newGameScan.nextLine();
 						
 						if(userPick.equalsIgnoreCase("0"))
 						{
-							inventoryScan.close();
 							inVentory = false;
 						}
 						else
@@ -205,13 +197,11 @@ public class GameController
 							{
 								int itemStrength = tempItem.getStrength();
 								thisPlayer.setHealth(thisPlayer.getHealth() + itemStrength);
-								inventoryScan.close();
 							}
 							else if(tempItem.isAddAtk())
 							{
 								int itemAttack = tempItem.getStrength();
 								thisPlayer.setAttackPower(thisPlayer.getAttackPower() + itemAttack);
-								inventoryScan.close();
 							}
 						}
 						break;
@@ -221,16 +211,14 @@ public class GameController
 				else if(selectedOption.substring(0,5).equalsIgnoreCase("Check")) //Check player status
 				{
 					thisPlayer.viewStatus();
-					newLoopScan.close();
 				}
 				//Attempt the Puzzle
 				else if(selectedOption.substring(0,5).equalsIgnoreCase("Solve")) //Solve the Puzzle
 				{
 					Puzzle.puzzleSolver(Puzzle.getID(), thisBackpack);
-					newLoopScan.close();
 				}
 				//SELECTED ATTACK MONSTER
-				else if(selectedOption.substring(0,6).equalsIgnoreCase("Attack")) //Attack the mosnter
+				else if(selectedOption.substring(0,6).equalsIgnoreCase("Attack")) //Attack the monster
 				{
 					//Enter Monster loop if this monster is alive.
 					if(thisMonster.isAlive())
@@ -244,7 +232,6 @@ public class GameController
 							thisMonster.setAlive(false);
 							//playerInput.close();
 							inEncounter = false;
-							newLoopScan.close();
 							return;
 						}
 
@@ -308,19 +295,17 @@ public class GameController
 					else
 					{
 						console.printView("You've already killt this boi!");
-					}					
-					newLoopScan.close();				
+					}								
 				}
 				
 				if(thisPlayer.getHealth() == 0)
 				{
 					console.printView("Aww good try! Thanks for playing :) \nEat more vegetables and grow big and strong and try again one day!");
-					newLoopScan.close();
 					GAMEON = false;
 				}
-				newLoopScan.close();
-				newLoopScan = new Scanner(System.in);
-			}			
+			}
+			
+			newGameScan.close();
 		}
 		//Load Game
 		else if(choice == 2)	
@@ -346,6 +331,6 @@ public class GameController
 		else if(choice == 4)
 		{
 
-		}
+		}		
 	}
 }
