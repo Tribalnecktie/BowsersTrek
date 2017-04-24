@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Puzzle extends RoomClass
 {
 
-	private static Puzzle currentPuzzleID;
 	private String pzlName;
 	private String pzlDescription;
 	private String pzlHint;
@@ -21,7 +20,6 @@ public class Puzzle extends RoomClass
 		
 	}
 	public Puzzle (Puzzle ID, String pzlName, String pzlDescription, String pzlHint, String answer, Artifact reward){
-		Puzzle.currentPuzzleID = ID;
 		this.pzlName = pzlName;
 		this.pzlDescription = pzlDescription;
 		this.pzlHint = pzlHint;
