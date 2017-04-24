@@ -44,7 +44,10 @@ public class RoomLibrary_HashMap extends Room {
 		this.roomsAL = roomsAL();
 
 	}
-
+	/**
+	 * Default Constructor
+	 * 
+	 */
 	public RoomLibrary_HashMap()
 	{
 		this.roomsAL = roomsAL();
