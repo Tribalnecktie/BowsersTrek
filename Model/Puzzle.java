@@ -142,7 +142,7 @@ public class Puzzle extends RoomClass
 			else if (numOfAttempts >= 5 && numOfAttempts <= 10)
 			{
 				System.out.print("Looks like you are having a little trouble, here is a hint: ");
-				System.out.print(hint);
+				System.out.print(hint + " ");
 				
 				if (playerAnswer.equals(answer))
 				{
@@ -177,10 +177,10 @@ public class Puzzle extends RoomClass
 				}
 			}
 		}
-		//playerInput.close();
+		
 	}
 
-	public static Puzzle getID() {
+	public Puzzle getID() {
 		Room rm = new Room();
 		
 		return rm.getPuzzleObj();

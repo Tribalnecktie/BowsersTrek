@@ -220,8 +220,8 @@ public class GameController
 				//Attempt the Puzzle
 				else if(selectedOption.substring(0,5).equalsIgnoreCase("Solve")) //Solve the Puzzle
 				{
-<<<<<<< HEAD
-					thisPuzzle.puzzleSolver(Puzzle.getID(), thisBackpack);
+//<<<<<<< HEAD
+					thisPuzzle.puzzleSolver(thisPuzzle.getID(), thisBackpack);
 
 				}
 				//SELECTED ATTACK MONSTER
