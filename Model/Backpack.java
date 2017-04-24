@@ -43,8 +43,23 @@ public class Backpack implements Serializable {
 	
 	public void addArtifact(String ID, Artifact ArtifactObj)
 	{
-		ArtifactObj.setQuantity(ArtifactObj.getQuantity() + 1);
-		userBackpack.put(ID, ArtifactObj);
+		
+		if(userBackpack.containsKey(ID))
+		{
+			System.out.println("ITEM FOUND IN INVENTORY - ADDING QUANTITY");
+			Artifact tempArt = this.userBackpack.get(ID);
+			System.out.println("Quantity of AddArtifact: " + tempArt.getQuantity());
+			tempArt.setQuantity(tempArt.getQuantity() + 1);
+			userBackpack.remove(ID);
+			userBackpack.put(ID, tempArt);
+		}
+		else
+		{
+			System.out.println("SETTING QUANTITY TO 1 - NOT FOUND IN INVENTORY");
+			ArtifactObj.setQuantity(1);
+			userBackpack.put(ID, ArtifactObj);
+		}
+		
 		this.isEmpty = false;
 	}
 	
@@ -59,7 +74,7 @@ public class Backpack implements Serializable {
 	{
 		
 		System.out.println("INVENTORY----------");
-		Iterator it = userBackpack.entrySet().iterator();
+		Iterator it = this.userBackpack.entrySet().iterator();
 		while(it.hasNext())
 		{
 			
@@ -77,8 +92,8 @@ public class Backpack implements Serializable {
 	{
 		String ArtifactInfo = "Default Info";
 		
-		ArtifactInfo = "ID#:" + item.getID().toString().substring(2,4) + " Name: " + item.getName().toString() + " Quantity: " + item.getQuantity() 
-				+ " Strength: " + item.getStrength() + " Description: " + item.getDescription();
+		ArtifactInfo = "ID#:" + item.getID().toString().substring(2,4) + " Name: " + item.getName().toString() + " \n\tQuantity: " + item.getQuantity() 
+				+ " \n\tStrength: " + item.getStrength() + " \n\tDescription: " + item.getDescription();
 		
 		
 		return ArtifactInfo;	

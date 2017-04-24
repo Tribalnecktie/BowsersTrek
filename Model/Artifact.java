@@ -56,7 +56,7 @@ public class Artifact implements Serializable {
 			this.strength = 2;
 			this.setCanHeal(true);
 			this.setAddAtk(false);
-			this.quantity = 0;
+			this.quantity = 1;
 		}
 		if (ID.equals("A0001"))
 		{
@@ -66,7 +66,7 @@ public class Artifact implements Serializable {
 			this.strength = 4;
 			this.setCanHeal(false);
 			this.setAddAtk(true);
-			this.quantity = 0;
+			this.quantity = 1;
 		}
 		if (ID.equals("A0002"))
 		{
@@ -76,7 +76,7 @@ public class Artifact implements Serializable {
 			this.strength = 2;
 			this.setCanHeal(false);
 			this.setAddAtk(true);
-			this.quantity = 0;
+			this.quantity = 1;
 		}
 		if (ID.equals("A0003"))
 		{
@@ -85,7 +85,7 @@ public class Artifact implements Serializable {
 			this.strength = 6;
 			this.setCanHeal(false);
 			this.setAddAtk(true);
-			this.quantity = 0;
+			this.quantity = 1;
 		}
 		if (ID.equals("A0004"))
 		{
@@ -94,7 +94,7 @@ public class Artifact implements Serializable {
 			this.strength = 5;
 			this.setCanHeal(false);
 			this.setAddAtk(true);
-			this.quantity = 0;
+			this.quantity = 1;
 		}
 		if (ID.equals("A0005"))
 		{
@@ -103,7 +103,7 @@ public class Artifact implements Serializable {
 			this.strength = 25;
 			this.setCanHeal(false);
 			this.setAddAtk(true);
-			this.quantity = 0;
+			this.quantity = 1;
 		}
 		if (ID.equals("A0006"))
 		{
@@ -112,7 +112,7 @@ public class Artifact implements Serializable {
 			this.strength = 2;
 			this.setCanHeal(false);
 			this.setAddAtk(true);
-			this.quantity = 0;
+			this.quantity = 1;
 		}
 		if (ID.equals("A0007"))
 		{
@@ -121,7 +121,7 @@ public class Artifact implements Serializable {
 			this.strength = 2;
 			this.setCanHeal(false);
 			this.setAddAtk(true);
-			this.quantity = 0;
+			this.quantity = 1;
 		}
 		if (ID.equals("A0008"))
 		{
@@ -130,7 +130,7 @@ public class Artifact implements Serializable {
 			this.strength = 2;
 			this.setCanHeal(false);
 			this.setAddAtk(true);
-			this.quantity = 0;
+			this.quantity = 1;
 		}
 		if (ID.equals("A0009"))
 		{
@@ -139,7 +139,7 @@ public class Artifact implements Serializable {
 			this.strength = 5;
 			this.setCanHeal(false);
 			this.setAddAtk(true);
-			this.quantity = 0;
+			this.quantity = 1;
 			
 		}
 		if (ID.equals("A0010"))
@@ -148,7 +148,7 @@ public class Artifact implements Serializable {
 			this.description = "A green coin that shimmers and hums with magical energy";
 			this.strength = 5;
 			this.setCanHeal(true);
-			this.quantity = 0;
+			this.quantity = 1;
 		}
 		if (ID.equals("A0011"))
 		{
@@ -156,7 +156,7 @@ public class Artifact implements Serializable {
 			this.description = "A red coin that shimmers and hums with magical energy";
 			this.strength = 10;
 			this.setCanHeal(true);
-			this.quantity = 0;
+			this.quantity = 1;
 		}
 		if (ID.equals("A0012"))
 		{
@@ -165,7 +165,7 @@ public class Artifact implements Serializable {
 			this.strength = 5;
 			this.setCanHeal(false);
 			this.setAddAtk(true);
-			this.quantity = 0;
+			this.quantity = 1;
 		}
 	}
 
