@@ -212,7 +212,7 @@ public class RoomLibrary_HashMap extends Room {
 
 		if(rmId.equalsIgnoreCase("HW_L3"))
 		{
-			rmDescript = "Your have reached the creative level of the mansion.  This is a four-way hallway with 8 rooms to rummage through.  Each with their own flare and inspirations. But wait, this is no ordinary hallway. There are two rooms on the West side and 2 rooms on the East side, but the East side has a hidden gem of a room further down the hallway. The carpet is blood red, and the hallway smells of old popcorn.\n";
+			rmDescript = "Your have reached the creative level of the mansion.  This is a four-way hallway with 5 rooms to rummage through.  Each with their own flare and inspirations. But wait, this is no ordinary hallway. There are two rooms on the West side and 2 rooms on the East side, but the East side has a hidden gem of a room further down the hallway. The carpet is blood red, and the hallway smells of old popcorn.\n";
 		}
 
 		if(rmId.equalsIgnoreCase("RM301"))
