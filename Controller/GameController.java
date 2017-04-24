@@ -227,9 +227,19 @@ public class GameController
 						}
 						else if (!thisBackpack.isEmpty())
 						{
+							Artifact tempItem = null;
 							//get the artifact using its id given by user.
-							String invChoice = "" + userPick;
-							Artifact tempItem = thisBackpack.getItem("A000"+userPick);
+							if(userPick >= 10)
+							{
+								console.printView("usersChoice >= 10: = " + "A00"+userPick);
+								tempItem = thisBackpack.getItem("A00"+userPick);
+							}
+							else
+							{
+								console.printView("usersChoice: ELSE = " + "A000"+userPick);
+								tempItem = thisBackpack.getItem("A000"+userPick);
+							}
+							
 							
 							if(tempItem.getQuantity() == 0)
 							{
