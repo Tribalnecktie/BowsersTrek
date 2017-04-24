@@ -32,7 +32,7 @@ public class MenuLibrary
 		rm101list[0] = ("Hallway L1");
 		rm101list[1] =("DR102");
 		rm101list[2] =("Attack Monster");
-		rm101list[3] =("Check puzzle");
+		rm101list[3] =("Solve puzzle");
 		rm101list[4] =("View Inventory");
 		rm101list[5] = ("Check Stats");		
 		optionlist.put("RM101",rm101list);
@@ -53,7 +53,7 @@ public class MenuLibrary
 		rm102list[0] = ("DR101");
 		rm102list[1] = ("DR103");
 		rm102list[2] = ("Attack Monster");
-		rm102list[3] = ("Check puzzle");
+		rm102list[3] = ("Solve puzzle");
 		rm102list[4] = ("View Inventory");
 		rm102list[5] = ("Check Stats");
 		optionlist.put("RM102",rm102list);
@@ -62,7 +62,7 @@ public class MenuLibrary
 		rm103list[0] = ("DR102");
 		rm103list[1] = ("DR104");
 		rm103list[2] = ("Attack Monster");
-		rm103list[3] = ("Check puzzle");
+		rm103list[3] = ("Solve puzzle");
 		rm103list[4] = ("View Inventory");
 		rm103list[5] = ("Check Stats");
 		optionlist.put("RM103",rm103list);
@@ -71,7 +71,7 @@ public class MenuLibrary
 		rm104list[0] = ("DR103");
 		rm104list[1] = ("DR105");
 		rm104list[2] = ("Attack Monster");
-		rm104list[3] = ("Check puzzle");
+		rm104list[3] = ("Solve puzzle");
 		rm104list[4] = ("View Inventory");
 		rm104list[5] = ("Check Stats");
 		optionlist.put("RM104",rm104list);
@@ -80,7 +80,7 @@ public class MenuLibrary
 		rm105list[0] = ("DR104");
 		rm105list[1] = ("DR106");
 		rm105list[2] = ("Attack Monster");
-		rm105list[3] = ("Check puzzle");
+		rm105list[3] = ("Solve puzzle");
 		rm105list[4] = ("View Inventory");
 		rm105list[5] = ("Check Stats");
 		optionlist.put("RM105",rm105list);
@@ -89,7 +89,7 @@ public class MenuLibrary
 		rm106list[0] = ("DR105");
 		rm106list[1] = ("DR107");
 		rm106list[2] = ("Attack Monster");
-		rm106list[3] = ("Check puzzle");
+		rm106list[3] = ("Solve puzzle");
 		rm106list[4] = ("View Inventory");
 		rm106list[5] = ("Check Stats");
 		optionlist.put("RM106",rm106list);
@@ -98,7 +98,7 @@ public class MenuLibrary
 		rm107list[0] = ("DR106");
 		rm107list[1] = ("Hallway L1");
 		rm107list[2] = ("Attack Monster");
-		rm107list[3] = ("Check puzzle");
+		rm107list[3] = ("Solve puzzle");
 		rm107list[4] = ("View Inventory");
 		rm107list[5] = ("Check Stats");
 		optionlist.put("RM107",rm107list);
@@ -115,7 +115,7 @@ public class MenuLibrary
 		hwl2list[6] = ("DR211");
 		hwl2list[7] = ("DR212");
 		hwl2list[8] = ("View Inventory");
-		hwl2list[9] = ("View Stats");
+		hwl2list[9] = ("Check Stats");
 		optionlist.put("HW_L2",hwl2list);
 
 		String[] rm201list = new String[8];
@@ -124,63 +124,63 @@ public class MenuLibrary
 		rm201list[2] = ("DR203");
 		rm201list[3] = ("DR204");
 		rm201list[4] = ("Attack Monster");
-		rm201list[5] = ("Check puzzle");
+		rm201list[5] = ("Solve puzzle");
 		rm201list[6] = ("View Inventory");
-		rm201list[7] = ("View Stats");
+		rm201list[7] = ("Check Stats");
 		optionlist.put("DR201",rm201list);
 
 		String[] rm202list = new String[6];
 		rm202list[0] = ("DR205");
 		rm202list[0] = ("DR201"); 
 		rm202list[2] = ("Attack Monster");
-		rm202list[3] = ("Check puzzle");
+		rm202list[3] = ("Solve puzzle");
 		rm202list[4] = ("View Inventory");
-		rm202list[5] = ("View Stats");
+		rm202list[5] = ("Check Stats");
 		optionlist.put("DR202",rm202list);
 
 		String[] rm203list = new String[6];
 		rm203list[0] = ("DR206");  
 		rm203list[1] = ("DR207");
 		rm203list[2] = ("Attack Monster");
-		rm203list[3] = ("Check puzzle");
+		rm203list[3] = ("Solve puzzle");
 		rm203list[4] = ("View Inventory");
-		rm203list[5] = ("View Stats");
+		rm203list[5] = ("Check Stats");
 		optionlist.put("DR203",rm203list);
 		
 		String[] rm204list = new String[6];
 		rm204list[0] = ("DR207");  
 		rm204list[1] = ("DR208");
 		rm204list[2] = ("Attack Monster");
-		rm204list[3] = ("Check puzzle");
+		rm204list[3] = ("Solve puzzle");
 		rm204list[4] = ("View Inventory");
-		rm204list[5] = ("View Stats");
+		rm204list[5] = ("Check Stats");
 		optionlist.put("DR204",rm204list);
 		
 		String[] rm205list = new String[6];
 		rm205list[0] = ("DR209");  
 		rm205list[1] = ("DR210");
 		rm205list[2] = ("Attack Monster");
-		rm205list[3] = ("Check puzzle");
+		rm205list[3] = ("Solve puzzle");
 		rm205list[4] = ("View Inventory");
-		rm205list[5] = ("View Stats");
+		rm205list[5] = ("Check Stats");
 		optionlist.put("DR205",rm205list);
 
 		String[] rm206list = new String[6];
 		rm206list[0] = ("DR210");  
 		rm206list[1] = ("DR211");
 		rm206list[2] = ("Attack Monster");
-		rm206list[3] = ("Check puzzle");
+		rm206list[3] = ("Solve puzzle");
 		rm206list[4] = ("View Inventory");
-		rm206list[5] = ("View Stats");
+		rm206list[5] = ("Check Stats");
 		optionlist.put("DR206",rm206list);
 		
 		String[] rm207list = new String[6];
 		rm207list[0] = ("DR204");  
 		rm207list[1] = ("DR212");
 		rm207list[2] = ("Attack Monster");
-		rm207list[3] = ("Check puzzle");
+		rm207list[3] = ("Solve puzzle");
 		rm207list[4] = ("View Inventory");
-		rm207list[5] = ("View Stats");
+		rm207list[5] = ("Check Stats");
 		optionlist.put("DR207",rm207list);
 		
 		//LEVEL THREE MENU OPTIONS
@@ -194,16 +194,16 @@ public class MenuLibrary
 		hwl3list[5] = ("DR306");
 		hwl3list[6] = ("DR307");  
 		hwl3list[7] = ("View Inventory");
-		hwl3list[8] = ("View Stats");
+		hwl3list[8] = ("Check Stats");
 		optionlist.put("HW_L3",hwl3list);
 		
 		String[] rm301list = new String[6];
 		rm301list[0] = ("DR300");  
 		rm301list[1] = ("DR301");
 		rm301list[2] = ("Attack Monster");
-		rm301list[3] = ("Check puzzle");
+		rm301list[3] = ("Solve puzzle");
 		rm301list[4] = ("View Inventory");
-		rm301list[5] = ("View Stats");
+		rm301list[5] = ("Check Stats");
 		optionlist.put("DR301",rm301list);
 			
 		return optionlist;

@@ -94,7 +94,7 @@ public class Puzzle extends RoomClass
 	}
 	
 	
-	static void puzzleSolver(Puzzle currentPuzzleID, Backpack pack)
+	public static void puzzleSolver(Puzzle currentPuzzleID, Backpack pack)
 	{
 		int numOfAttempts = 0;
 		boolean inPuzzle = true;

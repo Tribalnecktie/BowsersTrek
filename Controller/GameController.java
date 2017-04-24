@@ -122,11 +122,21 @@ public class GameController
 				 * 												
 				 * 
 				 */
-	
+				//SET UP THE NEW VARIABLES
 				if(thisMonster.isAlive())
 				{
-					thisMonster = thisRoom.rollMonster();	
+					thisMonster = thisRoom.rollMonster();
+					thisRoom.setMonsterObj(thisMonster);
+					
 				}
+				
+				if(thisPuzzle.getIsDone())
+				{
+					thisPuzzle = thisRoom.getPuzzleObj();
+					thisPuzzle.setIsDone(false);
+					thisRoom.setPuzzleObj(thisPuzzle);
+				}
+				
 				
 				console.printView("=========================================================================================");
 				//print room description
@@ -165,6 +175,7 @@ public class GameController
 				}
 				
 				//Parse and deal with the selection
+				//GOING THROUGH A DOOR TO NEW ROOM!
 				if(selectedOption.substring(0, 2).equalsIgnoreCase("DR")) //Door
 				{
 					Room newRoom = new Room();
@@ -176,12 +187,14 @@ public class GameController
 					
 					thisRoom = newRoom;
 					thisMonster = thisRoom.rollMonster();
-					thisRoom.setMonsterObj(thisMonster);				
+					thisRoom.setMonsterObj(thisMonster);
+					thisRoom.getMonsterObj().setAlive(true);
 					
 					
 					console.printView("\nYou succesfully walk through a door!\n");
 					//GAMEON = false;
 				}
+				//GOING INTO THE HALLWAY!
 				else if(selectedOption.substring(0, 2).equalsIgnoreCase("Ha")) //hallway
 				{
 					Room newRoom = new Room();
@@ -194,48 +207,26 @@ public class GameController
 					thisRoom = newRoom;
 					
 				}
+				//SELECTED VIEW INVENTORY
 				else if(selectedOption.substring(0,4).equalsIgnoreCase("View")) //see inventory
 				{
 					thisBackpack.printBackpack();
 					console.printView("");
 				}
+				//SELECTED CHECK STATUS
 				else if(selectedOption.substring(0,5).equalsIgnoreCase("Check")) //Check player status
 				{
 					thisPlayer.viewStatus();
 				}
+				//Attempt the Puzzle
+				else if(selectedOption.substring(0,5).equalsIgnoreCase("Solve")) //Solve the Puzzle
+				{
+					thisPuzzle.puzzleSolver(thisPuzzle.getID(), thisBackpack);
+				}
+				//SELECTED ATTACK MONSTER
 				else if(selectedOption.substring(0,6).equalsIgnoreCase("Attack")) //Attack the mosnter
 				{
-					//THIS IS THE PART COKER TOUCHED, I MOVED AROUND A FEW THINGS FOR GETTING THE LOOP TO ACTUALLY WORK
-					
-					//thisMonster.encounterEnemy(thisPlayer, thisMonster, thisBackpack);
-					/*
-					if(thisMonster.getHealth() <= 0)
-					{
-						console.printView("This monster ain't up for another fight");
-					}
-					else
-					{
-						
-						thisMonster.encounterEnemy(thisPlayer, thisMonster, thisBackpack);
-						newGameScan.close();
-					}
-					*/
-					/*
-					boolean isLooping = true;
-					while (isLooping)
-					{
-						int potato = newGameScan.nextInt();
-						if (potato == 0)
-						{
-							System.out.println("you ran the loop again");
-						}
-						else
-						{
-							System.out.println("You kicked yourself out");
-							isLooping = false;
-						}
-					}
-					*/
+					//Enter Monster loop if this monster is alive.
 					if(thisMonster.isAlive())
 					{
 						//Scanner playerInput = new Scanner(System.in);
