@@ -242,14 +242,14 @@ public class GameController
 					while(inVentory == true)
 					{
 						console.printView("");
-						System.out.println("Choose an item ID to apply effect \nOr type 0 to exit the inventory");
+						System.out.println("Choose an item ID to apply effect by typing in its number \nOr type 9 to exit the inventory");
 						
 						int userPick = newGameScan.nextInt();
 						//String userPick = inventoryScan.nextLine();
 						//System.out.println(" HERE I AM ");
 						//String userPick = newGameScan.nextLine();
 						//String userChoicsad = Integer.parseInt(userPick);
-						if(userPick == 0)
+						if(userPick == 9)
 						{
 							inVentory = false;
 							//break;
@@ -258,7 +258,7 @@ public class GameController
 						{
 							//get the artifact using its id given by user.
 							String invChoice = "" + userPick;
-							Artifact tempItem = thisBackpack.getItem(userPick + "");
+							Artifact tempItem = thisBackpack.getItem("A000"+userPick);
 							
 							//apply its effect to thisPlayer
 							if(tempItem.isCanHeal())
@@ -266,6 +266,7 @@ public class GameController
 								int itemStrength = tempItem.getStrength();
 								thisPlayer.setHealth(thisPlayer.getHealth() + itemStrength);
 								console.printView("Added " + itemStrength + " to Health");
+								thisBackpack.removeArtifact("A000"+userPick);
 								break;
 							}
 							else if(tempItem.isAddAtk())
@@ -273,6 +274,7 @@ public class GameController
 								int itemAttack = tempItem.getStrength();
 								thisPlayer.setAttackPower(thisPlayer.getAttackPower() + itemAttack);
 								console.printView("Added " + itemAttack + " to Attack");
+								thisBackpack.removeArtifact("A000"+userPick);
 								break;
 							}
 						}
