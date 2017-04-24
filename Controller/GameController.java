@@ -191,68 +191,6 @@ public class GameController
 				//SELECTED VIEW INVENTORY
 				else if(selectedOption.substring(0,4).equalsIgnoreCase("View")) //see inventory
 				{	
-					/*
-					Scanner inventoryScan = new Scanner(System.in);
-					thisBackpack.printBackpack();
-					boolean inVentory = true;
-					
-					while(inVentory)
-					{
-						console.printView("");
-						console.printView("Choose an item ID to apply effect \nOr type 0 to exit the inventory");
-						
-						String userPick = inventoryScan.nextLine();
-						
-						if(userPick.equalsIgnoreCase("0"))
-						{
-							inventoryScan.close();
-							inVentory = false;
-							break;
-						}
-						else if (!thisBackpack.isEmpty())
-						{
-							//get the artifact using its id given by user.
-							Artifact tempItem = thisBackpack.getItem(userPick);
-							
-							//apply its effect to thisPlayer
-							if(tempItem.isCanHeal())
-							{
-								int itemStrength = tempItem.getStrength();
-								thisPlayer.setHealth(thisPlayer.getHealth() + itemStrength);
-								console.printView("Added " + itemStrength + " to Health");
-								break;
-							}
-							else if(tempItem.isAddAtk())
-							{
-								int itemAttack = tempItem.getStrength();
-								thisPlayer.setAttackPower(thisPlayer.getAttackPower() + itemAttack);
-								console.printView("Added " + itemAttack + " to Attack");
-								break;
-							}
-						}
-						inventoryScan.close();
-						break;
-					}
-					inventoryScan.close();
-					*/
-
-					/*
-					while (true)
-					{
-						System.out.println("HERE I AM");
-						String potato = newGameScan.nextLine();
-						System.out.println("lets print potato");
-						System.out.println(potato);
-						
-					}
-					*/
-					//thisBackpack.addArtifact(thisMonster.getItemDrop().getID(), new Artifact(thisMonster.getItemDrop().getID()));
-					//thisBackpack.printBackpack();
-					//Scanner inventoryScan = new Scanner(System.in);
-					
-					
-					//System.out.println(" HERE I AM ");
-					//int userPick = newGameScan.nextInt();
 					
 					try
 					{
@@ -262,23 +200,18 @@ public class GameController
 					{
 						e.printStackTrace();
 					}
+					
 					boolean inVentory = true;
-					//System.out.println(" HERE I AM ");
-					//String userPick = newGameScan.nextLine();
 					while(inVentory == true)
 					{
 						console.printView("");
 						System.out.println("Choose an item ID to apply effect by typing in its number \nOr type 99 to exit the inventory");
 						
 						int userPick = newGameScan.nextInt();
-						//String userPick = inventoryScan.nextLine();
-						//System.out.println(" HERE I AM ");
-						//String userPick = newGameScan.nextLine();
-						//String userChoicsad = Integer.parseInt(userPick);
+						
 						if(userPick == 99)
 						{
 							inVentory = false;
-							//break;
 						}
 						else if (!thisBackpack.isEmpty())
 						{
@@ -333,9 +266,7 @@ public class GameController
 							}
 						}
 						break;
-					}
-					//inventoryScan.close();
-					
+					}					
 				}
 				//SELECTED CHECK STATUS
 				else if(selectedOption.substring(0,5).equalsIgnoreCase("Check")) //Check player status
@@ -344,9 +275,7 @@ public class GameController
 				}
 				//Attempt the Puzzle
 				else if(selectedOption.substring(0,5).equalsIgnoreCase("Solve")) //Solve the Puzzle
-				{
-					//thisPuzzle.puzzleSolver(thisPuzzle.getID(), thisBackpack);
-					
+				{					
 						int numOfAttempts = 0;
 						boolean inPuzzle = true;
 						
@@ -357,13 +286,9 @@ public class GameController
 							System.out.println(thisPuzzle.getPzlDescription());
 							String answer = thisPuzzle.getAnswer();
 							String hint = thisPuzzle.getHint();
-							//newGameScan.nextInt();
-							//newGameScan.nextInt();
-							//newGameScan.nextLine();
 							System.out.print("Your Answer: ");
 							String userAnswer = newGameScan.nextLine();
 							
-							//SCANNERRRRRRRRRRRRRRRRRRRRRRRRR???????????????????
 							if (numOfAttempts < 5)
 							{
 								
@@ -375,7 +300,6 @@ public class GameController
 									thisBackpack.addArtifact(thisPuzzle.getReward().getID(), thisPuzzle.getReward());
 									thisPuzzle.setIsDone(true);
 									inPuzzle = false;
-									//newGameScan.close();
 								}
 								else
 								{
@@ -396,7 +320,6 @@ public class GameController
 									thisBackpack.addArtifact(thisPuzzle.getReward().getID(), thisPuzzle.getReward());
 									thisPuzzle.setIsDone(true);
 									inPuzzle = false;
-									//newGameScan.close();
 								}
 								else
 								{
@@ -409,12 +332,11 @@ public class GameController
 								System.out.println("1. Come back to puzzle later");
 								System.out.println("2. Keep trying");
 								int command = newGameScan.nextInt();
-								///////////////////////////////////////////Fix scanner??
+
 								if (command == 1)
 								{
 									System.out.println("You can always come back and try again, have a safe journey.");
 									inPuzzle = false;
-									//newGameScan.close();
 								}
 								else if (command == 2)
 								{
@@ -434,12 +356,12 @@ public class GameController
 					{
 						//Scanner playerInput = new Scanner(System.in);
 						boolean inEncounter = true;
-						//Monster tempMonster = mList[0];
+						
 						if (thisMonster.getHealth() <= 0)
 						{
 							System.out.println("You have already slain this monster");
 							thisMonster.setAlive(false);
-							//playerInput.close();
+							
 							inEncounter = false;
 							return;
 						}
@@ -451,7 +373,6 @@ public class GameController
 							{
 								System.out.println("You died, Better Luck Next TIme");
 								inEncounter = false;
-								//playerInput.close();
 							}
 							else if (thisMonster.getHealth() <= 0 && inEncounter == true)
 							{
