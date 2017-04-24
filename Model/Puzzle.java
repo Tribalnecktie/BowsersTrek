@@ -209,18 +209,10 @@ public class Puzzle extends RoomClass
 	public String getPzlDescription() {
 		return pzlDescription;
 	}
-
-	//public void setPzlDescription(String pzlDescription) {
-		//this.pzlDescription = getPzlDescription();
-	//}
 	
 	public String getHint(){
 		return pzlHint;
 	}
-	
-	//public void setHint(String pzlHint){
-		//this.pzlHint = pzlHint;
-	//}
 
 	public String getAnswer() {
 		return answer;
