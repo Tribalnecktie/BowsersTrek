@@ -169,7 +169,7 @@ public class Puzzle extends RoomClass
 		playerInput.close();
 	}
 
-	public Puzzle getID() {
+	public static Puzzle getID() {
 		Room rm = new Room();
 		
 		return rm.getPuzzleObj();

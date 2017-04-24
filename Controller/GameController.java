@@ -172,7 +172,7 @@ public class GameController
 				//SELECTED VIEW INVENTORY
 				else if(selectedOption.substring(0,4).equalsIgnoreCase("View")) //see inventory
 				{	
-					//Scanner inventoryScan = new Scanner(System.in);
+					Scanner inventoryScan = new Scanner(System.in);
 					thisBackpack.printBackpack();
 					boolean inVentory = true;
 					
@@ -181,13 +181,13 @@ public class GameController
 						console.printView("");
 						console.printView("Choose an item ID to apply effect \nOr type 0 to exit the inventory");
 						
-						String userPick = newGameScan.nextLine();
+						String userPick = inventoryScan.nextLine();
 						
 						if(userPick.equalsIgnoreCase("0"))
 						{
-							inVentory = false;
+							break;
 						}
-						else
+						else if (!thisBackpack.isEmpty())
 						{
 							//get the artifact using its id given by user.
 							Artifact tempItem = thisBackpack.getItem(userPick);
@@ -197,15 +197,20 @@ public class GameController
 							{
 								int itemStrength = tempItem.getStrength();
 								thisPlayer.setHealth(thisPlayer.getHealth() + itemStrength);
+								console.printView("Added " + itemStrength + " to Health");
+								break;
 							}
 							else if(tempItem.isAddAtk())
 							{
 								int itemAttack = tempItem.getStrength();
 								thisPlayer.setAttackPower(thisPlayer.getAttackPower() + itemAttack);
+								console.printView("Added " + itemAttack + " to Attack");
+								break;
 							}
 						}
 						break;
 					}
+					inventoryScan.close();
 				}
 				//SELECTED CHECK STATUS
 				else if(selectedOption.substring(0,5).equalsIgnoreCase("Check")) //Check player status
@@ -215,7 +220,7 @@ public class GameController
 				//Attempt the Puzzle
 				else if(selectedOption.substring(0,5).equalsIgnoreCase("Solve")) //Solve the Puzzle
 				{
-					Puzzle.puzzleSolver(Puzzle.getID(), thisBackpack);
+					thisPuzzle.puzzleSolver(Puzzle.getID(), thisBackpack);
 				}
 				//SELECTED ATTACK MONSTER
 				else if(selectedOption.substring(0,6).equalsIgnoreCase("Attack")) //Attack the monster

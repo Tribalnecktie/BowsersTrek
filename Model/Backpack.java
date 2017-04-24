@@ -19,6 +19,7 @@ import java.util.Map;
 public class Backpack implements Serializable {
 
 	Map<String,Artifact> userBackpack = new HashMap<String,Artifact>();
+	boolean isEmpty = true;
 
 	/*
 	 * Thought:	How will we store this backpack to the save file for each user.
@@ -26,6 +27,14 @@ public class Backpack implements Serializable {
 	 * 			a save file is loaded?
 	 */
 	
+	public boolean isEmpty() {
+		return isEmpty;
+	}
+
+	public void setEmpty(boolean isEmpty) {
+		this.isEmpty = isEmpty;
+	}
+
 	//Backpack class constructor.
 	public Backpack()
 	{
@@ -35,6 +44,7 @@ public class Backpack implements Serializable {
 	public void addArtifact(String ID, Artifact ArtifactObj)
 	{
 		userBackpack.put(ID, ArtifactObj);
+		this.isEmpty = false;
 	}
 	
 	public void removeArtifact(String ID)
