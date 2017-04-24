@@ -303,20 +303,23 @@ public class GameController
 							System.out.println(thisPuzzle.getPzlDescription());
 							String answer = thisPuzzle.getAnswer();
 							String hint = thisPuzzle.getHint();
+							//newGameScan.nextInt();
+							newGameScan.nextInt();
+							String userAnswer = newGameScan.nextLine();
 							
 							//SCANNERRRRRRRRRRRRRRRRRRRRRRRRR???????????????????
 							if (numOfAttempts < 5)
 							{
 								
 								
-								if (newGameScan.equals(answer))
+								if (userAnswer.equals(answer))
 								{
 									System.out.println("You have correctly answer the puzzle!");
 									System.out.println(thisPuzzle.getReward() + " has been added to your inventory");
 									thisBackpack.addArtifact(thisPuzzle.getReward().getID(), thisPuzzle.getReward());
 									thisPuzzle.setIsDone(true);
 									inPuzzle = false;
-									newGameScan.close();
+									//newGameScan.close();
 								}
 								else
 								{
@@ -330,14 +333,14 @@ public class GameController
 								System.out.print("Looks like you are having a little trouble, here is a hint: ");
 								System.out.print(hint + " ");
 								
-								if (newGameScan.equals(answer))
+								if (userAnswer.equals(answer))
 								{
 									System.out.println("You have correctly answer the puzzle!");
 									System.out.println(thisPuzzle.getReward() + " has been added to your inventory");
 									thisBackpack.addArtifact(thisPuzzle.getReward().getID(), thisPuzzle.getReward());
 									thisPuzzle.setIsDone(true);
 									inPuzzle = false;
-									newGameScan.close();
+									//newGameScan.close();
 								}
 								else
 								{
@@ -355,7 +358,7 @@ public class GameController
 								{
 									System.out.println("You can always come back and try again, have a safe journey.");
 									inPuzzle = false;
-									newGameScan.close();
+									//newGameScan.close();
 								}
 								else if (command == 2)
 								{
