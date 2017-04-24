@@ -293,7 +293,7 @@ public class GameController
 							{
 								
 								
-								if (userAnswer.equals(answer))
+								if (userAnswer.equalsIgnoreCase(answer))
 								{
 									System.out.println("You have correctly answer the puzzle!");
 									System.out.println(thisPuzzle.getReward().getName() + " has been added to your inventory");
@@ -313,7 +313,7 @@ public class GameController
 								System.out.print("Looks like you are having a little trouble, here is a hint: ");
 								System.out.print(hint + " ");
 								
-								if (userAnswer.equals(answer))
+								if (userAnswer.equalsIgnoreCase(answer))
 								{
 									System.out.println("You have correctly answer the puzzle!");
 									System.out.println(thisPuzzle.getReward() + " has been added to your inventory");
