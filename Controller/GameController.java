@@ -140,8 +140,26 @@ public class GameController
 					x++;
 				}
 
-				int roomchoice = newGameScan.nextInt();
-				String selectedOption = menu[roomchoice];
+				int roomChoice = 0;
+				
+				
+				boolean isValidMenu = false;
+				while (isValidMenu == false)
+				{
+					roomChoice = newGameScan.nextInt();
+					if (roomChoice < 0 || roomChoice >= menu.length)
+					{
+						System.out.println("Please enter a valid input");
+					}
+					else
+					{
+						isValidMenu = true;
+					}
+						
+					
+				}
+				
+				String selectedOption = menu[roomChoice];
 				
 				//Parse and deal with the selection
 				//GOING THROUGH A DOOR TO NEW ROOM!
