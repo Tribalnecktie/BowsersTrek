@@ -43,7 +43,7 @@ public class Artifact implements Serializable {
 		{
 			this.ID = ID;
 			this.name = "Healing Mushroom";
-			this.description = "If you find this mushroom your character will be able \nto heal itself. You can consume the mushroom to regain 60HP";
+			this.description = "Consume the mushroom to regain some Health";
 			this.strength = 2;
 			this.setCanHeal(true);
 			this.setAddAtk(false);
@@ -52,7 +52,7 @@ public class Artifact implements Serializable {
 		{
 			this.ID = ID;
 			this.name = "Poison Goomba";
-			this.description = "If you find this item you will be able to poison your \nenemy (making the opposition nauseous), and gain the opportunity to catch your breath.";
+			this.description = "Using this Item will poison your attacks! More damage!!";
 			this.strength = 4;
 			this.setCanHeal(false);
 			this.setAddAtk(true);
@@ -61,7 +61,7 @@ public class Artifact implements Serializable {
 		{
 			this.ID = ID;
 			this.name = "Paralyzing Boo";
-			this.description = "This ghost, if selected, can paralyze your enemy for \nyou to catch your breath quickly";
+			this.description = "This ghost, if selected, can paralyze your enemy for you to catch your breath quickly";
 			this.strength = 2;
 			this.setCanHeal(false);
 			this.setAddAtk(true);
@@ -77,7 +77,7 @@ public class Artifact implements Serializable {
 		if (ID.equals("A0004"))
 		{
 			this.name = "Fire Flower";
-			this.description = "The fire flower is very useful if you want to keep \nyour distance from your enemy.";
+			this.description = "The fire flower is very useful if you want to keep your distance from your enemy.";
 			this.strength = 5;
 			this.setCanHeal(false);
 			this.setAddAtk(true);
@@ -85,7 +85,7 @@ public class Artifact implements Serializable {
 		if (ID.equals("A0005"))
 		{
 			this.name = "Bowser's Flaming Sword";
-			this.description = "This weapon is the rarest of them all. If found, \nyou're in luck. Bowsers sword does very heavy damage.";
+			this.description = "This weapon is the rarest of them all. If found, you're in luck. Bowsers sword does very heavy damage.";
 			this.strength = 25;
 			this.setCanHeal(false);
 			this.setAddAtk(true);
@@ -93,7 +93,7 @@ public class Artifact implements Serializable {
 		if (ID.equals("A0006"))
 		{
 			this.name = "Shroom Sword";
-			this.description = "A long white piece of mushroom dotted with red \nspots and sharpened.";
+			this.description = "A long white piece of mushroom dotted with red spots and sharpened.";
 			this.strength = 2;
 			this.setCanHeal(false);
 			this.setAddAtk(true);
@@ -101,7 +101,7 @@ public class Artifact implements Serializable {
 		if (ID.equals("A0007"))
 		{
 			this.name = "Shroom Bow";
-			this.description = "A curved piece of brown mushroom with a string \nconnecting the two ends.";
+			this.description = "A curved piece of brown mushroom with a string connecting the two ends.";
 			this.strength = 2;
 			this.setCanHeal(false);
 			this.setAddAtk(true);
@@ -109,7 +109,7 @@ public class Artifact implements Serializable {
 		if (ID.equals("A0008"))
 		{
 			this.name = "Shroom Hammer";
-			this.description = "A short mushroom stick with a very wide \nand dense end.";
+			this.description = "A short mushroom stick with a very wide and dense end.";
 			this.strength = 2;
 			this.setCanHeal(false);
 			this.setAddAtk(true);
@@ -117,7 +117,7 @@ public class Artifact implements Serializable {
 		if (ID.equals("A0009"))
 		{
 			this.name = "Shroom Gun";
-			this.description = "A small, hollow curved mushroom with \nsmall mechanical components.";
+			this.description = "A small, hollow curved mushroom with small mechanical components.";
 			this.strength = 5;
 			this.setCanHeal(false);
 			this.setAddAtk(true);
@@ -126,14 +126,14 @@ public class Artifact implements Serializable {
 		if (ID.equals("A0010"))
 		{
 			this.name = "Coin of Constitution";
-			this.description = "A green coin that shimmers and \nhums with magical energy";
+			this.description = "A green coin that shimmers and hums with magical energy";
 			this.strength = 5;
 			this.setCanHeal(true);
 		}
 		if (ID.equals("A0011"))
 		{
 			this.name = "Coin of Toughness";
-			this.description = "A red coin that shimmers and \nhums with magical energy";
+			this.description = "A red coin that shimmers and hums with magical energy";
 			this.strength = 10;
 			this.setCanHeal(true);
 		}
