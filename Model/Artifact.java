@@ -203,7 +203,7 @@ public class Artifact implements Serializable {
 
 	/**
 	 * Method: getStrength
-	 * Returns the int Strength or potency of an Artifact
+	 * Returns the int Strength of an Artifact
 	 * @return int
 	 */
 	public int getStrength() {
@@ -212,7 +212,7 @@ public class Artifact implements Serializable {
 
 	/**
 	 * Method: setStrength
-	 * Sets the Strenght or potency of an Artifact
+	 * Sets the Strength or potency of an Artifact
 	 * @param int
 	 */
 	public void setStrength(int strength) {

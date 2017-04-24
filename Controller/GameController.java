@@ -102,7 +102,8 @@ public class GameController
 			 * 
 			 */
 			while(GAMEON)
-			{			
+			{		
+				newGameScan = new Scanner(System.in);
 				//SET UP THE NEW VARIABLES
 				if(thisMonster.isAlive())
 				{
@@ -185,6 +186,8 @@ public class GameController
 						
 						if(userPick.equalsIgnoreCase("0"))
 						{
+							inventoryScan.close();
+							inVentory = false;
 							break;
 						}
 						else if (!thisBackpack.isEmpty())
@@ -208,6 +211,7 @@ public class GameController
 								break;
 							}
 						}
+						inventoryScan.close();
 						break;
 					}
 					inventoryScan.close();
