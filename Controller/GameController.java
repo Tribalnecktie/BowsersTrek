@@ -614,8 +614,8 @@ public class GameController
 			Puzzle thisPuzzle = thisRoom.getPuzzleObj();
 
 			//Get UserName and save it to the player profile
-			System.out.println("Please Enter your Character Name");
-			thisPlayer.setName(newGameScan.nextLine());
+			//System.out.println("Please Enter your Character Name");
+			//thisPlayer.setName(newGameScan.nextLine());
 			console.printView("Ready to start the game " + thisPlayer.getName() + "?");
 
 			//for dramatic effect
