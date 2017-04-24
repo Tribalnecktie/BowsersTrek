@@ -71,14 +71,17 @@ public class SaveState {
 	{
 		//Reading all the keys to an array
 		String[] keysArray = new String[13];
+		int[] qArray = new int[13];
 		int i = 0;
 		for (String key: pack.userBackpack.keySet())
 		{
 			keysArray[i] = key;
+			qArray[i] = pack.userBackpack.get(key).getQuantity();
 			i++;
 		}
 		
 		//Reading all the artifacts of those keys to an array
+		/*
 		Artifact[] artifactsArray = new Artifact[13];
 		i = 0;
 		for (String key: pack.userBackpack.keySet())
@@ -86,7 +89,7 @@ public class SaveState {
 			artifactsArray[i] = pack.userBackpack.get(key);
 			i++;
 		}
-		
+		*/
 		//Time to read all those keys from the String array into a file
 		try
 		{
@@ -99,6 +102,19 @@ public class SaveState {
 		{
 			e.printStackTrace();
 		}
+		
+		try
+		{
+			ObjectOutputStream qFile = new ObjectOutputStream(new FileOutputStream("packQTest.bin"));
+			qFile.writeObject(qArray);
+			qFile.close();
+			System.out.println("BackPack Q write successful");
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		
 		
 		/*
 		try
@@ -151,11 +167,19 @@ public class SaveState {
 		System.out.println("Backpack load successful");
 		
 	
+		ObjectInputStream packQInFile = new ObjectInputStream(new FileInputStream("packQTest.bin"));
+		int [] qArray = new int[13];
+		qArray = (int[])packQInFile.readObject();
+		packQInFile.close();
+		
 		Map<String, Artifact> sudoPack = new HashMap<String, Artifact>();
 		for (int i = 0; i < keysArray.length; i++)
 		{
 			if (keysArray[i] != null)
+			{
 			sudoPack.put(keysArray[i], new Artifact(keysArray[i]));
+			sudoPack.get(keysArray[i]).setQuantity(qArray[i]);
+			}
 		}
 		pack.userBackpack = sudoPack;
 		
