@@ -183,6 +183,11 @@ public class GameController
 				}
 
 				String selectedOption = menu[roomChoice];
+				
+				if(selectedOption == "EXIT")
+				{
+					System.exit(0);
+				}
 
 				//Parse and deal with the selection
 				//GOING THROUGH A DOOR TO NEW ROOM!
@@ -333,7 +338,9 @@ public class GameController
 
 						if (numOfAttempts < 5)
 						{
-							if (userAnswer.equals(answer))
+						
+							if (userAnswer.equalsIgnoreCase(answer))
+
 							{
 								System.out.println("You have correctly answer the puzzle!");
 								System.out.println(thisPuzzle.getReward().getName() + " has been added to your inventory");
@@ -352,10 +359,10 @@ public class GameController
 							System.out.print("Looks like you are having a little trouble, here is a hint: ");
 							System.out.print(hint + " ");
 
-							if (userAnswer.equals(answer))
+							if (userAnswer.equalsIgnoreCase(answer))
 							{
 								System.out.println("You have correctly answer the puzzle!");
-								System.out.println(thisPuzzle.getReward() + " has been added to your inventory");
+								System.out.println(thisPuzzle.getReward().getName() + " has been added to your inventory");
 								thisBackpack.addArtifact(thisPuzzle.getReward().getID(), thisPuzzle.getReward());
 								thisPuzzle.setIsDone(true);
 								inPuzzle = false;
