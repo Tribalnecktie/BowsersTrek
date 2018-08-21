@@ -1,4 +1,5 @@
 Plan of Attack - Bowser's Trek
+-Test for commit
 
 
 This is meant to be a sort of priority list. just with stuff we know we gotta do to make it work or thoughts and ideas.
